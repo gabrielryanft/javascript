@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+
+*{
+    margin: 0px ;
+    padding: 0px;
+}
+body{
+    display: flex; 
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    background: black url(../imgs/poo.jpg) repeat;
+    background-position: center center;
+    background-size: 250px;
+    overflow-x: hidden
+}
+#all{
+    min-width: 400px;
+    background-color: #214029ab;
+    border: 6px double #3c2e00
+}
+p, input{
+    font-variant: small-caps;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 1.5px
+}
+
+header{
+    margin: 30px
+}
+h1{
+    text-align:center;
+    font-variant: small-caps 
+}
+main{
+    text-align: center;
+}
+#listdad{
+    border: 5px double #28361d;
+    width: 250px;
+    min-height: 100px;
+    margin: auto;
+    background-color: rgba(245, 222, 179, 0.664);
+    padding: 10px
+}
+li{
+    list-style: url(../imgs/check-10.png);
+    list-style-position: inside;
+}
+button{
+    padding: 3px 4px;
+    font-size: 1.01em;
+    font-weight: bolder;
+    font-family: serif;
+    font-variant: small-caps;
+    margin: 7px;
+    color: rgb(255, 236, 196);
+    border: 3px double #634c00;
+    background-image: linear-gradient(270deg, #463601, #382c06)
+}
+input{
+    padding: 5px 6px;
+    font-size: 1.05em;
+    font-weight: bolder;
+    background-color: rgba(245, 245, 245, 0.432);
+    border: 3px double #725700
+}
+input::placeholder{
+    font-size: 1.05em;
+    font-weight: bolder;
+    color: rgba(0, 0, 0, 0.815)
+}
+#inbutt{
+    margin: 20px
+}
+footer{
+    text-align: center;
+    margin: 10px 10px 20px 10px 
+}
+#gt{
+    color: transparent;
+    text-shadow: 0px 0px 1px  black
+}
