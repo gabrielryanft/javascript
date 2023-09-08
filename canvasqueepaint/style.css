@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    display: flex;
+    height : 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: rgb(15, 15, 15) url(images/pattern.png) repeat;
+    background-size:300px;
+    background-position: center center
+}
+
+main{
+    width: 700px;
+    height: 500px;
+}
+
+#center{
+    width: calc(700px - 20px + 10px - 1px);
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(54, 28, 10);
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    vertical-align: top;
+}
+
+.letraLabel{
+    font-family: arial;
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+.conjunto{
+    display: flex;
+}
+
+#screen{
+    border: 5px solid rgb(54, 28, 10);
+    width: 700px;
+    height: 500px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: rgba(31, 54, 35, 0.986);
+    vertical-align: top;
+}
