@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+body{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    background-image: url(imgs/textura4.jpg);
+    background-size: 100px;
+    background-position: center center
+}
+#tudo{
+    width: 400px;
+    background-color: rgba(245, 222, 179, 0.877);
+    border-radius: 3px;
+    border: 2px dashed black;
+    text-align: center
+}
+h1, p{
+    font-variant: small-caps
+}
+header{
+
+}
+#cont{
+    text-shadow: 0px 0px 2px rgba(189, 162, 113, 0.877)
+}
+main{
+
+}
+#butt{
+    font-family: serif;
+    font-size: 14px;
+    letter-spacing: 1px; /* separação entre as letras!!!!!!!!!!!*/
+    font-variant: small-caps;
+    background-color: rgba(110, 86, 42, 0.473);
+    color: black;
+    border: 1px solid  rgba(77, 59, 23, 0.877);
+    padding: 3px;
+    box-shadow: 0px 0px 3px  rgba(189, 162, 113, 0.877);
+    transition: border 200ms linear, box-shadow 60ms linear
+}
+#butt:hover{
+    border: 1px solid  black
+}
+#butt:active{
+    box-shadow: 0px 0px 5px  rgb(110, 90, 53)
+}
+#res{
+    margin: 0px 20px
+}
+.emoj{
+    font-size: 11px
+
+}
+footer{
+
+}
+#gt{
+    color: rgba(0, 0, 0, 0);
+    text-shadow: 0px 0px 1px rgba(124, 100, 56, 0.877)
+}

@@ -1,0 +1,80 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+
+body{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-image: url(imgs/goal-09-hires.jpg);
+    background-size: cover;
+    background-position: left center;
+    overflow-x: hidden
+}
+#tudo{
+    min-width: 400px;
+    background-color: rgb(27, 171, 255);
+    border-radius: 3px;
+    border:  10px groove rgb(0, 113, 179);
+    padding: 20px
+}
+head{
+
+}
+h1, p{
+    text-align:center;
+}
+p{
+    font-variant: small-caps;
+    letter-spacing: 1px
+}
+h1{
+    font-family: 'Fredericka the Great', Arial, Helvetica, sans-serif
+}
+main{
+
+}
+#tabua{
+    text-align: center;
+    background-color: rgba(26, 110, 0, 0.664);
+    border: 3px groove rgb(126, 82, 0) ;
+    min-width:350px
+}
+#tabua::-webkit-scrollbar{
+    width: 5px
+}
+#tabua::-webkit-scrollbar-thumb{
+    width: 4px;
+    background-color: rgb(73, 31, 3);
+    border-radius: 4px;
+}
+#butt{
+    background-color: tomato;
+    border: 1px solid rgb(158, 40, 19);
+    font-variant: small-caps;
+    letter-spacing: 1px;
+    transition: border 200ms linear, box-shadow 50ms linear;
+
+}
+#butt:hover{
+    border: 1px solid black
+}
+#butt:active{
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.452)
+}
+#res{
+    margin: auto;
+    text-align: center;
+}
+select{
+   text-align: center;
+}
+footer{
+
+}
+#gt{
+    color: transparent;
+    text-shadow: 0px 0px 1px black;
+    letter-spacing: 13px
+}

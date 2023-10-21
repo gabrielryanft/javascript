@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="tudo">
+        <header>
+            <h1>Lista</h1>
+        </header>
+        <main>
+            <div>
+                <p>Número (de 1 a 100):
+                    <input type="number" id="num">
+                    <input type="button" id="adici" value="Adicionar" onclick="adicionar()">
+                </p>
+                <p><select name="lista" id="lista" size="6" scrolling="yes">
+                    
+                </select></p>
+                <p><input type="button" value="Finalizar" id="finali" onclick="finalizar()"></p>
+            </div>
+
+            <div id="res">
+            </div>
+        </main>
+        <footer>
+            <p id="gt">Gabriel totosão</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

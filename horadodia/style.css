@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+body{
+    background-color: black;
+    display:flex;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden
+}
+#tudo{
+    background-color: ;
+    border-radius: 4px;
+    max-width: 600px;
+    min-width: 340px;
+    padding: 1% 
+}
+header{
+ text-align: center
+}
+header h1{
+    font-variant: small-caps
+}
+main{
+    text-align: center;
+    margin: auto;
+    max-width: 500px;
+    background-color: ;
+    border-radius: 3px;
+    margin: 10px;
+    padding: 10px;
+   
+}
+#divimg{
+    border-radius: 46%;
+    margin: auto;
+    height: 300px;
+    width: 300px;
+    overflow: hidden;
+    border: 3px dashed rgba(0, 0, 0, 0.527);
+    background-image: url('imgs/');
+    background-position: center center;
+}
+main p{
+    background-color: ;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 10px 10%
+}
+footer{
+    text-align: center
+}
+footer p{
+    font-variant: small-caps
+}
