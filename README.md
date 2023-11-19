@@ -12,4 +12,5 @@ Projetos:
 <a href="https://gabrielryanft.github.io/javascript/lista-com-select/lista.html" target="_blank" rel="next">Lista-Com-Select</a>      
 <a href="https://gabrielryanft.github.io/javascript/lista-com-ul/lista.html" target="_blank" rel="next">Lista-Com-Ul</a>        
 <a href="https://gabrielryanft.github.io/javascript/listdenumsqrolam/numsquerolam.html" target="_blank" rel="next">ListDeNumsQRolam</a>     
+<a href="https://gabrielryanft.github.io/javascript/random_background_color/random_background_color_hexadecimal.html" target="_blank" rel="next">Random_Background_Color</a>     
 <a href="https://gabrielryanft.github.io/javascript/tabuada/tabuade.html" target="_blank" rel="next">Tabuada</a>     
