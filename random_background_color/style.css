@@ -8,8 +8,8 @@
 
 :root{
     --header_height: 4rem;
-    --main_height: calc(100vh - var(--header_height) - var(--footer_height));
-    --main_height: calc(100svh - var(--header_height) - var(--footer_height)); /*using svh*/
+    --main_height: calc(100vh - var(--header_height) - var(--footer_height) - 1.5rem); /* - 3rem is margin of error*/
+    --main_height: calc(100svh - var(--header_height) - var(--footer_height) - 1.5rem); /*using svh*/
     --footer_height: 3rem;
 
     --all_width: 100%;
