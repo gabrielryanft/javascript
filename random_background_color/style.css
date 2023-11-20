@@ -17,6 +17,10 @@
     --color_bg: ;
 }
 
+body{
+    height: 100vh;
+    height: 100svh
+}
 /*header*/
 
 header{
