@@ -26,8 +26,3 @@ function calcular(){
 }
 
 //gabriel totosão
-
-const gabrieltts = document.getElementById("gabrieltts")
-gabrieltts.addEventListener("click", () =>{
-    confirm("Você quer ser redirecionado(a) para um site que diz que o Gabriel R. é um baita de um totosão?")
-})
