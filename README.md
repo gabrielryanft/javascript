@@ -3,6 +3,7 @@
 
 Projetos:
 
+<a href="https://gabrielryanft.github.io/javascript/calculadoradenota/calculadoradenota.html" target="_blank" rel="next">CalculadoraDeNota</a>     
 <a href="https://gabrielryanft.github.io/javascript/canvasqueepaint/canvas.html" target="_blank" rel="next">CanvasQueEPaint</a>     
 <a href="https://gabrielryanft.github.io/javascript/contador/contador.html" target="_blank" rel="next">Contador</a>     
 <a href="https://gabrielryanft.github.io/javascript/editandoimagens/editandoimagens.html" target="_blank" rel="next">EditandoImagens</a>     

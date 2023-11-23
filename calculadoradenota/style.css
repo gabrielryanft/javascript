@@ -144,3 +144,8 @@ footer{
     place-items: center;
     border-top: 2px solid 
 }
+
+footer a{
+    text-decoration: none;
+    color: black
+}
