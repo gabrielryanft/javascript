@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Nota</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <header>
+        <h1>Calculadora de Nota</h1>
+        <button onclick="abrir()"><span class="material-symbols-outlined" id="icone_ajuda">
+            help
+            </span></button>
+        <dialog id="calculo_explicacao">
+            <div>
+                <p>Qual cálculo esta calculadora realiza?</p>
+                <div id="legenda">
+                    <p>Legenda:</p>
+                    <ul>
+                        <li>Primeiro trimestre: pt</li>
+                        <li>Segundo trimestre: st</li>
+                        <li>Terceiro trimestre (Nota necessária para passar): tt</li>
+                    </ul>
+                </div>
+            </div>
+            <p>Cálculo: (60 - (3pt + 3st)) / 4 = tt</p>
+            <button onclick="fechar()">Fechar</button>
+        </dialog>
+    </header>
+    <main>
+        <div>
+            <form onsubmit="calcular(); return false;">
+                <div>
+                    <label for="nota1trimestre">Nota do 1º trimestre:</label>
+                    <input type="number" name="nota1trimestre" id="nota1trimestre" step="0.5" max="10" min="0">
+                </div>
+
+                <div>
+                    <label for="nota2trimestre">Nota do 2º trimestre:</label>
+                    <input type="number" name="nota2trimestre" id="nota2trimestre" step="0.5" max="10" min="0">
+                </div>
+
+                <input type="submit" value="Calcular">
+            </form>
+            <p>A nota necessária para passar é: <span id="nota_passar"></span></p>
+        </div>
+    </main>
+    <footer>
+        <p>Gabriel R. totosão!</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

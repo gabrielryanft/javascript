@@ -1,0 +1,146 @@
+@charset "UTF-8";
+
+:root{
+    --heiht_header: 4rem;
+    --height_main: calc(100vh - var(--heiht_header) - var(--height_footer));
+    --height_footer: 3rem;
+    --width_principais: 100%;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*header*/
+
+header{
+    display: grid;
+    grid-template: auto / 3fr 1fr;
+    text-wrap: balance;
+    place-items: center;
+    text-align: center;
+
+    border-bottom: 2px solid
+}
+
+header > h1{
+    font-size: 1.5rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 1rem;
+}
+
+header > button{
+    display: flex;
+    align-items: center;
+
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#icone_ajuda{
+    font-size: 2rem;
+}
+
+#calculo_explicacao{
+    margin: auto;
+    padding: 1vw;
+    list-style: inside;
+    text-wrap: balance;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+
+    border: 5px double black
+}
+
+#calculo_explicacao p {
+    font-size: 1.1rem;
+    margin: .5rem
+}
+
+#calculo_explicacao button {
+    border: 2px solid;
+    padding: .1rem;
+    font-size: 1rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 1rem
+}
+
+#legenda{
+    text-align: left;
+    font-size: .9rem;
+    margin: .5rem
+}
+
+/*main*/
+
+main{
+    display: flex;
+    min-height: 22rem;
+    height: var(--height_main);
+    width: var(--width_principais);
+
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+main form{
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 1rem;
+
+    border: 5px double black;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600
+}
+
+main form div{
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    
+    margin: 0.5rem;
+}
+
+main form input[type=submit]{
+    margin: .6rem 0 0 ;
+    border: 2px solid;
+    padding: .3rem;
+    font-size: 1rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+main form input[type=number]{
+    border: 2px solid;
+    padding: .2rem;
+    font-size: 1rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+main div p{    
+    margin: 0.5rem;
+    border: 2px solid;
+    border-top: none;
+    padding: .5rem
+}
+
+/*footer*/
+
+footer{
+    display: grid;
+    height: var(--height_footer);
+    width: var(--width_principais);
+    place-items: center;
+    border-top: 2px solid 
+}
