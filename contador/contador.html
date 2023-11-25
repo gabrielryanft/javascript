@@ -7,31 +7,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="tudo">
-        <header>
-            <h1 id="cont">Contador</h1>
-        </header>
-        <main>
-            <div>
-                <p>Início
+    <header>
+        <h1 id="cont">Contador</h1>
+    </header>
+    <main>
+        <section>
+            <form onsubmit="contar()">
+                <div>
+                    <span><label for="ini">Inicio</label></span>
                     <input type="number" name="ini" id="ini">
-                </p>
-                <p>Fim
+                </div>
+                <div>
+                    <span><label for="fim">Fim</label></span>
                     <input type="number" name="fim" id="fim">
-                </p>
-                <p>Passo
+                </div>
+                <div>
+                    <span><label for="pas">Passo</label></span>
                     <input type="number" name="pas" id="pas">
-                </p>
-                <input type="button" name="butt" id="butt" value="Calcular" onclick="contar()">
-            </div>
-            <div>
-                <p id="res"></p>
-            </div>
-        </main>
-        <footer>
-            <p id="gt">Gabriel totosão!</p>
-        </footer>
-    </div>
+                </div>
+                <input type="submit" id="butt" value="Calcular">
+            </form>
+            <p id="res"></p>
+        </section>
+    </main>
+    <footer>
+        <p>Gabriel totosão!</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
