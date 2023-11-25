@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function(){
     const efeitos = document.querySelectorAll('.pRange')
 
     efeitos.forEach(function(div){
-        var pClicado = div.querySelector('p')
+        var pClicado = div.querySelector('label')
         var pNome = pClicado.textContent
 
         var valorRange = null
