@@ -10,6 +10,7 @@
 :root{
     --header_heigth: 4rem;
     --height_main: calc(100vh - var(--header_heigth) - var(--footer_height));
+    --height_main: calc(100svh - var(--header_heigth) - var(--footer_height));
     --footer_height: 3rem;
     --basic_width: 100% 
 }
