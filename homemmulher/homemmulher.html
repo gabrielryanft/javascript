@@ -8,33 +8,37 @@
     
 </head>
 <body>
-    <div id="all">
-        <header>
-            <h1>Homem ou Mulher</h1>
-        </header>
-        <main>
-            <div>
-                <p>Ano que nasceu:
+    <header>
+        <h1>Homem ou Mulher</h1>
+    </header>
+    <main>
+        <section>
+            <div id="formulario"> 
+                <div>
+                    <label for="dataname">Ano que nasceu:</label>
                     <input type="number" name="dataname" id="dataid">
-                </p>
-                <p>Sexo:
-                    <input type="radio" name="sexoname" id="sexohid" checked>
-                    <label for="sexohid">Homem</label>
-                    <input type="radio" name="sexoname" id="sexomid" >
-                    <label for="sexomid">Mulher</label>
-                </p>
-                <p>
-                    <input type="button" value="Verificar" id="btn" onclick="verificar()">
-                </p>
+                </div>
+                <div id="sexo">
+                    <p>Sexo:</p>
+                    <div>
+                        <input type="radio" name="sexoname" id="sexohid" checked>
+                        <label for="sexohid">Homem</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="sexoname" id="sexomid" >
+                        <label for="sexomid">Mulher</label>
+                    </div>
+                </div>
+                <input type="button" value="Verificar" id="btn" onclick="verificar()">
             </div>
             <div>
                 <p><span id=res></span> <span id="res0"></span></p>
             </div>
-        </main>
-        <footer>
-            <p>Gabriel Totosão!</p>
-        </footer>
-    </div>
+        </section>
+    </main>
+    <footer>
+        <p>Gabriel Totosão!</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
