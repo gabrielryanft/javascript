@@ -13,7 +13,7 @@ body{
     overflow-x: hidden
 }
 #tudo{
-    min-width: 400px;
+    min-width: 300px;
     background-color: rgb(27, 171, 255);
     border-radius: 3px;
     border:  10px groove rgb(0, 113, 179);
@@ -39,7 +39,7 @@ main{
     text-align: center;
     background-color: rgba(26, 110, 0, 0.664);
     border: 3px groove rgb(126, 82, 0) ;
-    min-width:350px
+    min-width:250px
 }
 #tabua::-webkit-scrollbar{
     width: 5px
