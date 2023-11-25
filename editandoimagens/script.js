@@ -32,8 +32,6 @@ document.addEventListener('DOMContentLoaded', function(){
                 medida = "%"
             }
             image.style = `filter: ${pNome}(${valorRange}${medida});`
-        })
-
-        
+        })   
     })
 })
