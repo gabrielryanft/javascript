@@ -27,14 +27,11 @@ header{
     place-items: center;
     background-color: rgba(245, 222, 179, 0.7);
     border-bottom: 2px dashed black;
-    
-    max-width: 600rem;
 }
 
 main{
     display: flex;
-    min-height: 11rem;
-    height: var(--height_main);
+    min-height: var(--height_main);
     width: var(--basic_width);
     align-items: center;
     justify-content: center;
@@ -42,10 +39,16 @@ main{
 }
 
 main > section{
+    display: flex;
+    max-width: 18rem;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     background-color: rgba(245, 222, 179, 0.8);
     border-radius: 3px;
     border: 2px dashed black;
-    padding: 1rem
+    padding: 1rem;
+    margin: 1rem
 }
 
 main > section div{
@@ -56,11 +59,7 @@ main > section div{
 label{
     font-size: 1rem;
     display: inline-block;
-    width: 2rem;
-}
-
-input[type=number]{
-    margin: 0 0 0 .6rem;
+    width: 2.5rem;
 }
 
 #butt{
