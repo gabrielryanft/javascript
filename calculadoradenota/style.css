@@ -135,19 +135,55 @@ main div p{
     padding: .5rem
 }
 
-/*footer*/
+/*Footer*/
 
 footer{
     display: grid;
     height: var(--height_footer);
-    width: var(--width_principais);
+    width: var(--main_width);
     place-items: center;
-    border-top: 2px solid 
 }
 
-footer a{
-    text-decoration: none;
-    color: black
+footer span{
+    transition: all 200ms linear;
 }
 
-/*gabriel totosão*/
+footer #igual::before{
+    content: "=";
+    font-size: 0;
+    transition: all 200ms linear;
+}
+
+footer:hover #igual::before{
+    content: "=";
+    font-size: 1rem;
+    margin: 5px
+}
+
+footer p {
+    position: relative;
+}
+footer #quadrado::before{
+    content: "2";
+    font-size: .7rem;
+    position: absolute;
+    top: -6px;
+    right: -10vmin;
+    opacity: 0;
+    transition: all 300ms linear;
+}
+
+footer:hover #quadrado::before{
+    opacity: 1;
+    right: -6px
+}
+
+footer:hover .sumiu{
+    font-size: 0;
+}
+
+footer:hover #rpequeno{
+    position: absolute;
+    font-size: .7rem;
+    bottom: -6px;
+}

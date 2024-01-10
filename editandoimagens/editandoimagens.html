@@ -7,11 +7,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <h1>Editor de imagem com HTML, CSS, JS</h1>
+        <p>Não é possivel salvar a imagem editada. <a href="#editar">Clique para centralizar na edição</a>.</p>
+        <p>Deite o seu telefone para uma melhor experiêcia.</p>
+    </header>
     <main>
         <div>
             <img src="https://source.unsplash.com/random/?id=a" alt="">
         </div>
-        <div id="divForm">
+        <form id="formulario" method="post" autocomplete="off">
+            <div id="editar"></div>
             <div class="pRange">
                 <label for="filter-blur" id="filter-blur">blur</label>
                 <input type="range" name="" id="filter-blur" min="0" max="20" value="0">
@@ -46,8 +52,12 @@
                 <label for="filter-saturate" id="filter-saturate" >saturate</label>
                 <input type="range" name="" id=" filter-saturate"min="0" max="500" value="100">
             </div>
-        </div>
+            <input type="reset" value="Resetar edição">
+        </form>
     </main>
+    <footer>
+        <p id="gbtts">Gabriel R. totosão</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>

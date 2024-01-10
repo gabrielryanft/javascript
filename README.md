@@ -2,8 +2,7 @@
  JavaScript
 
 Projetos:
-
-<a href="https://gabrielryanft.github.io/javascript/bolinhapulsante/bolinha.html" target="_blank" rel="next">BolinhaPulsante</a>         
+       
 <a href="https://gabrielryanft.github.io/javascript/calculadoradenota/calculadoradenota.html" target="_blank" rel="next">CalculadoraDeNota</a>         
 <a href="https://gabrielryanft.github.io/javascript/contador/contador.html" target="_blank" rel="next">Contador</a>     
 <a href="https://gabrielryanft.github.io/javascript/editandoimagens/editandoimagens.html" target="_blank" rel="next">EditandoImagens</a>     
