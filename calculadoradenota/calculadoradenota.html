@@ -2,53 +2,58 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="author" content="Gabriel Ryan">
+    <meta name="keywords" content="nota terceiro trimestre, nota escola, como calcular a nota do terceito trimestre, rio grande do sul, rs, nota ensino médio, note, ensino médio">
+    <meta name="description" content="Este site calcula a nota necessária para passar de ano, baseando-se nas notas que foram tiradas no primeiro e no último trimestre.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Nota</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body>
     <header>
         <h1>Calculadora de Nota</h1>
-        <button onclick="abrir()"><span class="material-symbols-outlined" id="icone_ajuda">
-            help
-            </span></button>
+        <button onclick="abrir_ajuda()" title="Mostrar fórmula usada para calcular a nota" aria-label="Mostrar fórmula usada para calcular a nota"><span class="material-symbols-outlined" id="icone_ajuda">help</span></button>    
         <dialog id="calculo_explicacao">
             <div>
-                <p>Qual cálculo esta calculadora realiza?</p>
+                <p>Fórmula usada para calcular a nota:</p>
                 <div id="legenda">
-                    <p>Legenda:</p>
+                    <p>Letras que representarão cada trimestre na fórmula</p>
                     <ul>
-                        <li>Primeiro trimestre: pt</li>
-                        <li>Segundo trimestre: st</li>
-                        <li>Terceiro trimestre (Nota necessária para passar): tt</li>
+                        <li>primeiro trimestre: p;</li>
+                        <li>segundo trimestre: s;</li>
+                        <li>terceiro trimestre (Nota necessária para passar): t</li>
                     </ul>
                 </div>
             </div>
-            <p>Cálculo: (60 - (3pt + 3st)) / 4 = tt</p>
-            <button onclick="fechar()">Fechar</button>
+            <p>Cálculo: (60 - (3p + 3s)) / 4 = t</p>
+            <button onclick="fechar_ajuda()" aria-label="Fechar explicação" title="Fechar explicação"><span class="material-symbols-outlined" id="icone_fechar">close</span></button>
         </dialog>
     </header>
     <main>
         <div>
-            <form onsubmit="calcular(); return false;">
+            <form onsubmit="calcular(); return false;" autocomplete="off">
                 <div>
                     <label for="nota1trimestre">Nota do 1º trimestre:</label>
-                    <input type="number" name="nota1trimestre" id="nota1trimestre" step="0.5" max="10" min="0">
+                    <input type="number" name="nota1trimestre" id="nota1trimestre" step="0.5" max="10" min="0" required>
                 </div>
 
                 <div>
                     <label for="nota2trimestre">Nota do 2º trimestre:</label>
-                    <input type="number" name="nota2trimestre" id="nota2trimestre" step="0.5" max="10" min="0">
+                    <input type="number" name="nota2trimestre" id="nota2trimestre" step="0.5" max="10" min="0" required>
                 </div>
 
                 <input type="submit" value="Calcular">
             </form>
-            <p>A nota necessária para passar é: <span id="nota_passar"></span></p>
+            <p>Nota: <span id="nota_passar"></span></p>
         </div>
     </main>
     <footer>
-        <p>G<span class="sumiu">abriel </span><span id="rpequeno">R</span><span class="sumiu">.</span> <span id="igual"></span> Totosão<span id="quadrado"></span></p>
+        <p>G<span class="sumiu">abriel </span><span id="rpequeno">R</span><span class="sumiu">.</span> <span id="igual"></span> T<span class="sumiu">otosão</span><span id="quadrado"></span></p>
     </footer>
     <script src="script.js"></script>
 </body>
