@@ -41,7 +41,8 @@ function calcular(){
                 <span 
                     style=" 
                         color: #ad2d9e; 
-                        font-family: 'Short Stack', monospace; 
+                        font-size: 1.5rem;
+                        font-family: 'Nanum Pen Script', monospace, arial; 
                         transform: rotate(-10deg); 
                         position: absolute; 
                         bottom: -2rem; 

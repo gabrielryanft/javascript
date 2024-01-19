@@ -241,23 +241,11 @@ footer:hover .sumiu{
 
 footer #rpequeno{
     position: relative;
-    color: transparent;
+    bottom: 0
 }
 
 footer:hover #rpequeno{
-    color: transparent;
-}
-
-footer #rpequeno::before{
-    content: "R";
-    position: absolute;
-    font-size: 1rem;
-    bottom: 0;
-    color: black;
-    transition: all var(--animation_time) linear;
-}
-
-footer:hover #rpequeno::before{
     font-size: .7rem;
     bottom: -7px
 }
+

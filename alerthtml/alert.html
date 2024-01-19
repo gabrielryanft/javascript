@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Gabriel Ryan">
+    <meta name="description" content="Um alerta que alerta os leitores de tela.">
+    <meta name="keywords" content="alerta, leitores de tela, acessibilidade">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alerta que também alerta os leitores de tela</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Alerta que também alerta os leitores de tela</h1>
+    </header>
+    <main>
+        <div>
+            <button id="mostrarAlerta_btn">Mostrar alerta</button>
+            <div aria-live="polite" id="alertText"></div>
+        </div>
+        <template id="templ_alert">
+            Isso é um alerta que alerta os leitores de tela. Os leitores de tela sabem que isso é um alerta graças à propriedade HTML aria-live.
+        </template>
+    </main>
+    <footer>
+        <p>Gabriel R. totosão</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
