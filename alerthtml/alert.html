@@ -17,10 +17,11 @@
     <main>
         <div>
             <button id="mostrarAlerta_btn">Mostrar alerta</button>
-            <div aria-live="polite" id="alertText"></div>
+            <div role="alert" aria-live="polite" id="alertText"></div>
         </div>
+        
         <template id="templ_alert">
-            Isso é um alerta que alerta os leitores de tela. Os leitores de tela sabem que isso é um alerta graças à propriedade HTML aria-live.
+            <p>Isso é um alerta que notifica os leitores de tela. Os leitores de tela reconhecem isso como um alerta graças às propriedades HTML role e aria-live.</p>
         </template>
     </main>
     <footer>

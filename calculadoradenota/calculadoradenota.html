@@ -22,15 +22,51 @@
             <div>
                 <p>Fórmula usada para calcular a nota:</p>
                 <div id="legenda">
-                    <p>Letras que representarão cada trimestre na fórmula</p>
+                    <p>Legenda: Letras que representam os trimestres na fórmula:</p>
                     <ul>
-                        <li>primeiro trimestre: p;</li>
-                        <li>segundo trimestre: s;</li>
-                        <li>terceiro trimestre (Nota necessária para passar): t</li>
+                        <li>primeiro trimestre é representado pela letra: p;</li>
+                        <li>segundo trimestre é representado pela letra: s;</li>
+                        <li>terceiro trimestre (Nota necessária para passar) é representado pela letra: t.</li>
                     </ul>
                 </div>
             </div>
-            <p>Cálculo: (60 - (3p + 3s)) / 4 = t</p>
+            <p aria-label="começo da fração: abre parenteses, sessenta menos, abre parenteses, três vezes letra p, mais 3 vezes letra s, fecha parenteses, fecha parenteses, sobre quatro, igual a letra t.">
+                <p aria-hidden="true">
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" id="mathml_calc">
+                        <mo>&#xA0;</mo>
+                        <mfrac>
+                            <mrow>
+                                <mo>(</mo>
+                                <mrow>
+                                    <mn>60</mn>
+                                    <mo>&#xa0;</mo>
+                                    <mo>-</mo>
+                                    <mo>&#xa0;</mo>
+                                    <mrow>
+                                        <mo>(</mo>
+                                        <mrow>
+                                            <mn>3</mn>
+                                            <mi>p</mi>
+                                            <mo>&#xa0;</mo>
+                                            <mo>+</mo>
+                                            <mo>&#xa0;</mo>
+                                            <mn>3</mn>
+                                            <mi>s</mi>
+                                        </mrow>
+                                        <mo>)</mo>
+                                    </mrow>
+                                </mrow>
+                                <mo>)</mo>
+                            </mrow>
+                            <mn>4</mn>
+                        </mfrac>
+                        <mo>&#xA0;</mo>
+                        <mo>=</mo>
+                        <mo>&#xA0;</mo>
+                        <mi>t</mi>
+                    </math>
+                </p>
+            </p>
             <button onclick="fechar_ajuda()" aria-label="Fechar explicação" title="Fechar explicação"><span class="material-symbols-outlined" id="icone_fechar">close</span></button>
         </dialog>
     </header>
@@ -38,12 +74,12 @@
         <div>
             <form onsubmit="calcular(); return false;" autocomplete="off">
                 <div>
-                    <label for="nota1trimestre">Nota do 1º trimestre:</label>
+                    <label for="nota1trimestre" aria-label="nota do primeiro trimestre."><span aria-hidden="true">Nota do 1º trimestre:</span></label>
                     <input type="number" name="nota1trimestre" id="nota1trimestre" step="0.5" max="10" min="0" required>
                 </div>
 
                 <div>
-                    <label for="nota2trimestre">Nota do 2º trimestre:</label>
+                    <label for="nota2trimestre" aria-label="nota do segundo trimestre."><span aria-hidden="true">Nota do 2º trimestre:</span></label>
                     <input type="number" name="nota2trimestre" id="nota2trimestre" step="0.5" max="10" min="0" required>
                 </div>
 

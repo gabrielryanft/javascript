@@ -36,21 +36,22 @@ function calcular(){
                 style="
                     border-bottom: 2px solid var(--cor_nota)
                 ">
-                ${nota_terceiro}
+                ${nota_terceiro.toString().replace(".", ",")}
             </span> 
-                <span 
-                    style=" 
-                        color: #ad2d9e; 
-                        font-size: 1.5rem;
-                        font-family: 'Nanum Pen Script', monospace, arial; 
-                        transform: rotate(-10deg); 
-                        position: absolute; 
-                        bottom: -2rem; 
-                        right: -.4rem"  
-                    class="brilhozinho"
-                    >
-                    Se fodeu!
-                </span>
+            .
+            <span 
+                style=" 
+                    color: #ad2d9e; 
+                    font-size: 1.5rem;
+                    font-family: 'Nanum Pen Script', monospace, arial; 
+                    transform: rotate(-10deg); 
+                    position: absolute; 
+                    bottom: -2rem; 
+                    right: -.4rem"  
+                class="brilhozinho"
+                >
+                Se fodeu!
+            </span>
         </span>`
     } else {
         document.documentElement.style.setProperty("--cor_nota", "#408640")
@@ -73,5 +74,4 @@ function calcular(){
     }
 
     nota_passar.innerHTML = nota_terceiro
-    console.log(nota_terceiro)
 }
