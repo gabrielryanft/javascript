@@ -46,8 +46,11 @@ header > button{
     transition: all 80ms linear;
 }
 
-header > button:hover,
-header > button:focus{
+header > button:hover{
+    background-color: #c0c0c0
+}
+
+header > button:focus-visible{
     outline: 2px solid #0080ff;
     outline-offset: 2px;
 }
@@ -99,11 +102,13 @@ header > button:focus{
     transition: all 80ms linear;
 }
 
-#calculo_explicacao button:hover,
-#calculo_explicacao button:focus{
+#calculo_explicacao button:hover{
+    background-color: #881620;
+}
+
+#calculo_explicacao button:focus-visible{
     outline: 2px solid #0080ff;
     outline-offset: 2px;
-    background-color: #881620;
 }
 
 #icone_fechar{
@@ -163,13 +168,13 @@ main form div{
     margin: 0.5rem;
 }
 
-@media (max-width: 370px) {
+@media (max-width: 280px) {
     main form div{
         flex-wrap: wrap;
     }
-    
-    main form div label{
-        margin-left: -12%;
+
+    main form input[type=number]{
+        width: 100%
     }
 }
 
@@ -186,8 +191,11 @@ main form input[type=submit]{
     transition: all 80ms linear;
 }
 
-main form input[type=submit]:hover,
-main form input[type=submit]:focus{
+main form input[type=submit]:hover{
+    background-color: #346d34;
+}
+
+main form input[type=submit]:focus-visible{
     outline: 2px solid #0080ff;
     outline-offset: 2px;
 }
@@ -195,6 +203,7 @@ main form input[type=submit]:focus{
 main form input[type=number]{
     border: 2px solid;
     padding: .2rem;
+    margin: .2rem;
     font-size: 1rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     outline: 2px solid #0080ff00;
@@ -202,8 +211,7 @@ main form input[type=number]{
     transition: all 80ms linear;
 }
 
-main form input[type=number]:hover,
-main form input[type=number]:focus{
+main form input[type=number]:focus-visible{
     outline: 2px solid #0080ff;
     outline-offset: 2px;
     border-radius: .1rem;
