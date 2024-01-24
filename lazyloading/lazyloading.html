@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazy Loading</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>
+            Atributo <abbr title="hypertext markup language">HTML</abbr> <code><span lang="en">Lazy loading</span></code>
+        </h1>
+        <p><span lang="en">Lazy Loading</span> é uma técnica que atrasa o carregamento de recursos de mídia até que sejam necessários, proporcionando uma economia significativa de dados. Vamos considerar um exemplo prático: quando alguém visita o site da sua empresa e está interessado apenas em obter informações sobre o que a empresa representa, o carregamento convencional de todas as mídias ocorre desnecessariamente. Isso acontece porque o navegador carrega todos os recursos do site de uma só vez, incluindo imagens e vídeos, mesmo que o visitante esteja apenas lendo o cabeçalho do site, que contém as informações essenciais sobre a empresa. No entanto, ao utilizar o atributo <span lang="en">lazy loading</span> nos elementos de mídia, é possível evitar esse carregamento prematuro, garantindo uma experiência mais eficiente e economizando dados para o usuário.</p>
+    </header>
+    <main>
+        <h2>Atributo <abbr title="hypertext markup language">HTML</abbr> <code>&lt;<span lang="en">loading="lazy"</span>&gt;</code> em execução:</h2>
+
+        <div class="imgs" id="img1"><img loading="lazy" src="imgs/eu.jpeg" alt="Gabriel Ryan: homem jovem, pele branca, cabelo moreno, muito gostoso, usando uma camisa polo vermelha."></div>
+        <p aria-label="texto de marcação 1."><span aria-hidden="true">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique cumque dolores est? Id, vitae error quasi molestiae vero cumque perferendis consequatur qui tempore alias, iure provident laboriosam doloribus consequuntur iste! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab autem voluptas odit amet magnam sequi quisquam rerum nesciunt! Perferendis accusantium dolorem, ea iure aperiam reprehenderit maxime nobis esse! Corporis, aperiam? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius illum officia nisi cupiditate eligendi quos at facilis distinctio? Possimus, nemo nisi! Exercitationem nulla excepturi dolorum aperiam sapiente voluptatibus necessitatibus voluptates? lorem</span></p>
+
+        <div class="imgs" id="img2"><img loading="lazy" src="imgs/feio.jpg" alt="Gabriel Ryan sentado em uma cadeira fezendo sinal de joinha com a mão"></div>
+        <p aria-label="texto de marcação 2."><span aria-hidden="true">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique cumque dolores est? Id, vitae error quasi molestiae vero cumque perferendis consequatur qui tempore alias, iure provident laboriosam doloribus consequuntur iste! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab autem voluptas odit amet magnam sequi quisquam rerum nesciunt! Perferendis accusantium dolorem, ea iure aperiam reprehenderit maxime nobis esse! Corporis, aperiam? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius illum officia nisi cupiditate eligendi quos at facilis distinctio? Possimus, nemo nisi! Exercitationem nulla excepturi dolorum aperiam sapiente voluptatibus necessitatibus voluptates? lorem</span></p>
+        
+        <div class="imgs" id="img3"><img loading="lazy" src="imgs/totoso.jpg" alt="Gabriel Ryan sentado em uma cadeira com os braços cruzados"></div>
+        <p aria-label="texto de marcação 3."><span aria-hidden="true">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique cumque dolores est? Id, vitae error quasi molestiae vero cumque perferendis consequatur qui tempore alias, iure provident laboriosam doloribus consequuntur iste! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab autem voluptas odit amet magnam sequi quisquam rerum nesciunt! Perferendis accusantium dolorem, ea iure aperiam reprehenderit maxime nobis esse! Corporis, aperiam? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius illum officia nisi cupiditate eligendi quos at facilis distinctio? Possimus, nemo nisi! Exercitationem nulla excepturi dolorum aperiam sapiente voluptatibus necessitatibus voluptates? lorem</span></p>
+
+        <img loading="lazy" src="imgs/reflexopaisagemoculos.png" alt="Imagem de um homem com uma cidade no reflexo de seus oculos.">
+        <p aria-label="texto de marcação 4."><span aria-hidden="true">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique cumque dolores est? Id, vitae error quasi molestiae vero cumque perferendis consequatur qui tempore alias, iure provident laboriosam doloribus consequuntur iste! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab autem voluptas odit amet magnam sequi quisquam rerum nesciunt! Perferendis accusantium dolorem, ea iure aperiam reprehenderit maxime nobis esse! Corporis, aperiam? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius illum officia nisi cupiditate eligendi quos at facilis distinctio? Possimus, nemo nisi! Exercitationem nulla excepturi dolorum aperiam sapiente voluptatibus necessitatibus voluptates? lorem</span></p>
+    </main>
+    <footer>
+        <p>Gabriel Ryan = <span id="spn2">Totosão</span><span id="spn1"></span></p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
