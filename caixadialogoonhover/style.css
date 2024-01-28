@@ -17,6 +17,13 @@
     --x_mouse2: 50%;
     --padding_sudo2: 0;
     --font_sz_sudo2: 0;
+
+    --y_mouse3: 50%;
+    --x_mouse3: 50%;
+    --min_wh: 0;
+    --max_wh: 0;
+    --outl_sz: 0;
+    --outln_clr: transparent
 }
 
 *{
@@ -36,64 +43,17 @@ body{
 header{
     display: grid;
     place-items: center;
-    text-align: left;
+    height: 4.5rem;
     background-color: rgba(0, 128, 0, 0.326);
     box-shadow: inset 0px 0px 20px 0px rgba(0, 85, 0, 0.75);
-}
-
-abbr{
-    position: relative
-}
-
-abbr::after{
-    transition: all 80ms linear;
-    content: "hypertext markup language";
-    text-wrap: nowrap;
-    font-size: 0;
-    color: rgba(0, 0, 0, 0);
-    background-color: rgba(0, 0, 0, 0);
-    position: absolute;
-    display: block;
-    bottom: 0;
-    right: clamp(0%, 50%, 100%)
-}
-
-abbr:hover::after{
-    border-radius: .4rem;
-    font-size: .8rem;
-    color: rgb(255, 255, 255);
-    background-color: rgb(29, 63, 26);
-    padding: .5rem;
-    bottom: -2rem;
-
-}
-
-abbr::before{
-    transition: all 80ms linear;
-    content: " ";
-    color: rgba(0, 0, 0, 0);
-    background-color: rgba(0, 0, 0, 0);
-    position: absolute;
-    display: block;
-    bottom: 0;
-    right: calc(50% + 6px)
-}
-
-abbr:hover::before{
-    --tamanho: .8rem;
-    background-color: rgb(29, 63, 26);
-    transform: rotate(45deg);
-    border-radius: .4rem 0 0 0;
-    height: var(--tamanho);
-    width: var(--tamanho);
-    bottom: calc(var(--tamanho)/2*-1 - 1px);
 }
 
 h1{
     text-align: center;
     text-wrap: balance;
-    margin: 2rem;
-    margin-bottom: 0;
+    margin: 0 2rem;
+    font-size: 2rem;
+    color: rgb(15, 37, 15);
 }
 
 h2{
@@ -117,9 +77,12 @@ header p{
 }
 
 main{
-    text-align: center;
-    margin: auto;
-    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: clamp(1rem, 50%, 2rem)
 }
 
 main p{
@@ -150,10 +113,10 @@ img{
 }
 
 .imgs::after{
-    transition-property: font-size, padding;
+    transition-property: font-size, padding, outline, min-height, min-width, max-height, max-width;
     transition-duration: 200ms;
     transition-timing-function: linear;
-    display: block;
+    display: inline;
     text-wrap: nowrap;
     pointer-events: none;
     position: absolute;
@@ -161,6 +124,8 @@ img{
     color: rgb(255, 255, 255);
     background-color: rgb(29, 63, 26);
     border-radius: .4rem;
+    font-weight: bold;
+    letter-spacing: .05rem;
 }
 
 #img1::after{
@@ -187,6 +152,40 @@ img{
     left: var(--x_mouse2);
 }
 
+#img4::after{
+    content: "";
+    background-image: url("https://source.unsplash.com/random/?id=a");
+    background-size: cover;
+    background-position: center center;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    min-height: var(--min_wh);
+    min-width: var(--min_wh);
+    max-width: var(--max_wh);
+    max-height: var(--max_wh);
+    outline: var(--outln_sz) double var(--outln_clr);
+
+    top: var(--y_mouse3); 
+    left: var(--x_mouse3);
+}
+
+#img4::before{
+    content: "Passe o mouse em cima:";
+    font-size: 1rem;
+    font-family: Roboto, Oxygen, Ubuntu, 'Trebuchet MS', sans-serif;
+    text-wrap: nowrap;
+    position: absolute;
+    top: .8rem;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+#img4_img{
+    padding: 1rem;
+    margin: 2rem
+}
+
 footer{
     display: grid;
     place-items: center;
@@ -197,46 +196,50 @@ footer{
 }
 
 footer > p{
+    --font_sz: 1rem;
     position: relative;
-    font-size: 1rem;
+    font-size: var(--font_sz);
     display: flex;
     align-items: center;
+    padding: .5rem; 
 }
 
-footer #spn1{
-    transition: all 1s linear;
-    animation: gira 2s linear forwards infinite;
-    margin: 0 1.5rem;
-    width: 2rem;
-    display: inline-block;  
-    border-radius: 2rem;
-    height: 2rem;
-    background-image: 
-        radial-gradient(white 0% 40%, transparent 40% 50%),
-        repeating-conic-gradient(transparent, rgba(0, 58, 0, 0.904))
-}
 
-footer #spn2{
+footer #spn{
     position: absolute;
-    right: -15%;
-    top: 50%;
-    
-    transform: translate(-50%, -50%);
-    transition: all 1s linear;
-    text-shadow: 0px 0px 1px rgba(0, 58, 0, 0);
+    left: 50%;
+    transform: translateX(-50%);
+    top: calc((var(--font_sz) + var(--padding_spn_sz) + .5rem) * -1); /*o .5rem  é para dar um espaço a mais.*/
+    font-size: 0;
+
+    transition: all 500ms linear;
 }
 
-@keyframes gira {
-    to{
-        transform: rotate(1turn);
-    }
+footer:hover #spn{
+    --padding_spn_sz: .3rem;
+    font-size: var(--font_sz);
+    background-color:rgb(29, 63, 26);
+    color: white;
+    padding: var(--padding_spn_sz);
+    border-radius: .5rem
 }
 
-footer:hover #spn2{
-    text-shadow: 0px 0px 1px rgba(0, 58, 0, 0.904);
-    
+footer #spn::after{
+    transition: all 500ms linear;
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    z-index: -1;
+    width: 0px;
+    height: 0px;
+    display: inline-block;
+    background-color: transparent;
 }
 
-footer:hover #spn1{
-    opacity: 0;
+footer:hover #spn::after{
+    width: 10px;
+    height: 10px;
+    background-color: rgb(29, 63, 26);
 }

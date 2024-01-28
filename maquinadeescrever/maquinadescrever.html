@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maquina de Escrever</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body >
+        <main>
+            <p id="texto">Gabriel Totosão!!!</p>
+            <form onsubmit="trocar_texto(); return false" method="post">
+                <div>
+                    <label for="input_texto">Escreva oque você quer que seja digitado:</label>
+                    <input type="text" name="input_texto" id="input_texto" placeholder="Max 20 caracteres" minlength="0" maxlength="20">
+                </div>
+        
+                <input type="submit" value="Escrever">
+            </form>
+        </main>
+        <footer>
+            <p id="gabtts">Gabriel R. totosão</p>
+        </footer>
+    <script src="script.js"></script>
+</body>
+</html>
