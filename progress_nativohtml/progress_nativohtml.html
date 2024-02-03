@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress nativo HTML</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Barra de progresso nativa do HTML</h1>
+        <p>Selecione um arquivo para visualizar a barra de progresso em ação.</p>
+    </header>
+    <main>
+        <label for="filething" class="padding_branca" >Escolha ou largue um arquivo:</label>
+        <input type="file" name="filething" id="filething" aria-label="Escolha um arquivo do seu computador" title="Escolha um arquivo do seu computador" role="button"  class="padding_branca" multiple>
+
+        <div aria-live="assertive" role="alert" id="alert_progresso"></div>
+        <template id="tmpl_alert">
+            <p>O tamanho do arquivo que você enviou é: <span id="tmpl_span_alert"></span></p>
+        </template>
+        <div aria-hidden="true">
+            <progress id="barra_progresso" value="0" max="100"></progress>
+            <p class="padding_branca" >O seu arquivo tem: <span id="progresso">Tamanho do arquivo escolhido</span></p>
+        </div>
+    </main>
+    <footer>
+        <p>Gabriel R. totosão!</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
