@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maquina de Escrever</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <hgroup>
+            <h1>Animação de máquina de escrever:</h1>
+            <p>Escreve oque você quiser com uma animação de máquina de escrever.</p>
+        </hgroup>
+    </header>
+    <main>
+        <form onsubmit="trocar_texto(); return false" method="post">
+            <div id="form_txt">
+                <label for="input_texto">Escreva oque você quer que seja digitado com a animação de máquina de escrever:</label>
+                <textarea type="text" name="input_texto" id="input_texto" placeholder="O que estiver escrito aqui será animado na tela."></textarea>
+            </div>
+            <input type="submit" value="Escrever">
+        </form>
+        
+        <div id="div_txt">
+            <p id="texto" aria-label='Texto "Gabriel Totosão!!!" escrito com uma animação de máquina de escrever.'><span aria-hidden="true">Gabriel Totosão!!!</span></p>
+        </div>
+    </main>
+    <footer>
+        <p id="gabtts">Gabriel R. totosão</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
