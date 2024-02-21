@@ -25,3 +25,4 @@
 <a href="https://gabrielryanft.github.io/javascript/progress_nativohtml/progress_nativohtml.html" target="_blank" rel="next">progress_nativohtml</a>      
 <a href="https://gabrielryanft.github.io/javascript/random_background_color/random_background_color_hexadecimal.html" target="_blank" rel="next">Random_Background_Color</a>     
 <a href="https://gabrielryanft.github.io/javascript/tabuada/tabuade.html" target="_blank" rel="next">Tabuada</a>     
+<a href="https://gabrielryanft.github.io/javascript/using_api/using_api.html" target="_blank" rel="next">using_api</a>     

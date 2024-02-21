@@ -20,13 +20,13 @@ const tag_span = document.querySelector("#tts")
 const tts_lst = [
     "Hot",
     "Beautiful",
-    "built different",
+    "Built different",
     "Programer?",
     "Student",
     "Your BFF! &#x1F498 &#x1F49E &#x1FAF6",
     "The nicestest guy",
     "<span id='dtdtdt'><span id='little'>Nathing</span>...</span>",
-    "<span contenteditable='true' id='waith'>What am i? Type here.</span>",
+    "<span contenteditable='true' spellcheck='false' id='waith'>What am i? Type here.</span>",
     "&#x1F937",
     "sudo",
     "Totosão"
@@ -36,7 +36,7 @@ function random0_11(n){
     const num = Math.floor(Math.random() * n)
     return num
 }
-var current_index
+var current_index = 11
 function footer_tts(){
     let local_current_index = random0_11(tts_lst.length)
     if (current_index == local_current_index){

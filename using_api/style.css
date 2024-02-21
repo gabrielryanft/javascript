@@ -76,7 +76,7 @@ article p{
     transition: background-color 50ms linear;
 }
 
-article button:active{
+.btn:active{
     background-color: rgb(170, 170, 170);
 }
 
@@ -108,11 +108,13 @@ footer p{
 
 #little{
     font-size: 0;
-    transition: font-size 100ms linear
+    color: transparent;
+    transition: all 500ms linear
 }
 
 #dtdtdt:hover #little{
     font-size: 1rem;
+    color: black
 }
 
 #waith{
