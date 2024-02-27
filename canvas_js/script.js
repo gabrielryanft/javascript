@@ -600,181 +600,380 @@ function canvas_things() {
     }
     refresh_screen_cp()
 
+    // line connecting
+
+    var mouse_lc = {
+        y: undefined,
+        x: undefined
+    }
+    class Particle_lc {
+        constructor() {
+            this.y = mouse_lc.y + (Math.random() * 10)
+            this.x = mouse_lc.x + (Math.random() * 10)
+            this.count = 0
+            this.size = 1
+            this.speedy = Math.random() * 0.25 - 0.125
+            this.speedx = Math.random() * 0.25 - 0.125
+        }
+        update_lc() {
+            if (this.count>100){
+                this.speedy = this.speedx * -1
+                this.speedx = this.speedx * -1
+
+                this.count = 0
+            }
+            this.y += this.speedy
+            this.x += this.speedx
+            this.count++
+        }
+        draw_balls_lc() {
+            list_cntxt[14].fillStyle = "green"
+            list_cntxt[14].beginPath()
+            list_cntxt[14].arc(this.x, this.y, this.size, 0, Math.PI * 2)
+            list_cntxt[14].fill()
+            list_cntxt[14].closePath()
+        }
+    }
+
+    let mouse_down_lc = false
+    c[14].addEventListener("mousedown", ()=>{
+        mouse_down_lc = true
+    })
+
+    let divisible_by_lc = 0
+    c[14].addEventListener("mousemove", (event) => {
+        if(mouse_down_lc){
+            if ((divisible_by_lc / (3)) == 1){
+                var gbcr_lc = c[14].getBoundingClientRect().top
+
+                mouse_lc.y = event.y - gbcr_lc
+                mouse_lc.x = event.x
+                for(let i=0; i<2; i++){
+                    array_balls_lc.push(new Particle_lc())
+                }
+                divisible_by_lc = 0
+            }
+            divisible_by_lc++
+        }
+    })
+
+    c[14].addEventListener("mouseup", ()=>{
+        mouse_down_lc = false
+    })
+
+    c[14].addEventListener("click", (event)=>{
+        var gbcr_lc = c[14].getBoundingClientRect().top
+
+        mouse_lc.y = event.y - gbcr_lc
+        mouse_lc.x = event.x
+        for(let i=0; i<3; i++){
+            array_balls_lc.push(new Particle_lc())
+        }
+    })
+
+    var array_balls_lc = []
+
+    function refresh_done_balls_lc() {
+        for (let i = 0; i < array_balls_lc.length; i++) {
+            array_balls_lc[i].update_lc()
+            array_balls_lc[i].draw_balls_lc()
+            for(let j = 0; j < array_balls_lc.length; j++){
+                let dy = array_balls_lc[j].y - array_balls_lc[i].y
+                let dx = array_balls_lc[j].x - array_balls_lc[i].x
+                let hypotenuse = Math.sqrt(dy*dy + dx*dx)
+                if (hypotenuse<30){
+                    list_cntxt[14].beginPath()
+                    list_cntxt[14].strokeStyle = "green"
+                    list_cntxt[14].lineWidth = 0.05
+                    list_cntxt[14].moveTo(array_balls_lc[j].x, array_balls_lc[j].y)
+                    list_cntxt[14].lineTo(array_balls_lc[i].x, array_balls_lc[i].y)
+                    list_cntxt[14].stroke()
+                }
+            }
+        }
+    }
+
+    function refresh_screen_lc() {
+        list_cntxt[14].fillStyle = "rgba(0, 0, 0, 0.2)"
+        list_cntxt[14].fillRect(0, 0, c[14].width, c[14].height)
+        refresh_done_balls_lc()
+        requestAnimationFrame(refresh_screen_lc)
+    }
+    refresh_screen_lc()
+
+    // connecting particles temporary
+
+    var mouse_cpt = {
+        y: undefined,
+        x: undefined
+    }
+
+    class Particle_cpt {
+        constructor() {
+            this.y = mouse_cpt.y
+            this.x = mouse_cpt.x
+            this.size = Math.random() * 7 + 1
+            this.color_indx = Math.floor(Math.random() * n)
+            this.speedy = Math.random() * 2 - 1
+            this.speedx = Math.random() * 2 - 1
+        }
+        update_cpt() {
+            this.y += this.speedy
+            this.x += this.speedx
+            if (this.size > 0.2) this.size -= 0.05
+        }
+        draw_balls_cpt() {
+            list_cntxt[15].fillStyle = "transparent"
+            list_cntxt[15].beginPath()
+            list_cntxt[15].arc(this.x, this.y, this.size, 0, Math.PI * 2)
+            list_cntxt[15].fill()
+            list_cntxt[15].closePath()
+        }
+    }
+
+    var click_tf_cpt = false
+    c[15].addEventListener('mousedown', () => {
+        click_tf_cpt = true
+    })
+
+    c[15].addEventListener('mouseup', () => {
+        click_tf_cpt = false
+    })
+
+    c[15].addEventListener("mousemove", (event) => {
+        if (click_tf_cpt) {
+            var gbcr_cpt = c[15].getBoundingClientRect().top
+
+            mouse_cpt.y = event.y - gbcr_cpt
+            mouse_cpt.x = event.x
+            for (let i = 0; i < 1; i++) {
+                array_balls_cpt.push(new Particle_cpt())
+            }
+        }
+    })
+
+    c[15].addEventListener("click", (event)=>{
+        var gbcr_cpt = c[15].getBoundingClientRect().top
+
+        mouse_cpt.y = event.y - gbcr_cpt
+        mouse_cpt.x = event.x
+        for (let i = 0; i < 6; i++) {
+            array_balls_cpt.push(new Particle_cpt())
+        }
+    })
+
+    var array_balls_cpt = []
+
+    function refresh_done_balls_cpt() {
+        for (let i = 0; i < array_balls_cpt.length; i++) {
+            array_balls_cpt[i].update_cpt()
+            array_balls_cpt[i].draw_balls_cpt()
+            for(let j = i; j < array_balls_cpt.length; j++){
+
+                let dx = array_balls_cpt[i].x - array_balls_cpt[j].x
+                let dy = array_balls_cpt[i].y - array_balls_cpt[j].y
+                var hypotenuse = Math.sqrt(dx*dx + dy*dy)
+                
+                if (hypotenuse<40){
+                    list_cntxt[15].beginPath()
+                    list_cntxt[15].strokeStyle = "green"
+                    list_cntxt[15].lineWidth = 0.2
+                    list_cntxt[15].moveTo(array_balls_cpt[j].x, array_balls_cpt[j].y)
+                    list_cntxt[15].lineTo(array_balls_cpt[i].x, array_balls_cpt[i].y)
+                    list_cntxt[15].stroke()
+                }
+            }
+            if (array_balls_cpt[i].size <= 0.3) {
+                array_balls_cpt.splice(i, 1)
+                i--
+            }
+
+        }
+    }
+
+    function refresh_screen_cpt() {
+        list_cntxt[15].fillStyle = "rgba(0, 0, 0, 0.2)"
+        list_cntxt[15].fillRect(0, 0, c[15].width, c[15].height)
+        refresh_done_balls_cpt()
+        requestAnimationFrame(refresh_screen_cpt)
+    }
+    refresh_screen_cpt()
+
+
 }
 canvas_things()
 
+// particles/balls green
 
-    // particles/balls green
+class Particle_g {
+    constructor() {
+        this.y = Math.random() * c[6].height
+        this.x = Math.random() * c[6].width
+        this.size = Math.random() * 3 + 1
+        this.speedy = Math.random() * 2 - 1
+        this.speedx = Math.random() * 2 - 1
+    }
+    update_g() {
+        this.y += this.speedy
+        this.x += this.speedx
+    }
+    draw_balls_g() {
+        list_cntxt[6].beginPath()
+        list_cntxt[6].fillStyle = "green"
+        list_cntxt[6].arc(this.x, this.y, this.size, 0, Math.PI * 2)
+        list_cntxt[6].fill()
+        list_cntxt[6].closePath()
+    }
+}
 
-    class Particle_g {
-        constructor() {
-            this.y = Math.random() * c[6].height
-            this.x = Math.random() * c[6].width
-            this.size = Math.random() * 3 + 1
-            this.speedy = Math.random() * 2 - 1
-            this.speedx = Math.random() * 2 - 1
+function animation_balls_g() {
+    var array_balls_g = []
+
+    function do_balls_g() {
+        for (let i = 0; i < 30; i++) {
+            array_balls_g.push(new Particle_g())
         }
-        update_g() {
-            this.y += this.speedy
-            this.x += this.speedx
-        }
-        draw_balls_g() {
-            list_cntxt[6].beginPath()
-            list_cntxt[6].fillStyle = "green"
-            list_cntxt[6].arc(this.x, this.y, this.size, 0, Math.PI * 2)
-            list_cntxt[6].fill()
-            list_cntxt[6].closePath()
+    }
+    do_balls_g()
+
+    function refresh_done_balls_g() {
+        for (let i = 0; i < array_balls_g.length; i++) {
+            array_balls_g[i].update_g()
+            array_balls_g[i].draw_balls_g()
         }
     }
 
-    function animation_balls_g() {
-        var array_balls_g = []
-
-        function do_balls_g() {
-            for (let i = 0; i < 30; i++) {
-                array_balls_g.push(new Particle_g())
-            }
-        }
-        do_balls_g()
-
-        function refresh_done_balls_g() {
-            for (let i = 0; i < array_balls_g.length; i++) {
-                array_balls_g[i].update_g()
-                array_balls_g[i].draw_balls_g()
-            }
-        }
-
-        function refresh_screen_g() {
-            list_cntxt[6].clearRect(0, 0, c[6].width, c[6].height)
-            refresh_done_balls_g()
-            requestAnimationFrame(refresh_screen_g)
-        }
-        refresh_screen_g()
+    function refresh_screen_g() {
+        list_cntxt[6].clearRect(0, 0, c[6].width, c[6].height)
+        refresh_done_balls_g()
+        requestAnimationFrame(refresh_screen_g)
     }
-    animation_balls_g()
+    refresh_screen_g()
+}
+animation_balls_g()
 
-    // particles/balls green to little
+// particles/balls green to little
 
-    class Particle_gtl {
-        constructor() {
-            this.y = Math.random() * c[7].height
-            this.x = Math.random() * c[7].width
-            this.size = Math.random() * 3 + 1
-            this.speedy = Math.random() * 2 - 1
-            this.speedx = Math.random() * 2 - 1
-        }
-        update_gtl() {
-            this.y += this.speedy
-            this.x += this.speedx
-        }
-        draw_balls_gtl() {
-            list_cntxt[7].beginPath()
-            list_cntxt[7].fillStyle = "green"
-            list_cntxt[7].arc(this.x, this.y, this.size, 0, Math.PI * 2)
-            list_cntxt[7].fill()
-            list_cntxt[7].closePath()
+class Particle_gtl {
+    constructor() {
+        this.y = Math.random() * c[7].height
+        this.x = Math.random() * c[7].width
+        this.size = Math.random() * 3 + 1
+        this.speedy = Math.random() * 2 - 1
+        this.speedx = Math.random() * 2 - 1
+    }
+    update_gtl() {
+        this.y += this.speedy
+        this.x += this.speedx
+    }
+    draw_balls_gtl() {
+        list_cntxt[7].beginPath()
+        list_cntxt[7].fillStyle = "green"
+        list_cntxt[7].arc(this.x, this.y, this.size, 0, Math.PI * 2)
+        list_cntxt[7].fill()
+        list_cntxt[7].closePath()
+    }
+}
+
+function animation_balls_gtl() {
+    var array_balls_gtl = []
+
+    function do_balls_gtl() {
+        for (let i = 0; i < 30; i++) {
+            array_balls_gtl.push(new Particle_gtl())
         }
     }
+    do_balls_gtl()
 
-    function animation_balls_gtl() {
-        var array_balls_gtl = []
-
-        function do_balls_gtl() {
-            for (let i = 0; i < 30; i++) {
-                array_balls_gtl.push(new Particle_gtl())
+    function refresh_done_balls_gtl() {
+        for (let i = 0; i < array_balls_gtl.length; i++) {
+            array_balls_gtl[i].update_gtl()
+            array_balls_gtl[i].draw_balls_gtl()
+            if (array_balls_gtl[i].size > 0.2) {
+                array_balls_gtl[i].size -= 0.01
             }
-        }
-        do_balls_gtl()
-
-        function refresh_done_balls_gtl() {
-            for (let i = 0; i < array_balls_gtl.length; i++) {
-                array_balls_gtl[i].update_gtl()
-                array_balls_gtl[i].draw_balls_gtl()
-                if (array_balls_gtl[i].size > 0.2) {
-                    array_balls_gtl[i].size -= 0.01
-                }
-                if (array_balls_gtl[i].size <= 0.3) {
-                    array_balls_gtl.splice(i, 1)
-                    i--
-                }
+            if (array_balls_gtl[i].size <= 0.3) {
+                array_balls_gtl.splice(i, 1)
+                i--
             }
-        }
-
-        var raf_tf_gtl = true
-        function refresh_screen_gtl() {
-            if (array_balls_gtl.length == 0) {
-                raf_tf_gtl = false
-                list_cntxt[7].clearRect(0, 0, c[7].width, c[7].height)
-            }
-            if (raf_tf_gtl == true) {
-                list_cntxt[7].clearRect(0, 0, c[7].width, c[7].height)
-                refresh_done_balls_gtl()
-                requestAnimationFrame(refresh_screen_gtl)
-            }
-        }
-        refresh_screen_gtl()
-    }
-    animation_balls_gtl()
-
-    // particles/balls scratch
-
-    class Particle_s {
-        constructor() {
-            this.y = Math.random() * c[8].height
-            this.x = Math.random() * c[8].width
-            this.size = Math.random() * 3 + 1
-            this.speedy = Math.random() * 2 - 1
-            this.speedx = Math.random() * 2 - 1
-        }
-        update_s() {
-            this.y += this.speedy
-            this.x += this.speedx
-        }
-        draw_balls_s() {
-            list_cntxt[8].beginPath()
-            list_cntxt[8].fillStyle = "green"
-            list_cntxt[8].arc(this.x, this.y, this.size, 0, Math.PI * 2)
-            list_cntxt[8].fill()
-            list_cntxt[8].closePath()
         }
     }
 
-    var array_balls_s = []
-    function animation_balls_s() {
-        array_balls_s = []
-        list_cntxt[8].clearRect(0, 0, c[8].width, c[8].height)
-
-        function do_balls_s() {
-            for (let i = 0; i < 30; i++) {
-                array_balls_s.push(new Particle_s())
-            }
+    var raf_tf_gtl = true
+    function refresh_screen_gtl() {
+        if (array_balls_gtl.length == 0) {
+            raf_tf_gtl = false
+            list_cntxt[7].clearRect(0, 0, c[7].width, c[7].height)
         }
-        do_balls_s()
-
-        function refresh_done_balls_s() {
-            for (let i = 0; i < array_balls_s.length; i++) {
-                array_balls_s[i].update_s()
-                array_balls_s[i].draw_balls_s()
-                if (array_balls_s[i].size > 0.2) {
-                    array_balls_s[i].size -= 0.01
-                }
-                if (array_balls_s[i].size <= 0.3) {
-                    array_balls_s.splice(i, 1)
-                    i--
-                }
-            }
+        if (raf_tf_gtl == true) {
+            list_cntxt[7].clearRect(0, 0, c[7].width, c[7].height)
+            refresh_done_balls_gtl()
+            requestAnimationFrame(refresh_screen_gtl)
         }
-
-        var raf_tf_s = true
-        function refresh_screen_s() {
-            if (array_balls_s.length == 0) {
-                raf_tf_s = false
-            }
-            if (raf_tf_s == true) {
-                refresh_done_balls_s()
-                requestAnimationFrame(refresh_screen_s)
-            }
-        }
-        refresh_screen_s()
     }
-    animation_balls_s()
+    refresh_screen_gtl()
+}
+animation_balls_gtl()
+
+// particles/balls scratch
+
+class Particle_s {
+    constructor() {
+        this.y = Math.random() * c[8].height
+        this.x = Math.random() * c[8].width
+        this.size = Math.random() * 3 + 1
+        this.speedy = Math.random() * 2 - 1
+        this.speedx = Math.random() * 2 - 1
+    }
+    update_s() {
+        this.y += this.speedy
+        this.x += this.speedx
+    }
+    draw_balls_s() {
+        list_cntxt[8].beginPath()
+        list_cntxt[8].fillStyle = "green"
+        list_cntxt[8].arc(this.x, this.y, this.size, 0, Math.PI * 2)
+        list_cntxt[8].fill()
+        list_cntxt[8].closePath()
+    }
+}
+
+var array_balls_s = []
+function animation_balls_s() {
+    array_balls_s = []
+    list_cntxt[8].clearRect(0, 0, c[8].width, c[8].height)
+
+    function do_balls_s() {
+        for (let i = 0; i < 30; i++) {
+            array_balls_s.push(new Particle_s())
+        }
+    }
+    do_balls_s()
+
+    function refresh_done_balls_s() {
+        for (let i = 0; i < array_balls_s.length; i++) {
+            array_balls_s[i].update_s()
+            array_balls_s[i].draw_balls_s()
+            if (array_balls_s[i].size > 0.2) {
+                array_balls_s[i].size -= 0.01
+            }
+            if (array_balls_s[i].size <= 0.3) {
+                array_balls_s.splice(i, 1)
+                i--
+            }
+        }
+    }
+
+    var raf_tf_s = true
+    function refresh_screen_s() {
+        if (array_balls_s.length == 0) {
+            raf_tf_s = false
+        }
+        if (raf_tf_s == true) {
+            refresh_done_balls_s()
+            requestAnimationFrame(refresh_screen_s)
+        }
+    }
+    refresh_screen_s()
+}
+animation_balls_s()
