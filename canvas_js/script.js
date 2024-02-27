@@ -214,181 +214,6 @@ function canvas_things() {
         requestAnimationFrame(Balls_fm)
     }
 
-    // particles/balls green
-
-    class Particle_g {
-        constructor() {
-            this.y = Math.random() * c[6].height
-            this.x = Math.random() * c[6].width
-            this.size = Math.random() * 3 + 1
-            this.speedy = Math.random() * 2 - 1
-            this.speedx = Math.random() * 2 - 1
-        }
-        update_g() {
-            this.y += this.speedy
-            this.x += this.speedx
-        }
-        draw_balls_g() {
-            list_cntxt[6].beginPath()
-            list_cntxt[6].fillStyle = "green"
-            list_cntxt[6].arc(this.x, this.y, this.size, 0, Math.PI * 2)
-            list_cntxt[6].fill()
-            list_cntxt[6].closePath()
-        }
-    }
-
-    function animation_balls_g() {
-        var array_balls_g = []
-
-        function do_balls_g() {
-            for (let i = 0; i < 30; i++) {
-                array_balls_g.push(new Particle_g())
-            }
-        }
-        do_balls_g()
-
-        function refresh_done_balls_g() {
-            for (let i = 0; i < array_balls_g.length; i++) {
-                array_balls_g[i].update_g()
-                array_balls_g[i].draw_balls_g()
-            }
-        }
-
-        function refresh_screen_g() {
-            list_cntxt[6].clearRect(0, 0, c[6].width, c[6].height)
-            refresh_done_balls_g()
-            requestAnimationFrame(refresh_screen_g)
-        }
-        refresh_screen_g()
-    }
-    animation_balls_g()
-
-    // particles/balls green to little
-
-    class Particle_gtl {
-        constructor() {
-            this.y = Math.random() * c[7].height
-            this.x = Math.random() * c[7].width
-            this.size = Math.random() * 3 + 1
-            this.speedy = Math.random() * 2 - 1
-            this.speedx = Math.random() * 2 - 1
-        }
-        update_gtl() {
-            this.y += this.speedy
-            this.x += this.speedx
-        }
-        draw_balls_gtl() {
-            list_cntxt[7].beginPath()
-            list_cntxt[7].fillStyle = "green"
-            list_cntxt[7].arc(this.x, this.y, this.size, 0, Math.PI * 2)
-            list_cntxt[7].fill()
-            list_cntxt[7].closePath()
-        }
-    }
-
-    function animation_balls_gtl() {
-        var array_balls_gtl = []
-
-        function do_balls_gtl() {
-            for (let i = 0; i < 30; i++) {
-                array_balls_gtl.push(new Particle_gtl())
-            }
-        }
-        do_balls_gtl()
-
-        function refresh_done_balls_gtl() {
-            for (let i = 0; i < array_balls_gtl.length; i++) {
-                array_balls_gtl[i].update_gtl()
-                array_balls_gtl[i].draw_balls_gtl()
-                if (array_balls_gtl[i].size > 0.2) {
-                    array_balls_gtl[i].size -= 0.01
-                }
-                if (array_balls_gtl[i].size <= 0.3) {
-                    array_balls_gtl.splice(i, 1)
-                    i--
-                }
-            }
-        }
-
-        var raf_tf_gtl = true
-        function refresh_screen_gtl() {
-            if (array_balls_gtl.length == 0) {
-                raf_tf_gtl = false
-                list_cntxt[7].clearRect(0, 0, c[7].width, c[7].height)
-            }
-            if (raf_tf_gtl == true) {
-                list_cntxt[7].clearRect(0, 0, c[7].width, c[7].height)
-                refresh_done_balls_gtl()
-                requestAnimationFrame(refresh_screen_gtl)
-            }
-        }
-        refresh_screen_gtl()
-    }
-    animation_balls_gtl()
-
-    // particles/balls scratch
-
-    class Particle_s {
-        constructor() {
-            this.y = Math.random() * c[8].height
-            this.x = Math.random() * c[8].width
-            this.size = Math.random() * 3 + 1
-            this.speedy = Math.random() * 2 - 1
-            this.speedx = Math.random() * 2 - 1
-        }
-        update_s() {
-            this.y += this.speedy
-            this.x += this.speedx
-        }
-        draw_balls_s() {
-            list_cntxt[8].beginPath()
-            list_cntxt[8].fillStyle = "green"
-            list_cntxt[8].arc(this.x, this.y, this.size, 0, Math.PI * 2)
-            list_cntxt[8].fill()
-            list_cntxt[8].closePath()
-        }
-    }
-
-    var array_balls_s = []
-    function animation_balls_s() {
-        array_balls_s = []
-        list_cntxt[8].clearRect(0, 0, c[8].width, c[8].height)
-
-        function do_balls_s() {
-            for (let i = 0; i < 30; i++) {
-                array_balls_s.push(new Particle_s())
-            }
-        }
-        do_balls_s()
-
-        function refresh_done_balls_s() {
-            for (let i = 0; i < array_balls_s.length; i++) {
-                array_balls_s[i].update_s()
-                array_balls_s[i].draw_balls_s()
-                if (array_balls_s[i].size > 0.2) {
-                    array_balls_s[i].size -= 0.01
-                }
-                if (array_balls_s[i].size <= 0.3) {
-                    array_balls_s.splice(i, 1)
-                    i--
-                }
-            }
-        }
-
-        var raf_tf_s = true
-        function refresh_screen_s() {
-            if (array_balls_s.length == 0) {
-                raf_tf_s = false
-            }
-            if (raf_tf_s == true) {
-                refresh_done_balls_s()
-                requestAnimationFrame(refresh_screen_s)
-            }
-        }
-        refresh_screen_s()
-    }
-    animation_balls_s()
-
     // spines mouse move
 
     var mouse_smm = {
@@ -777,3 +602,179 @@ function canvas_things() {
 
 }
 canvas_things()
+
+
+    // particles/balls green
+
+    class Particle_g {
+        constructor() {
+            this.y = Math.random() * c[6].height
+            this.x = Math.random() * c[6].width
+            this.size = Math.random() * 3 + 1
+            this.speedy = Math.random() * 2 - 1
+            this.speedx = Math.random() * 2 - 1
+        }
+        update_g() {
+            this.y += this.speedy
+            this.x += this.speedx
+        }
+        draw_balls_g() {
+            list_cntxt[6].beginPath()
+            list_cntxt[6].fillStyle = "green"
+            list_cntxt[6].arc(this.x, this.y, this.size, 0, Math.PI * 2)
+            list_cntxt[6].fill()
+            list_cntxt[6].closePath()
+        }
+    }
+
+    function animation_balls_g() {
+        var array_balls_g = []
+
+        function do_balls_g() {
+            for (let i = 0; i < 30; i++) {
+                array_balls_g.push(new Particle_g())
+            }
+        }
+        do_balls_g()
+
+        function refresh_done_balls_g() {
+            for (let i = 0; i < array_balls_g.length; i++) {
+                array_balls_g[i].update_g()
+                array_balls_g[i].draw_balls_g()
+            }
+        }
+
+        function refresh_screen_g() {
+            list_cntxt[6].clearRect(0, 0, c[6].width, c[6].height)
+            refresh_done_balls_g()
+            requestAnimationFrame(refresh_screen_g)
+        }
+        refresh_screen_g()
+    }
+    animation_balls_g()
+
+    // particles/balls green to little
+
+    class Particle_gtl {
+        constructor() {
+            this.y = Math.random() * c[7].height
+            this.x = Math.random() * c[7].width
+            this.size = Math.random() * 3 + 1
+            this.speedy = Math.random() * 2 - 1
+            this.speedx = Math.random() * 2 - 1
+        }
+        update_gtl() {
+            this.y += this.speedy
+            this.x += this.speedx
+        }
+        draw_balls_gtl() {
+            list_cntxt[7].beginPath()
+            list_cntxt[7].fillStyle = "green"
+            list_cntxt[7].arc(this.x, this.y, this.size, 0, Math.PI * 2)
+            list_cntxt[7].fill()
+            list_cntxt[7].closePath()
+        }
+    }
+
+    function animation_balls_gtl() {
+        var array_balls_gtl = []
+
+        function do_balls_gtl() {
+            for (let i = 0; i < 30; i++) {
+                array_balls_gtl.push(new Particle_gtl())
+            }
+        }
+        do_balls_gtl()
+
+        function refresh_done_balls_gtl() {
+            for (let i = 0; i < array_balls_gtl.length; i++) {
+                array_balls_gtl[i].update_gtl()
+                array_balls_gtl[i].draw_balls_gtl()
+                if (array_balls_gtl[i].size > 0.2) {
+                    array_balls_gtl[i].size -= 0.01
+                }
+                if (array_balls_gtl[i].size <= 0.3) {
+                    array_balls_gtl.splice(i, 1)
+                    i--
+                }
+            }
+        }
+
+        var raf_tf_gtl = true
+        function refresh_screen_gtl() {
+            if (array_balls_gtl.length == 0) {
+                raf_tf_gtl = false
+                list_cntxt[7].clearRect(0, 0, c[7].width, c[7].height)
+            }
+            if (raf_tf_gtl == true) {
+                list_cntxt[7].clearRect(0, 0, c[7].width, c[7].height)
+                refresh_done_balls_gtl()
+                requestAnimationFrame(refresh_screen_gtl)
+            }
+        }
+        refresh_screen_gtl()
+    }
+    animation_balls_gtl()
+
+    // particles/balls scratch
+
+    class Particle_s {
+        constructor() {
+            this.y = Math.random() * c[8].height
+            this.x = Math.random() * c[8].width
+            this.size = Math.random() * 3 + 1
+            this.speedy = Math.random() * 2 - 1
+            this.speedx = Math.random() * 2 - 1
+        }
+        update_s() {
+            this.y += this.speedy
+            this.x += this.speedx
+        }
+        draw_balls_s() {
+            list_cntxt[8].beginPath()
+            list_cntxt[8].fillStyle = "green"
+            list_cntxt[8].arc(this.x, this.y, this.size, 0, Math.PI * 2)
+            list_cntxt[8].fill()
+            list_cntxt[8].closePath()
+        }
+    }
+
+    var array_balls_s = []
+    function animation_balls_s() {
+        array_balls_s = []
+        list_cntxt[8].clearRect(0, 0, c[8].width, c[8].height)
+
+        function do_balls_s() {
+            for (let i = 0; i < 30; i++) {
+                array_balls_s.push(new Particle_s())
+            }
+        }
+        do_balls_s()
+
+        function refresh_done_balls_s() {
+            for (let i = 0; i < array_balls_s.length; i++) {
+                array_balls_s[i].update_s()
+                array_balls_s[i].draw_balls_s()
+                if (array_balls_s[i].size > 0.2) {
+                    array_balls_s[i].size -= 0.01
+                }
+                if (array_balls_s[i].size <= 0.3) {
+                    array_balls_s.splice(i, 1)
+                    i--
+                }
+            }
+        }
+
+        var raf_tf_s = true
+        function refresh_screen_s() {
+            if (array_balls_s.length == 0) {
+                raf_tf_s = false
+            }
+            if (raf_tf_s == true) {
+                refresh_done_balls_s()
+                requestAnimationFrame(refresh_screen_s)
+            }
+        }
+        refresh_screen_s()
+    }
+    animation_balls_s()
