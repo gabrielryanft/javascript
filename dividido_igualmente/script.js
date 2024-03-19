@@ -13,13 +13,16 @@ function submit_img(){
     img.src = link_img.value
 }
 const img_sz = document.querySelector("#img_sz")
+var tamanho = document.querySelector("#tamanho")
 img_sz.addEventListener("change", ()=>{
 
     if(img.height > img.width){
         img.style.height = `${img_sz.value}%`
+        tamanho.textContent = `h${img_sz.value}`
         img.style.width = "auto"
     } else{
         img.style.width = `${img_sz.value}%`
+        tamanho.textContent = `w${img_sz.value}`
         img.style.height = "auto"
     }
 })
