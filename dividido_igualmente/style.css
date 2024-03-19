@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+:root{
+    --height-header: 4rem;
+    --height-footer: 3rem;
+    --height-main: calc(100vh - var(--height-header) - var(--height-footer));
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    display: grid;
+    min-height: var(--height-header);
+    width: 100%;
+    place-items: center;
+}
+img{
+    display: flex;
+    min-width: 0;
+    min-height: 0;
+    max-height: 100%; /*esse 100% é o 100% do pai, q é o pequeno div pequena por isso n vai.*/
+    max-width: 100%;
+    outline: 1px solid black;
+    z-index: 0;
+}
+
+main{
+    display: flex;
+    min-height: var(--height-main);
+    width: 100%;
+    align-items: center;
+    place-content: center;
+    flex-direction: column;
+}
+
+main > #img_div{
+    display: grid;
+    width: calc(18vmin * 5);
+    height: calc(11vmin * 5);
+    place-items: center;
+    border: 1px solid black;
+}
+/* 
+#img_div > div{
+    display: flex;
+    position: relative;
+}
+
+#img_div > div::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-image: repeating-linear-gradient(90deg, black 0% 1%, transparent 1% 19%, black 19% 20%), repeating-linear-gradient(180deg, black 0% 1%, transparent 1% 24%, black 24% 25%);
+} */
+
+footer{
+    display: grid;
+    height: var(--height-footer);
+    width: 100%;
+    place-items: center;
+}

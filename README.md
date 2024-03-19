@@ -16,6 +16,7 @@
 <a href="https://gabrielryanft.github.io/javascript/calculadoradenota/calculadoradenota.html" target="_blank" rel="next">caixadialogohover</a>         
 <a href="https://gabrielryanft.github.io/javascript/canvas_js/canvas_js.html" target="_blank" rel="next">canvas_js</a>         
 <a href="https://gabrielryanft.github.io/javascript/contador/contador.html" target="_blank" rel="next">Contador</a>     
+<a href="https://gabrielryanft.github.io/javascript/dividido_igualmente/dividido_igualmente.html" target="_blank" rel="next">dividindo_igualmente</a>     
 <a href="https://gabrielryanft.github.io/javascript/editandoimagens/editandoimagens.html" target="_blank" rel="next">EditandoImagens</a>     
 <a href="https://gabrielryanft.github.io/javascript/homemmulher/homemmulher.html" target="_blank" rel="next">HomemMulher</a>     
 <a href="https://gabrielryanft.github.io/javascript/horadodia/horadodia.html" target="_blank" rel="next">HoraDoDia</a>     
