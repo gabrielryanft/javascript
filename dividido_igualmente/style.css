@@ -4,6 +4,9 @@
     --height-header: 4rem;
     --height-footer: 3rem;
     --height-main: calc(100vh - var(--height-header) - var(--height-footer));
+
+    --n_col: 20%;
+    --n_row: 25%;
 }
 
 *{
@@ -18,15 +21,6 @@ header{
     width: 100%;
     place-items: center;
 }
-img{
-    display: flex;
-    min-width: 0;
-    min-height: 0;
-    max-height: 100%; /*esse 100% é o 100% do pai, q é o pequeno div pequena por isso n vai.*/
-    max-width: 100%;
-    outline: 1px solid black;
-    z-index: 0;
-}
 
 main{
     display: flex;
@@ -38,25 +32,43 @@ main{
 }
 
 main > #img_div{
-    display: grid;
+    display: flex;
     width: calc(18vmin * 5);
     height: calc(11vmin * 5);
-    place-items: center;
+    align-items: center;
+    justify-content: center;
     border: 1px solid black;
 }
-/* 
+
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+
+}
+
 #img_div > div{
+    outline: 1px solid black;
     display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
+    max-width: calc(18vmin * 5);
+    max-height: calc(11vmin * 5);
+    height: fit-content;
+    width: fit-content;
+    min-width: 0;
+    min-height: 0;
+    object-fit: contain;
 }
 
 #img_div > div::after{
     content: "";
     position: absolute;
     inset: 0;
-    z-index: 1;
-    background-image: repeating-linear-gradient(90deg, black 0% 1%, transparent 1% 19%, black 19% 20%), repeating-linear-gradient(180deg, black 0% 1%, transparent 1% 24%, black 24% 25%);
-} */
+    z-index: 2;
+    background-image: repeating-linear-gradient(90deg, black 0% calc(0% + 1px), transparent calc(0% + 1px) calc(var(--n_col) - 1px), black calc(var(--n_col) - 1px) var(--n_col)), repeating-linear-gradient(180deg, black 0% calc(0% + 1px), transparent calc(0% + 1px) calc(var(--n_row) - 1px), black calc(var(--n_row) - 1px) var(--n_row));
+}
 
 footer{
     display: grid;
