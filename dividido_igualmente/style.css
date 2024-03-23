@@ -41,13 +41,14 @@ main > #img_div{
 }
 
 img{
+    max-width: calc(18vmin * 5);
+    max-height: calc(11vmin * 5);
     height: 100%;
     width: 100%;
     object-fit: contain;
-
 }
 
-#img_div > div{
+#wrapper{
     outline: 1px solid black;
     display: flex;
     align-items: center;
@@ -55,19 +56,20 @@ img{
     position: relative;
     max-width: calc(18vmin * 5);
     max-height: calc(11vmin * 5);
-    height: fit-content;
-    width: fit-content;
+    height: calc(11vmin * 5);
+    width: auto;
     min-width: 0;
     min-height: 0;
     object-fit: contain;
 }
 
-#img_div > div::after{
+#wrapper::after{
     content: "";
     position: absolute;
     inset: 0;
     z-index: 2;
     background-image: repeating-linear-gradient(90deg, black 0% calc(0% + 1px), transparent calc(0% + 1px) calc(var(--n_col) - 1px), black calc(var(--n_col) - 1px) var(--n_col)), repeating-linear-gradient(180deg, black 0% calc(0% + 1px), transparent calc(0% + 1px) calc(var(--n_row) - 1px), black calc(var(--n_row) - 1px) var(--n_row));
+
 }
 
 footer{
@@ -75,4 +77,68 @@ footer{
     height: var(--height-footer);
     width: 100%;
     place-items: center;
+}
+
+@media print {
+    header{
+        display: none
+    }
+
+    form{
+        display: none
+    }
+    
+    main{
+        display: flex;
+        min-height: 100%;
+        width: 100%;
+        align-items: center;
+        place-content: center;
+        flex-direction: column;
+    }
+    
+    main > #img_div{
+        display: flex;
+        width: calc(18vmin * 5);
+        height: calc(11vmin * 5);
+        align-items: center;
+        justify-content: center;
+        border: 1px solid black;
+    }
+    
+    img{
+        max-width: calc(18vmin * 5);
+        max-height: calc(11vmin * 5);
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    
+    }
+    
+    #wrapper{
+        outline: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        max-width: calc(18vmin * 5);
+        max-height: calc(11vmin * 5);
+        height: calc(11vmin * 5);
+        width: auto;
+        min-width: 0;
+        min-height: 0;
+        object-fit: contain;
+    }
+    
+    #wrapper::after{
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        background-image: repeating-linear-gradient(90deg, black 0% calc(0% + 1px), transparent calc(0% + 1px) calc(var(--n_col) - 1px), black calc(var(--n_col) - 1px) var(--n_col)), repeating-linear-gradient(180deg, black 0% calc(0% + 1px), transparent calc(0% + 1px) calc(var(--n_row) - 1px), black calc(var(--n_row) - 1px) var(--n_row));
+    }
+    
+    footer{
+        display: none
+    }
 }

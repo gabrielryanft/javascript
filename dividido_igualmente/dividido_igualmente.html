@@ -22,7 +22,7 @@
                 <img src="imagens/eu-feio.jpg" alt="imagem">
             </div>
         </div>
-        <form onsubmit="return false">
+        <div>
             <div>
                 <label for="img_user">Escolha uma imagem do seu computador</label>
                 <input type="file" name="img_user" id="img_user" accept="image/png, image/jpeg">
@@ -30,7 +30,7 @@
             <div>
                 <label for="link_img">Ou use o link de uma imagem</label>
                 <input type="text" name="link_img" id="link_img">
-                <button onclick="submit_img()">Enviar</button>
+                <button onclick="submit_img()">Aplicar mudança</button>
             </div>
             <div>
                 <label for="img_sz">Tamanho da imagem</label>
@@ -38,14 +38,15 @@
                 <p id="tamanho"></p>
             </div>
             <div>
-                <label for="num_col">Number of columns</label>
-                <input type="number" name="num_col" id="num_col" value="5">
+                <label for="num_col">Número de colunas (Número maior que zero.)</label>
+                <input type="number" name="num_col" id="num_col" value="5" min="1" oninput="num_col_change()">
             </div>
             <div>
-                <label for="num_row">Number of rows</label>
-                <input type="number" name="num_row" id="num_row" value="4">
+                <label for="num_row">Número de linhas (Número maior que zero.)</label>
+                <input type="number" name="num_row" id="num_row" value="4" min="1" oninput="num_row_change()">
             </div>
-        </form>
+            <input type="submit" value="">
+        </div>
     </main>
     <footer>
         <p>Gabriel R. totosão</p>
