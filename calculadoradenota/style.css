@@ -19,6 +19,8 @@
 
 header{
     display: grid;
+    height: var(--heiht_header);
+    width: var(--width_principais);
     grid-template: auto / 3fr 1fr;
     text-wrap: balance;
     place-items: center;
