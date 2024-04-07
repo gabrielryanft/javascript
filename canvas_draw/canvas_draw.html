@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draw</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div>
+            <div>
+                <canvas>
+                </canvas>
+                <div id="bg_img">
+                </div>
+            </div>
+            <div id="form_id">
+                <div id="brush_cnfg">
+                    <div class="input_class">
+                        <label for="col">Color</label><input type="color" name="col" id="col">
+                    </div>
+                    <div class="input_class">
+                        <label for="part_sz">Brush size</label><input type="number" name="part_sz" id="part_sz" value="20">
+                    </div>
+                    <div class="input_class">
+                        <label for="col_var">Variance in the color</label><input type="number" name="col_var" id="col_var" value="10" min="0" max="255">
+                    </div>
+                    <div class="input_class">
+                        <label for="sz_var">Variance in the size of the brush</label><input type="range" name="sz_var" id="sz_var" min="0" max="2" step="0.1" value="0">
+                    </div>
+                </div>
+                <div id="cnvs_cnfg">
+                    <div class="input_class">
+                        <label for="can_w">Canva width</label><input type="text" name="can_w" id="can_w" placeholder="px, vh, vh, rem...">
+                    </div>
+                    <div class="input_class">
+                        <label for="can_h">Canva height</label><input type="text" name="can_h" id="can_h" placeholder="px, vh, vh, rem...">
+                    </div>
+                </div>
+                <div id="bg_cnfg">
+                    <div class="input_class">
+                        <label for="bg_url">Background image(To help you copy)</label><input type="text" name="bg_url" id="bg_url" placeholder="Url / Link">
+                    </div>
+                    <div class="input_class">
+                        <label for="bg_x">Background X position</label><input type="number" name="bg_x" id="bg_x" placeholder="percentages(%) only.">
+                    </div>
+                    <div class="input_class">
+                        <label for="bg_y">Background Y position</label><input type="number" name="bg_y" id="bg_y" placeholder="percentages(%) only.">
+                    </div>
+                    <div class="input_class">
+                        <label for="bg_sz">Background size</label><input type="text" name="bg_sz" id="bg_sz" placeholder="px, rem, vh, vh, rem...">
+                    </div>
+                    <div class="input_class">
+                        <label for="bg_opcty">Background opacity</label><input type="range" name="bg_opcty" id="bg_opcty" min="0" max="1" step="0.1">
+                    </div>
+                    <div class="input_class">
+                        <input type="radio" name="bg_rpt" value="repeat background" id="bg_rpty">repeat background</input>
+                    </div>
+                    <div class="input_class">
+                        <input type="radio" name="bg_rpt" value="no repeat background" id="bg_rptn" checked>no repeat background</input>
+                    </div>
+                </div>
+                <div id="del_cnfg">
+                    <button onclick="delete_last_d()">Delete last dot</button>
+                    <button onclick="delete_last_s()">Delete last scratch</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
