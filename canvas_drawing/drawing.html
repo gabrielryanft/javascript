@@ -33,6 +33,10 @@
                         <label for="sz_var">Variance in the size of the brush</label><input type="range" name="sz_var" id="sz_var" min="0" max="2" step="0.1" value="0">
                     </div>
                 </div>
+                <div class="div_cnfg" id="del_cnfg">
+                    <button onclick="delete_last_d()">Delete last dot</button>
+                    <button onclick="delete_last_s()">Delete last scratch</button>
+                </div>
                 <div class="div_cnfg" id="cnvs_cnfg">
                     <div class="input_class">
                         <label for="can_w">Canva width</label><input type="text" name="can_w" id="can_w" placeholder="px, vh, vh, rem...">
@@ -43,7 +47,7 @@
                 </div>
                 <div class="div_cnfg" id="bg_cnfg">
                     <div class="input_class">
-                        <label for="bg_url">Background image(To help you copy)</label><input type="text" name="bg_url" id="bg_url" placeholder="Url / Link">
+                        <label for="bg_url">Background image(Only to help you copy)</label><input type="text" name="bg_url" id="bg_url" placeholder="Url / Link">
                     </div>
                     <div class="input_class">
                         <label for="bg_x">Background X position</label><input type="number" name="bg_x" id="bg_x" placeholder="percentages(%) only.">
@@ -64,14 +68,43 @@
                         <input type="radio" name="bg_rpt" value="no repeat background" id="bg_rptn" checked>no repeat background</input>
                     </div>
                 </div>
-                <div class="div_cnfg" id="other_cnfg">
-                    <button onclick="delete_last_d()">Delete last dot</button>
-                    <button onclick="delete_last_s()">Delete last scratch</button>
-                    <button onclick="rcst_info_lst()">Request Info List</button>
+            </div>
+        </div>
+        <div id="lst_cnfg">
+            <div id="info_lst_cnfg">
+                <button id="btn_ilc" onclick="rcst_info_lst()">Request Info List</button>
+                <p id="p_ilc">You can copy from the console (The one in your browser).</p>
+            </div>
+            <p id="legend">
+                <span class="key">c</span> = <span class="str">color of the brush</span>;<br>
+                <span class="key">o_c</span> = <span class="str">original brush color</span>;<br>
+                <span class="key">c_v</span> = <span class="str">variancy in the brush color</span>;<br>
+                <span class="key">o</span> = <span class="str">opacity</span>;<br>
+                <span class="key">s</span> = <span class="str">brush size</span>;<br>
+                <span class="key">i_g</span> = <span class="str">index of the group (each scratch is a group)</span>;<br>
+                <span class="key">i_s</span> = <span class="str">self index in the group</span>;<br>
+                <span class="key">i_a</span> = <span class="str">absolue index</span>;<br>
+                <span class="key">x</span> = <span class="str">x position</span>;<br>
+                <span class="key">y</span> = <span class="str">y position</span>.<br>
+            </p>
+            <div id="info_list_grid">
+                <div>
+                    <div>
+                        <p>Info List</p>
+                        <button onclick="copy_info_list()">Copy Info List to clipboard</button>
+                    </div>
+
+                    <p id="inf_lst"></p>
+                </div>
+                <div>
+                    <div>
+                        <p>Info List With each scratch in its own list(group)</p>
+                        <button onclick="copy_info_list_sctch_pts()">Copy Info List to clipboard</button>
+                    </div>
+                    <p id="inf_lst_sctchs_pts"></p>
                 </div>
             </div>
         </div>
-        <p id="inf_lst">Info List</p>
     </main>
     <script src="script.js"></script>
 </body>

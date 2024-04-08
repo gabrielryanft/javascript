@@ -64,6 +64,7 @@ class particle {
     this.y = mouse_pos.y
     this.index_self = i_self
     this.index_group = i_group
+    this.absolute_index = i_absolute
     let hex_str = [cor.substr(1, 1), cor.substr(2, 1), cor.substr(3, 1), cor.substr(4, 1), cor.substr(5, 1), cor.substr(6)]
     for (let i = 0; i < hex_str.length; i++) {
       if (!["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"].includes(hex_str[i])) {
@@ -170,6 +171,7 @@ c.addEventListener("pointerdown", (event) => {
     y: particles[i_absolute].y,
     i_s: particles[i_absolute].index_self,
     i_g: particles[i_absolute].index_group,
+    i_a: particles[i_absolute].absolute_index,
     c: particles[i_absolute].color,
     o_c: particles[i_absolute].original_col,
     c_v: particles[i_absolute].variation_col,
@@ -182,6 +184,7 @@ c.addEventListener("pointerdown", (event) => {
     y: particles[i_absolute].y,
     i_s: particles[i_absolute].index_self,
     i_g: particles[i_absolute].index_group,
+    i_a: particles[i_absolute].absolute_index,
     c: particles[i_absolute].color,
     o_c: particles[i_absolute].original_col,
     c_v: particles[i_absolute].variation_col,
@@ -208,6 +211,7 @@ c.addEventListener("pointermove", (event) => {
       y: particles[i_absolute].y,
       i_s: particles[i_absolute].index_self,
       i_g: particles[i_absolute].index_group,
+      i_a: particles[i_absolute].absolute_index,
       c: particles[i_absolute].color,
       o_c: particles[i_absolute].original_col,
       c_v: particles[i_absolute].variation_col,
@@ -220,6 +224,7 @@ c.addEventListener("pointermove", (event) => {
       y: particles[i_absolute].y,
       i_s: particles[i_absolute].index_self,
       i_g: particles[i_absolute].index_group,
+      i_a: particles[i_absolute].absolute_index,
       c: particles[i_absolute].color,
       o_c: particles[i_absolute].original_col,
       c_v: particles[i_absolute].variation_col,
@@ -318,9 +323,9 @@ bg_rptn.addEventListener("input", () => {
 })
 
 const inf_lst = document.querySelector("#inf_lst")
+const inf_lst_sctchs_pts = document.querySelector("#inf_lst_sctchs_pts")
 function rcst_info_lst() {
-  let list = ""
-  list = '<span class="sqr_bkts">[</span><br>'
+  let list = '<span class="sqr_bkts">[</span><br>'
   for (let i = 0; i < instructions.length; i++) {
     list += `
 <span class="indent_1"></span><span class="crl_bkts">{</span><br>
@@ -328,14 +333,106 @@ function rcst_info_lst() {
 <span class="indent_2"></span><span class="key">o_c</span>: <span class="str">"${instructions[i].o_c}"</span>,<br>
 <span class="indent_2"></span><span class="key">c_v</span>: <span class="num">${instructions[i].c_v}</span>,<br>
 <span class="indent_2"></span><span class="key">o</span>: <span class="num">${instructions[i].o}</span>,<br>
-<span class="indent_2"></span><span class="key">b_s</span>: <span class="num">${instructions[i].s}</span>, <br>
+<span class="indent_2"></span><span class="key">b_s</span>: <span class="num">${instructions[i].b_s}</span>, <br>
 <span class="indent_2"></span><span class="key">i_g</span>: <span class="num">${instructions[i].i_g}</span>, <br>
 <span class="indent_2"></span><span class="key">i_s</span>: <span class="num">${instructions[i].i_s}</span>, <br>
+<span class="indent_2"></span><span class="key">i_a</span>: <span class="num">${instructions[i].i_a}</span>, <br>
 <span class="indent_2"></span><span class="key">x</span>: <span class="num">${instructions[i].x}</span>, <br>
 <span class="indent_2"></span><span class="key">y</span>: <span class="num">${instructions[i].y}</span><br>
 <span class="indent_1"></span><span class="crl_bkts">}</span>,<br>`
   }
-  list = list.slice(0, ("<br>".length + 1) * -1)
+  list = list.slice(0, (",<br>".length) * -1) // take last comma off
   list += '<br><span class="sqr_bkts">]</span>'
   inf_lst.innerHTML = list
+
+  let list_sctchs_pts = '<span class="sqr_bkts">[</span><br>'
+  for(let i=0; i<(instructions_sctchs_pts.length); i++){
+    list_sctchs_pts += '<span class="indent_1"></span><span class="sqr_bkts">[</span><br>'
+    for(let ii=0; ii<instructions_sctchs_pts[i].length; ii++){
+      list_sctchs_pts += `
+<span class="indent_2"></span><span class="crl_bkts">{</span><br>
+<span class="indent_3"></span><span class="key">c</span>: <span class="str">"${instructions_sctchs_pts[i][ii].c}"</span>,<br>
+<span class="indent_3"></span><span class="key">o_c</span>: <span class="str">"${instructions_sctchs_pts[i][ii].o_c}"</span>,<br>
+<span class="indent_3"></span><span class="key">c_v</span>: <span class="num">${instructions_sctchs_pts[i][ii].c_v}</span>,<br>
+<span class="indent_3"></span><span class="key">o</span>: <span class="num">${instructions_sctchs_pts[i][ii].o}</span>,<br>
+<span class="indent_3"></span><span class="key">b_s</span>: <span class="num">${instructions_sctchs_pts[i][ii].b_s}</span>, <br>
+<span class="indent_3"></span><span class="key">i_g</span>: <span class="num">${instructions_sctchs_pts[i][ii].i_g}</span>, <br>
+<span class="indent_3"></span><span class="key">i_s</span>: <span class="num">${instructions_sctchs_pts[i][ii].i_s}</span>, <br>
+<span class="indent_3"></span><span class="key">i_a</span>: <span class="num">${instructions_sctchs_pts[i][ii].i_a}</span>, <br>
+<span class="indent_3"></span><span class="key">x</span>: <span class="num">${instructions_sctchs_pts[i][ii].x}</span>, <br>
+<span class="indent_3"></span><span class="key">y</span>: <span class="num">${instructions_sctchs_pts[i][ii].y}</span><br>
+<span class="indent_2"></span><span class="crl_bkts">}</span>,<br>
+`
+      if(ii == (instructions_sctchs_pts[i].length - 1)){
+        list_sctchs_pts = list_sctchs_pts.slice(0, (",<br>".length + 1) * -1) // take last comma off (about : ",<br>".length + 1), the +1 is because in the end of the html above, i broke the line. and it counts as a space.
+        list_sctchs_pts += '<br><span class="indent_1"></span><span class="sqr_bkts">]</span>,<br>'
+      }
+    }
+    if(i == (instructions_sctchs_pts.length - 1)){
+      list_sctchs_pts = list_sctchs_pts.slice(0, (",<br>".length) * -1) // take last comma off
+      list_sctchs_pts += '<br><span class="sqr_bkts">]</span><br>'
+    }
+  }
+  inf_lst_sctchs_pts.innerHTML = list_sctchs_pts
+
+  console.log(list)
+  console.log(list_sctchs_pts)
+}
+
+function copy_info_list(){
+  let list = ""
+  list = '['
+  for (let i = 0; i < instructions.length; i++) {
+    list += `
+{
+c: "${instructions[i].c}",
+o_c: "${instructions[i].o_c}",
+c_v: ${instructions[i].c_v},
+o: ${instructions[i].o},
+b_s: ${instructions[i].b_s}, 
+i_g: ${instructions[i].i_g}, 
+i_s: ${instructions[i].i_s}, 
+i_a: ${instructions[i].i_a}, 
+x: ${instructions[i].x}, 
+y: ${instructions[i].y}
+},`
+  }
+  list = list.slice(0, -1) // take last comma off
+  list += ']'
+
+  navigator.clipboard.writeText(list)
+  console.log(list)
+}
+
+function copy_info_list_sctch_pts(){
+  let list_sctchs_pts = '['
+  for(let i=0; i<(instructions_sctchs_pts.length); i++){
+    list_sctchs_pts += '['
+    for(let ii=0; ii<instructions_sctchs_pts[i].length; ii++){
+      list_sctchs_pts += `
+{
+c: "${instructions_sctchs_pts[i][ii].c}",
+o_c: "${instructions_sctchs_pts[i][ii].o_c}",
+c_v: ${instructions_sctchs_pts[i][ii].c_v},
+o: ${instructions_sctchs_pts[i][ii].o},
+b_s: ${instructions_sctchs_pts[i][ii].b_s},
+i_g: ${instructions_sctchs_pts[i][ii].i_g},
+i_s: ${instructions_sctchs_pts[i][ii].i_s},
+i_a: ${instructions_sctchs_pts[i][ii].i_a},
+x: ${instructions_sctchs_pts[i][ii].x},
+y: ${instructions_sctchs_pts[i][ii].y}
+},
+`
+      if(ii == (instructions_sctchs_pts[i].length - 1)){
+        list_sctchs_pts = list_sctchs_pts.slice(0, -2) // take last comma off (it is -2 because at the end of the html above, at the end, i broke the line, and it counts as a space)
+        list_sctchs_pts += '],'
+      }
+    }
+    if(i == (instructions_sctchs_pts.length - 1)){
+      list_sctchs_pts = list_sctchs_pts.slice(0, -1) // take last comma off
+      list_sctchs_pts += ']'
+    }
+  }
+  navigator.clipboard.writeText(list_sctchs_pts)
+  console.log(list_sctchs_pts)
 }

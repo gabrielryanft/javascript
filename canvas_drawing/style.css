@@ -3,7 +3,9 @@
 *{
     margin: 0px;
     padding: 0px;
-    box-sizing: border-box
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 :root{
@@ -15,7 +17,7 @@ body{
     background-color: rgb(85, 85, 85);
 }
 
-main > div{
+main > div:nth-child(1){
     min-height: 100vh;
     width: 100%;
     display: flex;
@@ -27,6 +29,7 @@ main > div{
 main > div > div:nth-child(1){
     display: flex;
     position: relative;
+    margin: 10px 0
 
 }
 
@@ -53,21 +56,86 @@ canvas{
 
 #form_id{
     display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     flex-direction: row;
     flex-wrap: wrap;
+    margin: 15px 0
 }
 
 .div_cnfg{
+    display: flex;
+    flex-direction: column;
     padding: 6px;
     outline: 1px solid black;
+    outline-offset: -1px;
     border-radius: 10px
+}
+
+.div_cnfg > * > *{
+    margin: 3px
+}
+
+button{
+    padding: 6px;
+    border-radius: 6px;
+    border: none;
+    outline: 1px solid black;
+    margin: 3px
+}
+
+#lst_cnfg{
+    background-color: rgb(34, 34, 34);
+}
+
+#lst_cnfg button{
+    margin: 3px
 }
 
 p{
     color: white;
-    font-family: monospace;
-    background-color: rgb(34, 34, 34);
-    padding: 1rem
+    font-family: 'Courier New', Courier, monospace;
+    padding: 1rem;
+    font-weight: bold;
+}
+
+p > *{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#info_list_grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+#info_list_grid > div > div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#info_list_grid > div > div > button{
+    margin: 0px
+}
+
+#info_lst_cnfg{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 1rem;
+    gap: 10px
+}
+
+#btn_ilc{
+    margin: 0
+}
+
+#p_ilc{
+    margin: 0;
+    padding: 0
 }
 
 .sqr_bkts{
@@ -75,7 +143,7 @@ p{
 }
 
 .crl_bkts{
-    color: rgb(128, 22, 128)
+    color: rgb(194, 49, 194)
 }
 
 .key{
@@ -98,4 +166,9 @@ p{
 .indent_2{
     display: inline-block;
     width: 4ch;
+}
+
+.indent_3{
+    display: inline-block;
+    width: 6ch;
 }
