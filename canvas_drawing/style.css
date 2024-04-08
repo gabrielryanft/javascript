@@ -56,3 +56,40 @@ canvas{
     flex-direction: row;
     flex-wrap: wrap;
 }
+
+p{
+    color: white;
+    font-family: monospace;
+    background-color: rgb(34, 34, 34);
+    padding: 1rem
+}
+
+.sqr_bkts{
+    color: rgb(143, 168, 28)
+}
+
+.crl_bkts{
+    color: rgb(128, 22, 128)
+}
+
+.key{
+    color: rgb(8, 145, 224)
+}
+
+.str{
+    color: rgb(207, 65, 13)
+}
+
+.num{
+    color: rgb(39, 155, 35)
+}
+
+.indent_1{
+    display: inline-block;
+    width: 2ch;
+}
+
+.indent_2{
+    display: inline-block;
+    width: 4ch;
+}

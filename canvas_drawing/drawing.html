@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Draw</title>
+    <title>Drawing</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,6 +22,9 @@
                     </div>
                     <div class="input_class">
                         <label for="part_sz">Brush size</label><input type="number" name="part_sz" id="part_sz" value="20">
+                    </div>
+                    <div class="input_class">
+                        <label for="part_opcty">Brush opacity</label><input type="range" name="part_opcty" id="part_opcty" min="0" max="1" step="0.1" value="1">
                     </div>
                     <div class="input_class">
                         <label for="col_var">Variance in the color</label><input type="number" name="col_var" id="col_var" value="10" min="0" max="255">
@@ -61,12 +64,14 @@
                         <input type="radio" name="bg_rpt" value="no repeat background" id="bg_rptn" checked>no repeat background</input>
                     </div>
                 </div>
-                <div id="del_cnfg">
+                <div id="other_cnfg">
                     <button onclick="delete_last_d()">Delete last dot</button>
                     <button onclick="delete_last_s()">Delete last scratch</button>
+                    <button onclick="rcst_info_lst()">Request Info List</button>
                 </div>
             </div>
         </div>
+        <p id="inf_lst">Info List</p>
     </main>
     <script src="script.js"></script>
 </body>

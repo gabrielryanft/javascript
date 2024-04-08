@@ -5,6 +5,7 @@
 
 <a href="https://gabrielryanft.github.io/javascript/caixadialogoonhover/caixadialogoonhover.html" target="_blank" rel="next">caixadialogohover</a>         
 <a href="https://gabrielryanft.github.io/javascript/calculadoradenota/calculadoradenota.html" target="_blank" rel="next">CalculadoraDeNota</a>         
+<a href="https://gabrielryanft.github.io/javascript/canvas_drawing/drawing.html" target="_blank" rel="next">canvas_drawing</a>         
 <a href="https://gabrielryanft.github.io/javascript/canvas_js/canvas_js.html" target="_blank" rel="next">canvas_js</a>         
 <a href="https://gabrielryanft.github.io/javascript/editandoimagens/editandoimagens.html" target="_blank" rel="next">EditandoImagens</a>     
 <a href="https://gabrielryanft.github.io/javascript/maquinadeescrever/maquinadescrever.html" target="_blank" rel="next">maquinadeescrever</a>      
