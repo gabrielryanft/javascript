@@ -57,6 +57,12 @@ canvas{
     flex-wrap: wrap;
 }
 
+.div_cnfg{
+    padding: 6px;
+    outline: 1px solid black;
+    border-radius: 10px
+}
+
 p{
     color: white;
     font-family: monospace;
