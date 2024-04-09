@@ -5,7 +5,13 @@
     padding: 0px;
     box-sizing: border-box;
     font-size: 1rem;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Courier New', Courier, monospace;
+    outline: 0px solid transparent
+}
+
+*:focus-visible{
+    outline: 2px solid rgb(0, 200, 255);
+    outline-offset: 1px;
 }
 
 :root{
@@ -85,12 +91,18 @@ button{
     margin: 3px
 }
 
+button:active{
+    background-color: gray
+}
+
 #lst_cnfg{
+    display: flex;
+    flex-direction: column;
     background-color: rgb(34, 34, 34);
 }
 
 #lst_cnfg button{
-    margin: 3px
+    margin: 3px 1rem 3px 3px
 }
 
 p{
@@ -102,6 +114,10 @@ p{
 
 p > *{
     font-family: 'Courier New', Courier, monospace;
+}
+
+#legend{
+    padding-top: 0;
 }
 
 #info_list_grid{
@@ -126,7 +142,7 @@ p > *{
     flex-wrap: wrap;
     align-items: center;
     padding: 1rem;
-    gap: 10px
+    margin: 0
 }
 
 #btn_ilc{
