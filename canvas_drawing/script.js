@@ -9,7 +9,8 @@ can_h.addEventListener("input", () => {
   gbcrl = c.getBoundingClientRect().left
   gbcrt = c.getBoundingClientRect().top
   c.width = c.offsetWidth
-  c.height = c.offsetHeight
+  c.height = c.
+  c.style.maxHeight = "none"
 })
 var can_w = document.querySelector("#can_w")
 can_w.addEventListener("input", () => {
@@ -18,6 +19,8 @@ can_w.addEventListener("input", () => {
   gbcrt = c.getBoundingClientRect().top
   c.width = c.offsetWidth
   c.height = c.offsetHeight
+  c.style.maxWidth = "none"
+
 })
 
 // class particle_making{
@@ -176,7 +179,8 @@ c.addEventListener("pointerdown", (event) => {
     o_c: particles[i_absolute].original_col,
     c_v: particles[i_absolute].variation_col,
     o: particles[i_absolute].opacity,
-    b_s: particles[i_absolute].size
+    b_s: particles[i_absolute].size,
+    s_v: particles[i_absolute].size_variation
   })
 
   instructions.push({
@@ -189,7 +193,8 @@ c.addEventListener("pointerdown", (event) => {
     o_c: particles[i_absolute].original_col,
     c_v: particles[i_absolute].variation_col,
     o: particles[i_absolute].opacity,
-    b_s: particles[i_absolute].size
+    b_s: particles[i_absolute].size,
+    s_v: particles[i_absolute].size_variation
   })
 
   i_self++
@@ -216,7 +221,8 @@ c.addEventListener("pointermove", (event) => {
       o_c: particles[i_absolute].original_col,
       c_v: particles[i_absolute].variation_col,
       o: particles[i_absolute].opacity,
-      b_s: particles[i_absolute].size
+      b_s: particles[i_absolute].size,
+      s_v: particles[i_absolute].size_variation
     })
 
     instructions.push({
@@ -229,7 +235,8 @@ c.addEventListener("pointermove", (event) => {
       o_c: particles[i_absolute].original_col,
       c_v: particles[i_absolute].variation_col,
       o: particles[i_absolute].opacity,
-      b_s: particles[i_absolute].size
+      b_s: particles[i_absolute].size,
+      s_v: particles[i_absolute].size_variation
     })
 
     i_self++
@@ -334,6 +341,7 @@ function rcst_info_lst() {
 <span class="indent_2"></span><span class="key">c_v</span>: <span class="num">${instructions[i].c_v}</span>,<br>
 <span class="indent_2"></span><span class="key">o</span>: <span class="num">${instructions[i].o}</span>,<br>
 <span class="indent_2"></span><span class="key">b_s</span>: <span class="num">${instructions[i].b_s}</span>, <br>
+<span class="indent_2"></span><span class="key">s_v</span>: <span class="num">${instructions[i].s_v}</span>, <br>
 <span class="indent_2"></span><span class="key">i_g</span>: <span class="num">${instructions[i].i_g}</span>, <br>
 <span class="indent_2"></span><span class="key">i_s</span>: <span class="num">${instructions[i].i_s}</span>, <br>
 <span class="indent_2"></span><span class="key">i_a</span>: <span class="num">${instructions[i].i_a}</span>, <br>
@@ -356,6 +364,7 @@ function rcst_info_lst() {
 <span class="indent_3"></span><span class="key">c_v</span>: <span class="num">${instructions_sctchs_pts[i][ii].c_v}</span>,<br>
 <span class="indent_3"></span><span class="key">o</span>: <span class="num">${instructions_sctchs_pts[i][ii].o}</span>,<br>
 <span class="indent_3"></span><span class="key">b_s</span>: <span class="num">${instructions_sctchs_pts[i][ii].b_s}</span>, <br>
+<span class="indent_3"></span><span class="key">s_v</span>: <span class="num">${instructions_sctchs_pts[i][ii].s_v}</span>, <br>
 <span class="indent_3"></span><span class="key">i_g</span>: <span class="num">${instructions_sctchs_pts[i][ii].i_g}</span>, <br>
 <span class="indent_3"></span><span class="key">i_s</span>: <span class="num">${instructions_sctchs_pts[i][ii].i_s}</span>, <br>
 <span class="indent_3"></span><span class="key">i_a</span>: <span class="num">${instructions_sctchs_pts[i][ii].i_a}</span>, <br>
@@ -368,11 +377,10 @@ function rcst_info_lst() {
         list_sctchs_pts += '<br><span class="indent_1"></span><span class="sqr_bkts">]</span>,<br>'
       }
     }
-    if(i == (instructions_sctchs_pts.length - 1)){
-      list_sctchs_pts = list_sctchs_pts.slice(0, (",<br>".length) * -1) // take last comma off
-      list_sctchs_pts += '<br><span class="sqr_bkts">]</span><br>'
-    }
   }
+  list_sctchs_pts = list_sctchs_pts.slice(0, (",<br>".length) * -1) // take last comma off
+  list_sctchs_pts += '<br><span class="sqr_bkts">]</span><br>'
+  
   inf_lst_sctchs_pts.innerHTML = list_sctchs_pts
 
   console.log(list)

@@ -4,6 +4,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    color: white;
     font-size: 1rem;
     font-family: 'Courier New', Courier, monospace;
     outline: 0px solid transparent
@@ -20,7 +21,7 @@
 }
 
 body{
-    background-color: rgb(85, 85, 85);
+    background-color: rgb(17, 17, 17);
 }
 
 main > div:nth-child(1){
@@ -35,27 +36,31 @@ main > div:nth-child(1){
 main > div > div:nth-child(1){
     display: flex;
     position: relative;
-    margin: 10px 0
-
 }
 
 #bg_img{
     position: absolute;
     inset: 0;
-    background-image: url(images/nerd_face.jpg);
-    background-size: 400px;
+    --col-grd: rgba(0, 0, 0, 0.6);
+    background-image: none;
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position-x: 50%;
-    background-position-y: 10%;
+    background-position-y: 50%;
     z-index: -1;
     opacity: .7;
     transition: all 200ms linear;
 }
 
 canvas{
+    background-color: white;
+
     height: var(--can_h);
+    max-height: 90vh;
     width: var(--can_w);
+    max-width: 75vh;
     outline: 1px solid white;
+    outline-offset: -1px;
     z-index: 1;
     touch-action: none;
 }
@@ -74,7 +79,7 @@ canvas{
     display: flex;
     flex-direction: column;
     padding: 6px;
-    outline: 1px solid black;
+    outline: 1px solid rgb(255, 255, 255);
     outline-offset: -1px;
     border-radius: 10px
 }
@@ -87,6 +92,7 @@ button{
     padding: 6px;
     border-radius: 6px;
     border: none;
+    color: black;
     outline: 1px solid black;
     margin: 3px
 }
@@ -116,6 +122,10 @@ p > *{
     font-family: 'Courier New', Courier, monospace;
 }
 
+input{
+    color: black
+}
+
 #legend{
     padding-top: 0;
 }
@@ -134,7 +144,7 @@ p > *{
 }
 
 #info_list_grid > div > div > button{
-    margin: 0px
+    margin: 10px
 }
 
 #info_lst_cnfg{
