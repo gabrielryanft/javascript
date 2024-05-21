@@ -1,7 +1,7 @@
 const c = document.querySelector("canvas")
 
 var cc = c.getContext("2d")
-c.width = c.offsetWidth
+c.width = c.offsetWidth 
 c.height = c.offsetHeight
 var can_h = document.querySelector("#can_h")
 can_h.addEventListener("input", () => {
@@ -122,6 +122,7 @@ class particle {
         this.color = `rgba(${Math.round(r + some_num)}, ${Math.round(g + some_num)}, ${Math.round(b + some_num)}, ${this.opacity})`
       }
     }
+    this.particle_size = part_sz
     this.size_variation = Number(variation_sz)
     this.size = part_sz * ((Math.random() * ((1 + this.size_variation) - (1 - this.size_variation))) + (1 - this.size_variation)) //(math.random * (max-min)) + min
   }
@@ -179,6 +180,7 @@ c.addEventListener("pointerdown", (event) => {
     o_c: particles[i_absolute].original_col,
     c_v: particles[i_absolute].variation_col,
     o: particles[i_absolute].opacity,
+    o_b_s: particles[i_absolute].particle_size,
     b_s: particles[i_absolute].size,
     s_v: particles[i_absolute].size_variation
   })
@@ -193,6 +195,7 @@ c.addEventListener("pointerdown", (event) => {
     o_c: particles[i_absolute].original_col,
     c_v: particles[i_absolute].variation_col,
     o: particles[i_absolute].opacity,
+    o_b_s: particles[i_absolute].particle_size,
     b_s: particles[i_absolute].size,
     s_v: particles[i_absolute].size_variation
   })
@@ -221,6 +224,7 @@ c.addEventListener("pointermove", (event) => {
       o_c: particles[i_absolute].original_col,
       c_v: particles[i_absolute].variation_col,
       o: particles[i_absolute].opacity,
+      o_b_s: particles[i_absolute].particle_size,
       b_s: particles[i_absolute].size,
       s_v: particles[i_absolute].size_variation
     })
@@ -235,6 +239,7 @@ c.addEventListener("pointermove", (event) => {
       o_c: particles[i_absolute].original_col,
       c_v: particles[i_absolute].variation_col,
       o: particles[i_absolute].opacity,
+      o_b_s: particles[i_absolute].particle_size,
       b_s: particles[i_absolute].size,
       s_v: particles[i_absolute].size_variation
     })
@@ -340,6 +345,7 @@ function rcst_info_lst() {
 <span class="indent_2"></span><span class="key">o_c</span>: <span class="str">"${instructions[i].o_c}"</span>,<br>
 <span class="indent_2"></span><span class="key">c_v</span>: <span class="num">${instructions[i].c_v}</span>,<br>
 <span class="indent_2"></span><span class="key">o</span>: <span class="num">${instructions[i].o}</span>,<br>
+<span class="indent_2"></span><span class="key">o_b_s</span>: <span class="num">${instructions[i].o_b_s}</span>, <br>
 <span class="indent_2"></span><span class="key">b_s</span>: <span class="num">${instructions[i].b_s}</span>, <br>
 <span class="indent_2"></span><span class="key">s_v</span>: <span class="num">${instructions[i].s_v}</span>, <br>
 <span class="indent_2"></span><span class="key">i_g</span>: <span class="num">${instructions[i].i_g}</span>, <br>
@@ -363,6 +369,7 @@ function rcst_info_lst() {
 <span class="indent_3"></span><span class="key">o_c</span>: <span class="str">"${instructions_sctchs_pts[i][ii].o_c}"</span>,<br>
 <span class="indent_3"></span><span class="key">c_v</span>: <span class="num">${instructions_sctchs_pts[i][ii].c_v}</span>,<br>
 <span class="indent_3"></span><span class="key">o</span>: <span class="num">${instructions_sctchs_pts[i][ii].o}</span>,<br>
+<span class="indent_3"></span><span class="key">o_b_s</span>: <span class="num">${instructions_sctchs_pts[i][ii].o_b_s}</span>, <br>
 <span class="indent_3"></span><span class="key">b_s</span>: <span class="num">${instructions_sctchs_pts[i][ii].b_s}</span>, <br>
 <span class="indent_3"></span><span class="key">s_v</span>: <span class="num">${instructions_sctchs_pts[i][ii].s_v}</span>, <br>
 <span class="indent_3"></span><span class="key">i_g</span>: <span class="num">${instructions_sctchs_pts[i][ii].i_g}</span>, <br>
@@ -397,7 +404,9 @@ c: "${instructions[i].c}",
 o_c: "${instructions[i].o_c}",
 c_v: ${instructions[i].c_v},
 o: ${instructions[i].o},
+o_b_s: ${instructions[i].o_b_s}, 
 b_s: ${instructions[i].b_s}, 
+s_v: ${instructions[i].s_v}, 
 i_g: ${instructions[i].i_g}, 
 i_s: ${instructions[i].i_s}, 
 i_a: ${instructions[i].i_a}, 
@@ -423,7 +432,9 @@ c: "${instructions_sctchs_pts[i][ii].c}",
 o_c: "${instructions_sctchs_pts[i][ii].o_c}",
 c_v: ${instructions_sctchs_pts[i][ii].c_v},
 o: ${instructions_sctchs_pts[i][ii].o},
+0_b_s: ${instructions_sctchs_pts[i][ii].o_b_s},
 b_s: ${instructions_sctchs_pts[i][ii].b_s},
+s_v: ${instructions_sctchs_pts[i][ii].s_v},
 i_g: ${instructions_sctchs_pts[i][ii].i_g},
 i_s: ${instructions_sctchs_pts[i][ii].i_s},
 i_a: ${instructions_sctchs_pts[i][ii].i_a},
