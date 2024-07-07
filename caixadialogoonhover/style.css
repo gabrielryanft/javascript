@@ -20,8 +20,10 @@
 
     --y_mouse3: 50%;
     --x_mouse3: 50%;
-    --min_wh: 0;
-    --max_wh: 0;
+    --min_h: 0;
+    --min_w: 0;
+    --max_h: 0;
+    --max_w: 0;
     --outl_sz: 0;
     --outln_clr: transparent
 }
@@ -154,16 +156,16 @@ img{
 
 #img4::after{
     content: "";
-    background-image: url("https://source.unsplash.com/random/?id=a");
+    background-image: url("imgs/eunsay.png");
     background-size: cover;
     background-position: center center;
     background-color: transparent;
     background-repeat: no-repeat;
     background-clip: border-box;
-    min-height: var(--min_wh);
-    min-width: var(--min_wh);
-    max-width: var(--max_wh);
-    max-height: var(--max_wh);
+    min-height: var(--min_h);
+    min-width: var(--min_w);
+    max-width: var(--max_w);
+    max-height: var(--max_h);
     outline: var(--outln_sz) double var(--outln_clr);
 
     top: var(--y_mouse3); 
@@ -208,38 +210,37 @@ footer > p{
 footer #spn{
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
-    top: calc((var(--font_sz) + var(--padding_spn_sz) + .5rem) * -1); /*o .5rem  é para dar um espaço a mais.*/
-    font-size: 0;
+    transform: translateX(-50%) translateY(calc((var(--font_sz) + var(--padding_spn_sz) + .5rem) * -1)); /*o .5rem  é para dar um espaço a mais.*/
+    font-size: 0px;
 
-    transition: all 500ms linear;
+    transition: all 200ms linear;
 }
 
 footer:hover #spn{
-    --padding_spn_sz: .3rem;
-    font-size: var(--font_sz);
-    background-color:rgb(29, 63, 26);
-    color: white;
-    padding: var(--padding_spn_sz);
-    border-radius: .5rem
+     --padding_spn_sz: .3rem; 
+     font-size: var(--font_sz);
+     background-color:rgb(29, 63, 26);
+     color: white;
+     padding: var(--padding_spn_sz);
+     border-radius: .5rem 
 }
-
+ 
 footer #spn::after{
-    transition: all 500ms linear;
-    content: "";
-    position: absolute;
-    bottom: -4px;
-    left: 50%;
-    transform: translateX(-50%) rotate(45deg);
-    z-index: -1;
-    width: 0px;
-    height: 0px;
-    display: inline-block;
-    background-color: transparent;
+     transition: all 500ms linear;
+     content: "";
+     position: absolute;
+     bottom: -4px;
+     left: 50%;
+     transform: translateX(-50%) rotate(45deg);
+     z-index: -1;
+     width: 0px;
+     height: 0px;
+     display: inline-block;
+     background-color: transparent;
 }
-
+ 
 footer:hover #spn::after{
-    width: 10px;
-    height: 10px;
-    background-color: rgb(29, 63, 26);
-}
+     width: 10px;
+     height: 10px;
+     background-color: rgb(29, 63, 26);
+ }
