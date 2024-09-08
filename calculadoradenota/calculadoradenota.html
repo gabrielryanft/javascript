@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Gabriel Ryan">
+    <meta name="keywords" content="nota terceiro trimestre, nota escola, como calcular a nota do terceito trimestre, rio grande do sul, rs, nota ensino médio, note, ensino médio">
+    <meta name="description" content="Este site calcula a nota necessária para passar de ano, baseando-se nas notas que foram tiradas no primeiro e no último trimestre.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Nota</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <header>
+        <h1>Calculadora de Nota</h1>
+        <button onclick="abrir_ajuda()" title="Mostrar fórmula usada para calcular a nota" aria-label="Mostrar fórmula usada para calcular a nota"><span class="material-symbols-outlined" id="icone_ajuda">help</span></button>    
+        <dialog id="calculo_explicacao">
+            <div>
+                <p>Fórmula usada para calcular a nota:</p>
+                <div id="legenda">
+                    <p>Legenda: Letras que representam os trimestres na fórmula:</p>
+                    <ul>
+                        <li>primeiro trimestre é representado pela letra: p;</li>
+                        <li>segundo trimestre é representado pela letra: s;</li>
+                        <li>terceiro trimestre (Nota necessária para passar) é representado pela letra: t.</li>
+                    </ul>
+                </div>
+            </div>
+            <p aria-label="começo da fração: abre parenteses, sessenta menos, abre parenteses, três vezes letra p, mais 3 vezes letra s, fecha parenteses, fecha parenteses, sobre quatro, igual a letra t.">
+                <p aria-hidden="true">
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" id="mathml_calc">
+                        <mo>&#xA0;</mo>
+                        <mfrac>
+                            <mrow>
+                                <mo>(</mo>
+                                <mrow>
+                                    <mn>60</mn>
+                                    <mo>&#xa0;</mo>
+                                    <mo>-</mo>
+                                    <mo>&#xa0;</mo>
+                                    <mrow>
+                                        <mo>(</mo>
+                                        <mrow>
+                                            <mn>3</mn>
+                                            <mi>p</mi>
+                                            <mo>&#xa0;</mo>
+                                            <mo>+</mo>
+                                            <mo>&#xa0;</mo>
+                                            <mn>3</mn>
+                                            <mi>s</mi>
+                                        </mrow>
+                                        <mo>)</mo>
+                                    </mrow>
+                                </mrow>
+                                <mo>)</mo>
+                            </mrow>
+                            <mn>4</mn>
+                        </mfrac>
+                        <mo>&#xA0;</mo>
+                        <mo>=</mo>
+                        <mo>&#xA0;</mo>
+                        <mi>t</mi>
+                    </math>
+                </p>
+            </p>
+            <button onclick="fechar_ajuda()" aria-label="Fechar explicação" title="Fechar explicação"><span class="material-symbols-outlined" id="icone_fechar">close</span></button>
+        </dialog>
+    </header>
+    <main>
+        <div>
+            <form onsubmit="calcular(); return false;" autocomplete="off">
+                <div>
+                    <label for="nota1trimestre" aria-label="nota do primeiro trimestre."><span aria-hidden="true">Nota do 1º trimestre:</span></label>
+                    <input type="number" name="nota1trimestre" id="nota1trimestre" step="0.5" max="10" min="0" required>
+                </div>
+
+                <div>
+                    <label for="nota2trimestre" aria-label="nota do segundo trimestre."><span aria-hidden="true">Nota do 2º trimestre:</span></label>
+                    <input type="number" name="nota2trimestre" id="nota2trimestre" step="0.5" max="10" min="0" required>
+                </div>
+
+                <input type="submit" value="Calcular">
+            </form>
+            <p>Nota: <span id="nota_passar"></span></p>
+        </div>
+    </main>
+    <footer>
+        <p>G<span class="sumiu">abriel </span><span id="rpequeno">R</span><span class="sumiu">.</span> <span id="igual"></span> T<span class="sumiu">otosão</span><span id="quadrado"></span></p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

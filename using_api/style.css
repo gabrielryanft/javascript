@@ -1,0 +1,130 @@
+@charset "UTF-8";
+
+
+:root{
+    --header-height: 7rem;
+    --main-height: calc(100vh - var(--header-height) - var(--footer-height));
+    --footer-height: 3rem;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+header{
+    min-height: var(--header-height);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    outline: 3px solid black
+}
+
+header h1{
+    margin: .5rem 1rem;
+    text-wrap: balance;
+    text-align: center;
+    font-size: 1.7rem;
+}
+
+header p{
+    padding: 0rem 1rem 1rem 1rem;
+    text-wrap: balance;
+    display: inline-block;
+    width: clamp(10ch, 100%, 85ch);
+    text-align: center;
+}
+
+main{
+    min-height: var(--main-height);
+    width: 100%;
+    display: grid;
+    place-items: center
+}
+
+article{
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem
+}
+
+article p{
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+#spn_fetch{
+    color: #115923;
+}
+
+.btn{
+    background-color: rgb(219, 219, 219);
+    border: 1px solid black;
+    padding: .3rem;
+    font-family: inherit;
+    font-size: 1rem;
+    margin: .5rem 1rem;
+    border-radius: .2rem;
+    transition: background-color 50ms linear;
+}
+
+.btn:active{
+    background-color: rgb(170, 170, 170);
+}
+
+footer{
+    height: var(--footer-height);
+    width: 100%;
+    display: grid;
+    place-items: center;
+    outline: 3px solid black;
+}
+
+footer div{
+    height: var(--footer-height);
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+footer div > div{
+    grid-template-columns: 2fr 1fr
+}
+
+footer p{
+    display: inline;
+    text-wrap: pretty;
+    text-align: center;
+    padding: 0
+}
+
+#little{
+    font-size: 0;
+    color: transparent;
+    transition: all 500ms linear
+}
+
+#dtdtdt:hover #little{
+    font-size: 1rem;
+    color: black
+}
+
+#waith{
+    outline: 0px solid transparent;
+    outline-offset: -5px;
+    border-radius: .3rem;
+    transition: all 100ms linear
+}
+
+#waith:focus{
+    outline: 2px solid rgb(1, 92, 211);
+    outline-offset: 5px
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homem e Mulher</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <header>
+        <h1>Homem ou Mulher</h1>
+    </header>
+    <main>
+        <section>
+            <div id="formulario"> 
+                <div>
+                    <label for="dataname">Ano que nasceu:</label>
+                    <input type="number" name="dataname" id="dataid">
+                </div>
+                <div id="sexo">
+                    <p>Sexo:</p>
+                    <div>
+                        <input type="radio" name="sexoname" id="sexohid" checked>
+                        <label for="sexohid">Homem</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="sexoname" id="sexomid" >
+                        <label for="sexomid">Mulher</label>
+                    </div>
+                </div>
+                <input type="button" value="Verificar" id="btn" onclick="verificar()">
+            </div>
+            <div>
+                <p><span id=res></span> <span id="res0"></span></p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Gabriel Totosão!</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

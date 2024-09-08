@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Gabriel Ryan">
+    <meta name="keywords" content="gabriel ryan, grid, tabela, separar">
+    <meta name="description" content="Divida as suas imagens em uma grade para realizar o método de ampliamento em seus desenhos.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divisor de imagens</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Divisor de imagens</h1>
+            <p>Divida as suas imagens em uma grade para realizar a técnica de ampliação.</p>
+        </div>
+    </header>
+    <main>
+        <div id="img_div">
+            <div id="wrapper"> 
+                <img src="imagens/eu-feio.jpg" alt="imagem">
+            </div>
+        </div>
+        <div>
+            <div>
+                <label for="img_user">Escolha uma imagem do seu computador</label>
+                <input type="file" name="img_user" id="img_user" accept="image/png, image/jpeg">
+            </div>
+            <div>
+                <label for="link_img">Ou use o link de uma imagem</label>
+                <input type="text" name="link_img" id="link_img">
+                <button onclick="submit_img()">Aplicar mudança</button>
+            </div>
+            <div>
+                <label for="img_sz">Tamanho da imagem</label>
+                <input type="range" name="img_sz" id="img_sz" min="0" max="100" value="100">
+                <p id="tamanho"></p>
+            </div>
+            <div>
+                <label for="num_col">Número de colunas (Número maior que zero.)</label>
+                <input type="number" name="num_col" id="num_col" value="5" min="1" oninput="num_col_change()">
+            </div>
+            <div>
+                <label for="num_row">Número de linhas (Número maior que zero.)</label>
+                <input type="number" name="num_row" id="num_row" value="4" min="1" oninput="num_row_change()">
+            </div>
+            <input type="submit" value="">
+        </div>
+    </main>
+    <footer>
+        <p>Gabriel R. totosão</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

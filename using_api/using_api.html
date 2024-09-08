@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Gabriel ryan">
+        <meta name="keywords" content="APIs">
+        <meta name="description" content="Me, Gabriel Ryan, learning how to use APIs.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Learning how to use APIs</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>
+                Learning how to use APIs
+            </h1>
+            <p>
+                On this website, I've implemented an API called BoredAPI using fetch promises. This API suggests activities to do when you're feeling bored, such as "Learn a new programming language".
+            </p>
+        </header>
+        <main>
+            <article>
+                <p>API response: <span id="spn_fetch">The API didn't responded yet.</span></p>
+                <button onclick="new_message_fetch()" class="btn">Load an other activity</button>
+            </article>
+        </main>
+        <footer id="tag_footer">
+            <div aria-label="Gabriel R. totosão">
+                <div aria-hidden="true">
+                    <p>Gabriel R. <span id="tts">Totosão</span></p>
+                    <button onclick="footer_tts()" class="btn">Change</button>
+                </div>
+            </div>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>
