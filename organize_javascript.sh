@@ -1,6 +1,5 @@
 #!/bin/bash
 
-rm exists.txt
 ls | grep -v -e "README.md" -e "LICENSE" -e "organize_javascript.sh" -e "exists.txt" > exists.txt
 printf "# JavaScript\n" > README.md
 while read name
