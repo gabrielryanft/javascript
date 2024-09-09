@@ -1,0 +1,16 @@
+caixadialogoonhover
+calculadoradenota
+canvas_drawing
+canvas_js
+contador
+dividido_igualmente
+editandoimagens
+homemmulher
+horadodia
+lista-com-select
+lista-com-ul
+listdenumsqrolam
+maquinadeescrever
+progress_nativohtml
+random_background_color
+using_api
