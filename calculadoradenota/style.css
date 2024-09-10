@@ -145,6 +145,26 @@ main{
     justify-content: center;
     flex-wrap: wrap;
     flex-direction: column;
+	flex-wrap: nowrap;
+}
+
+#escolars{
+	font-family: "sans-serif";
+}
+
+#aviso{
+	font-family: "sans-serif";
+	display: flex;
+	max-width: 500px;
+	flex-direction: row;
+	flex-wrap: wrap;
+	text-wrap: pretty;
+	margin: 1rem;
+}
+
+#escolars_suround{
+	font-weight: bold;
+	font-size: 1.1rem;
 }
 
 main div{
