@@ -150,6 +150,23 @@ main{
 
 #escolars{
 	font-family: "sans-serif";
+	position: relative;
+	z-index: 2
+}
+
+#escolars::before{
+	position: absolute;
+	z-index: -1;
+	top: 50%;
+	left: 50%;
+	background-color: #fac308;
+	content: "escos";
+	padding: 1px;
+	font-size: 1rem;
+	font-family: 'sans-serif';
+	color: transparent;
+	transform: translate(-50%, -55%);
+	border-radius: 0.3rem
 }
 
 #aviso{
