@@ -137,7 +137,7 @@ header > button:focus-visible{
 
 main{
     display: flex;
-    min-height: 22rem;
+    min-height: 30rem;
     height: var(--height_main);
     width: var(--width_principais);
 
