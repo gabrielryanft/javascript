@@ -162,7 +162,7 @@ main{
 	background-color: #fac308;
 	content: "escos";
 	padding: 1px;
-	font-size: 1rem;
+	font-size: 0.8rem;
 	font-family: 'sans-serif';
 	color: transparent;
 	transform: translate(-50%, -60%);
@@ -186,6 +186,7 @@ main{
 
 #escolars_suround{
 	font-weight: bold;
+	font-size: 0.9rem
 }
 
 main div{
