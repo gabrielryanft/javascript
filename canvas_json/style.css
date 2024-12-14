@@ -1,0 +1,235 @@
+@charset "UTF-8";
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    color: white;
+    font-size: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    outline: 0px solid transparent
+}
+
+*:focus-visible{
+    outline: 2px solid rgb(0, 200, 255);
+    outline-offset: 1px;
+}
+
+:root{
+    --can_h: 450px;
+    --can_w: 330px;
+    --bg_c: rgb(17, 17, 17);
+}
+
+body{
+    background-color: var(--bg_c)
+}
+
+main > div:nth-child(1){
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main > div > div:nth-child(1){
+    display: flex;
+    position: relative;
+}
+
+#bg_img{
+    position: absolute;
+    inset: 0;
+    --col-grd: rgba(0, 0, 0, 0.6);
+    background-image: none;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: 50%;
+    z-index: -1;
+    opacity: .7;
+    transition: all 200ms linear;
+}
+
+canvas{
+    background-color: white;
+
+    height: var(--can_h);
+    max-height: 90vh;
+    width: var(--can_w);
+    max-width: 75vh;
+    outline: 1px solid white;
+    outline-offset: -1px;
+    z-index: 1;
+    touch-action: none;
+}
+
+#form_id{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 15px 0
+}
+
+.div_cnfg{
+    display: flex;
+    flex-direction: column;
+    padding: 6px;
+    outline: 1px solid rgb(255, 255, 255);
+    outline-offset: -1px;
+    border-radius: 10px
+}
+
+.div_cnfg > * > *{
+    margin: 3px
+}
+
+button{
+    padding: 6px;
+    border-radius: 6px;
+    border: none;
+    color: black;
+    outline: 1px solid black;
+    margin: 3px
+}
+
+button:active{
+    background-color: gray
+}
+
+#lst_cnfg{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(34, 34, 34);
+}
+
+#lst_cnfg button{
+    margin: 3px 1rem 3px 3px
+}
+
+p{
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 1rem;
+    font-weight: bold;
+}
+
+p > *{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+input{
+    color: black
+}
+
+#legend{
+    padding-top: 0;
+}
+
+#info_list_grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+#info_list_grid > div > div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#info_list_grid > div > div > button{
+    margin: 10px
+}
+
+#info_lst_cnfg{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 1rem;
+    margin: 0
+}
+
+#btn_ilc{
+    margin: 0
+}
+
+#p_ilc{
+    margin: 0;
+    padding: 0
+}
+
+.sqr_bkts{
+    color: rgb(143, 168, 28)
+}
+
+.crl_bkts{
+    color: rgb(194, 49, 194)
+}
+
+.key{
+    color: rgb(8, 145, 224)
+}
+
+.str{
+    color: rgb(207, 65, 13)
+}
+
+.num{
+    color: rgb(39, 155, 35)
+}
+
+.indent_1{
+    display: inline-block;
+    width: 2ch;
+}
+
+.indent_2{
+    display: inline-block;
+    width: 4ch;
+}
+
+.indent_3{
+    display: inline-block;
+    width: 6ch;
+}
+
+footer{
+    display: flex;
+    height: 3rem;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 0;
+    background-image: url(images/nerd_face.jpg);
+    background-size: 4rem;
+    background-repeat: repeat-x;
+    background-position: 50% 20%;
+}
+
+footer > p{
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+
+}
+
+footer:hover::after{
+    background-color: transparent
+}
+
+footer::after{    
+    content: "";
+    background-color: var(--bg_c);
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    transition: all 200ms linear;
+}
