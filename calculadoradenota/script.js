@@ -1,16 +1,13 @@
 //modal: 
 
 const calculo_explicacao = document.getElementById("calculo_explicacao")
-aparecendo_explicacao = 0
 
 function abrir_ajuda(){
     calculo_explicacao.showModal()
-    aparecendo_explicacao = 1
 }
 
 function fechar_ajuda(){
     calculo_explicacao.close()
-    aparecendo_explicacao = 0
 }
 
 //cálculo: 
@@ -30,15 +27,16 @@ function calcular(){
                 color: var(--cor_nota); 
                 font-weight: bold; 
                 animation: mostrar_nota 200ms linear;
+                font-size: 1.1rem;
             ">
-            A nota que você precisa para passar é 
+            A nota que você precisa para passar é:
+                    <br>
             <span 
                 style="
                     border-bottom: 2px solid var(--cor_nota)
                 ">
                 ${nota_terceiro.toString().replace(".", ",")}
             </span> 
-            .
             <span 
                 style=" 
                     color: #ad2d9e; 
@@ -61,9 +59,10 @@ function calcular(){
                 color: var(--cor_nota); 
                 font-weight: bold; 
                 animation: mostrar_nota 200ms linear; 
-                font-size: 1.1rem
+                font-size: 1.1rem;
             ">
-            A nota que você precisa para passar é 
+            A nota que você precisa para passar é:
+                    <br>
             <span 
                 style="
                     border-bottom: 2px solid var(--cor_nota)

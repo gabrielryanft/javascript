@@ -2,31 +2,59 @@
 
 
 :root{
-    --heiht_header: 4rem;
-    --height_main: calc(100vh - var(--heiht_header) - var(--height_footer));
+    --height_header: 4rem;
+    --height_main: calc(100vh - var(--height_header) - var(--height_footer));
     --height_footer: 3rem;
     --width_principais: 100%;
     --cor_nota: black;
+
+    --bg-color: #ffffff;
+    --font-color: #000000;
 }
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: var(--font-color);
+}
+
+/* theme */
+
+@media (prefers-color-scheme: dark){
+    :root{
+	--bg-color: #181818;
+	--font-color: #aaaaaa;
+    }
+    header > button{
+	background-color: #888888;
+    }
+    header > button:hover{
+	background-color: #408640;
+	box-shadow: 0 0 20px 5px #408640;
+    }
+}
+
+@emdia (prefers-color-scheme: light){
+    header > button:hover{
+	background-color: #408640;
+	box-shadow: 0 0 20px 5px #70b670
+    }
 }
 
 /*header*/
 
 header{
     display: grid;
-    min-height: var(--heiht_header);
+    min-height: var(--height_header);
     width: var(--width_principais);
     grid-template: auto / 3fr 1fr;
     text-wrap: balance;
     place-items: center;
     text-align: center;
 
-    border-bottom: 2px solid
+    border-bottom: 2px solid;
+    background-color: var(--bg-color);
 }
 
 header > h1{
@@ -48,10 +76,6 @@ header > button{
     transition: all 80ms linear;
 }
 
-header > button:hover{
-    background-color: #c0c0c0
-}
-
 header > button:focus-visible{
     outline: 2px solid #0080ff;
     outline-offset: 2px;
@@ -59,9 +83,13 @@ header > button:focus-visible{
 
 #icone_ajuda{
     font-size: 2rem;
+    color: #222222
 }
 
+/* modal */
+
 #calculo_explicacao{
+    background-color: var(--bg-color);
     text-wrap: stable;
     position: relative;
     padding: 1rem;
@@ -70,7 +98,7 @@ header > button:focus-visible{
     font-family: 'Courier New', Courier, monospace;
     font-weight: 600;
 
-    border: 5px double black
+    border: 5px double var(--font-color);
 }
 
 #calculo_explicacao p {
@@ -121,7 +149,11 @@ header > button:focus-visible{
     text-align: left;
     font-size: .9rem;
     margin: .5rem;
-	text-wrap: balance;
+    text-wrap: balance;
+}
+
+li{
+    margin: .5rem 0;
 }
 
 .bold_leg{
@@ -145,13 +177,16 @@ main{
     justify-content: center;
     flex-wrap: wrap;
     flex-direction: column;
-	flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    background-color: var(--bg-color);
 }
 
 #escolars{
-	font-family: "sans-serif";
-	position: relative;
-	z-index: 2
+    font-family: "sans-serif";
+    margin: 0 .2rem;
+    position: relative;
+    z-index: 2;
+    color: black
 }
 
 #escolars::before{
@@ -202,7 +237,7 @@ main form{
     flex-direction: column;
     padding: 1rem;
 
-    border: 5px double black;
+    border: 5px double var(--font-color);
     font-family: 'Courier New', Courier, monospace;
     font-weight: 600
 }
@@ -230,7 +265,8 @@ main form div{
 
 main form input[type=submit]{
     margin: .6rem 0 0 ;
-    border: 2px solid;
+    border: 2px solid #111111;
+    color: #111111;
     border-radius: .1rem;
     padding: .3rem .8rem;
     background-color: #408640;
@@ -253,6 +289,9 @@ main form input[type=submit]:focus-visible{
 main form input[type=number]{
     border: 2px solid;
     padding: .2rem;
+    color: black;
+    background-color: #CCCCCC;
+    font-weight: bolder;
     margin: .2rem;
     font-size: 1rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -293,6 +332,7 @@ footer{
     height: var(--height_footer);
     width: var(--main_width);
     place-items: center;
+    background-color: var(--bg-color);
 }
 
 footer span{
@@ -345,4 +385,3 @@ footer:hover #rpequeno{
     font-size: .7rem;
     bottom: -7px
 }
-
