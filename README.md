@@ -1,8 +1,8 @@
 # JavaScript
 <a href='https://gabrielryanft.github.io/javascript/caixadialogoonhover/index.html' target='_blank' rel='next'>caixadialogoonhover</a><br/>
 <a href='https://gabrielryanft.github.io/javascript/calculadoradenota/index.html' target='_blank' rel='next'>calculadoradenota</a><br/>
-<a href='https://gabrielryanft.github.io/javascript/canvas_drawing/index.html' target='_blank' rel='next'>canvas_drawing</a><br/>
-<a href='https://gabrielryanft.github.io/javascript/canvas_js/index.html' target='_blank' rel='next'>canvas_js</a><br/>
+<a href='https://gabrielryanft.github.io/javascript/canvas_draw/index.html' target='_blank' rel='next'>canvas_draw</a><br/>
+<a href='https://gabrielryanft.github.io/javascript/canvas_json/index.html' target='_blank' rel='next'>canvas_json</a><br/>
 <a href='https://gabrielryanft.github.io/javascript/contador/index.html' target='_blank' rel='next'>contador</a><br/>
 <a href='https://gabrielryanft.github.io/javascript/dividido_igualmente/index.html' target='_blank' rel='next'>dividido_igualmente</a><br/>
 <a href='https://gabrielryanft.github.io/javascript/editandoimagens/index.html' target='_blank' rel='next'>editandoimagens</a><br/>
