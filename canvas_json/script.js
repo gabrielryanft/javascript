@@ -4,14 +4,16 @@ var cc = c.getContext("2d")
 c.width = c.offsetWidth 
 c.height = c.offsetHeight
 var can_h = document.querySelector("#can_h")
+
 can_h.addEventListener("input", () => {
   document.documentElement.style.setProperty("--can_h", can_h.value)
   gbcrl = c.getBoundingClientRect().left
   gbcrt = c.getBoundingClientRect().top
   c.width = c.offsetWidth
-  c.height = c.
+  c.height = c.offsetHeight
   c.style.maxHeight = "none"
 })
+
 var can_w = document.querySelector("#can_w")
 can_w.addEventListener("input", () => {
   document.documentElement.style.setProperty("--can_w", can_w.value)
