@@ -1,0 +1,117 @@
+@charset "UTF-8";
+
+*{
+	margin: 0px;
+}
+
+.child{
+	/*background-image: url("https://searx.org/image_proxy?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fa%2Fa0%2F1752_James_Ayscough_A_short_account_of_the_Eye_and_nature_of_vision_p30.jpg%2F500px-1752_James_Ayscough_A_short_account_of_the_Eye_and_nature_of_vision_p30.jpg&h=424f9ebb24fc2ac60ce342ed07587306ca787ba73d3a495355d0d898d1f2cedb");*/
+	background-color: black;
+	height: 200px;
+	width: 200px;
+	background-size: 200px;
+}
+
+#can_1{
+	mix-blend-mode: normal;
+}
+
+#can_2{
+	mix-blend-mode: multiply;
+}
+
+#can_3{
+	mix-blend-mode: screen;
+}
+
+#can_4{
+	mix-blend-mode: overlay;
+}
+
+#can_5{
+	mix-blend-mode: darken;
+}
+
+#can_6{
+	mix-blend-mode: lighten;
+}
+
+#can_7{
+	mix-blend-mode: color-dodge;
+}
+
+#can_8{
+	mix-blend-mode: color-burn;
+}
+
+#can_9{
+	mix-blend-mode: hard-light;
+}
+
+#can_10{
+	mix-blend-mode: soft-light;
+}
+
+#can_11{
+	mix-blend-mode: difference;
+}
+
+#can_12{
+	mix-blend-mode: exclusion;
+}
+
+#can_13{
+	mix-blend-mode: hue;
+}
+
+#can_14{
+	mix-blend-mode: saturation;
+}
+
+#can_15{
+	mix-blend-mode: color;
+}
+
+#can_16{
+	mix-blend-mode: luminosity;
+}
+
+#can_17{
+	mix-blend-mode: plus-lighter;
+}
+
+body{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.wrapper{
+	display: flex;
+	position: relative;
+}
+
+canvas{
+	background-color: white;
+
+	height: 200px;
+	max-height: 90vh;
+	width: 200px;
+	max-width: 75vh;
+	outline: 1px solid white;
+	outline-offset: -1px;
+	z-index: 1;
+	touch-action: none;
+}
+
+.child{
+	position: absolute;
+	inset: 0;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position-x: 50%;
+	background-position-y: 50%;
+	z-index: -1;
+	opacity: .7;
+	transition: all 200ms linear;
+}
