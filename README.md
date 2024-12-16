@@ -9,6 +9,7 @@
 <a href='https://gabrielryanft.github.io/javascript/lista-com-ul/index.html' target='_blank' rel='next'>lista-com-ul</a><br/>
 <a href='https://gabrielryanft.github.io/javascript/listdenumsqrolam/index.html' target='_blank' rel='next'>listdenumsqrolam</a><br/>
 <a href='https://gabrielryanft.github.io/javascript/maquinadeescrever/index.html' target='_blank' rel='next'>maquinadeescrever</a><br/>
+<a href='https://gabrielryanft.github.io/javascript/mix-blend-mode/index.html' target='_blank' rel='next'>mix-blend-mode</a><br/>
 <a href='https://gabrielryanft.github.io/javascript/progress_nativohtml/index.html' target='_blank' rel='next'>progress_nativohtml</a><br/>
 <a href='https://gabrielryanft.github.io/javascript/random_background_color/index.html' target='_blank' rel='next'>random_background_color</a><br/>
 <a href='https://gabrielryanft.github.io/javascript/using_api/index.html' target='_blank' rel='next'>using_api</a><br/>
