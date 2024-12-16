@@ -1,7 +1,7 @@
 const c = document.querySelector("canvas")
 
 var cc = c.getContext("2d")
-c.width = c.offsetWidth 
+c.width = c.offsetWidth
 c.height = c.offsetHeight
 var can_h = document.querySelector("#can_h")
 
@@ -22,7 +22,6 @@ can_w.addEventListener("input", () => {
   c.width = c.offsetWidth
   c.height = c.offsetHeight
   c.style.maxWidth = "none"
-
 })
 
 // class particle_making{
@@ -296,8 +295,8 @@ function delete_last_s() {
   }, 0);
 }
 
-const bg_img = document.querySelector("#bg_img")
-const bg_url = document.querySelector("#bg_url")
+var bg_img = document.querySelector("#bg_img")
+var bg_url = document.querySelector("#bg_url")
 bg_url.addEventListener("input", () => {
   bg_img.style.backgroundImage = `url(${bg_url.value})`
 })
@@ -362,9 +361,9 @@ function rcst_info_lst() {
   inf_lst.innerHTML = list
 
   let list_sctchs_pts = '<span class="sqr_bkts">[</span><br>'
-  for(let i=0; i<(instructions_sctchs_pts.length); i++){
+  for (let i = 0; i < (instructions_sctchs_pts.length); i++) {
     list_sctchs_pts += '<span class="indent_1"></span><span class="sqr_bkts">[</span><br>'
-    for(let ii=0; ii<instructions_sctchs_pts[i].length; ii++){
+    for (let ii = 0; ii < instructions_sctchs_pts[i].length; ii++) {
       list_sctchs_pts += `
 <span class="indent_2"></span><span class="crl_bkts">{</span><br>
 <span class="indent_3"></span><span class="key">c</span>: <span class="str">"${instructions_sctchs_pts[i][ii].c}"</span>,<br>
@@ -381,7 +380,7 @@ function rcst_info_lst() {
 <span class="indent_3"></span><span class="key">y</span>: <span class="num">${instructions_sctchs_pts[i][ii].y}</span><br>
 <span class="indent_2"></span><span class="crl_bkts">}</span>,<br>
 `
-      if(ii == (instructions_sctchs_pts[i].length - 1)){
+      if (ii == (instructions_sctchs_pts[i].length - 1)) {
         list_sctchs_pts = list_sctchs_pts.slice(0, (",<br>".length + 1) * -1) // take last comma off (about : ",<br>".length + 1), the +1 is because in the end of the html above, i broke the line. and it counts as a space.
         list_sctchs_pts += '<br><span class="indent_1"></span><span class="sqr_bkts">]</span>,<br>'
       }
@@ -389,14 +388,14 @@ function rcst_info_lst() {
   }
   list_sctchs_pts = list_sctchs_pts.slice(0, (",<br>".length) * -1) // take last comma off
   list_sctchs_pts += '<br><span class="sqr_bkts">]</span><br>'
-  
+
   inf_lst_sctchs_pts.innerHTML = list_sctchs_pts
 
   console.log(list)
   console.log(list_sctchs_pts)
 }
 
-function copy_info_list(){
+function copy_info_list() {
   let list = ""
   list = '['
   for (let i = 0; i < instructions.length; i++) {
@@ -423,11 +422,11 @@ y: ${instructions[i].y}
   console.log(list)
 }
 
-function copy_info_list_sctch_pts(){
+function copy_info_list_sctch_pts() {
   let list_sctchs_pts = '['
-  for(let i=0; i<(instructions_sctchs_pts.length); i++){
+  for (let i = 0; i < (instructions_sctchs_pts.length); i++) {
     list_sctchs_pts += '['
-    for(let ii=0; ii<instructions_sctchs_pts[i].length; ii++){
+    for (let ii = 0; ii < instructions_sctchs_pts[i].length; ii++) {
       list_sctchs_pts += `
 {
 c: "${instructions_sctchs_pts[i][ii].c}",
@@ -444,12 +443,12 @@ x: ${instructions_sctchs_pts[i][ii].x},
 y: ${instructions_sctchs_pts[i][ii].y}
 },
 `
-      if(ii == (instructions_sctchs_pts[i].length - 1)){
+      if (ii == (instructions_sctchs_pts[i].length - 1)) {
         list_sctchs_pts = list_sctchs_pts.slice(0, -2) // take last comma off (it is -2 because at the end of the html above, at the end, i broke the line, and it counts as a space)
         list_sctchs_pts += '],'
       }
     }
-    if(i == (instructions_sctchs_pts.length - 1)){
+    if (i == (instructions_sctchs_pts.length - 1)) {
       list_sctchs_pts = list_sctchs_pts.slice(0, -1) // take last comma off
       list_sctchs_pts += ']'
     }
