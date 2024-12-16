@@ -2,11 +2,14 @@
 
 *{
 	margin: 0px;
+	padding: 0px;
+	outline: none;
+	border: none;
+	box-sizing: border-box;
 }
 
 .child{
-	/*background-image: url("https://searx.org/image_proxy?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fa%2Fa0%2F1752_James_Ayscough_A_short_account_of_the_Eye_and_nature_of_vision_p30.jpg%2F500px-1752_James_Ayscough_A_short_account_of_the_Eye_and_nature_of_vision_p30.jpg&h=424f9ebb24fc2ac60ce342ed07587306ca787ba73d3a495355d0d898d1f2cedb");*/
-	background-color: black;
+	background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png");
 	height: 200px;
 	width: 200px;
 	background-size: 200px;
