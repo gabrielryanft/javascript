@@ -18,7 +18,7 @@ class Particle {
 	constructor() {
 		this.x = mouse_pos.x;
 		this.y = mouse_pos.y;
-		this.color = "rgba(100, 0, 0, 0.5)";
+		this.color = color;
 		this.size = 10;
 	}
 
@@ -84,3 +84,12 @@ c.forEach((canvas, index) => {
 	//	mouse_down = false // Stop drawing
 	//})
 });
+
+var color_element = document.querySelector("#col");
+var color;
+color_element.addEventListener("input", () => {
+	color = color_element.value;
+	console.log(color);
+});
+
+k;

@@ -1,18 +1,100 @@
 @charset "UTF-8";
 
+:root{
+	--height-form-canvas: 3rem;
+	--height-wrppr-wrppr: calc(var(--height-header) - var(--height-footer));
+	--height-footer: 2rem;
+}
+
 *{
 	margin: 0px;
 	padding: 0px;
-	outline: none;
 	border: none;
 	box-sizing: border-box;
 }
 
-.child{
+body{
+	width: 100%;
+	height: 100vh;
+}
+
+#form-canvas{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	position: sticky;
+	margin-top: -1px;
+
+	min-height: var(--height-form-canvas);
+	width: 100%;
+	padding: 10px;
+}
+
+#form-canvas > div{
+	margin: auto 20px
+}
+
+label, header{
+	margin: auto 5px;
+	margin-left: 20px;
+}
+
+.multi-line{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: no-wrap;
+}
+
+.one-line{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+#wrapper-wrapper{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.wrapper{
+	display: flex;
+	position: relative;
+}
+
+canvas{
+	background-color: white;
+
+	height: 200px;
+	max-height: 90vh;
+	width: 200px;
+	max-width: 75vh;
+	outline-offset: -1px;
+	z-index: 1;
+	touch-action: none;
+}
+
+.img_bg{
 	background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png");
+	background-size: 200px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position-x: 50%;
+	background-position-y: 50%;
+	opacity: .7;
+
 	height: 200px;
 	width: 200px;
-	background-size: 200px;
+	position: absolute;
+	inset: -1;
+	z-index: -1;
+	transition: all 200ms linear;
+}
+
+p{
+	text-align: center;
 }
 
 #can_1{
@@ -81,40 +163,4 @@
 
 #can_17{
 	mix-blend-mode: plus-lighter;
-}
-
-body{
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-}
-
-.wrapper{
-	display: flex;
-	position: relative;
-}
-
-canvas{
-	background-color: white;
-
-	height: 200px;
-	max-height: 90vh;
-	width: 200px;
-	max-width: 75vh;
-	outline: 1px solid white;
-	outline-offset: -1px;
-	z-index: 1;
-	touch-action: none;
-}
-
-.child{
-	position: absolute;
-	inset: 0;
-	background-size: 100%;
-	background-repeat: no-repeat;
-	background-position-x: 50%;
-	background-position-y: 50%;
-	z-index: -1;
-	opacity: .7;
-	transition: all 200ms linear;
 }

@@ -3,77 +3,214 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Document</title>
+		<title>mix-blend-mode (CSS)</title>
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-		<div class="wrapper">
-			<canvas class="can" id="can_1"></canvas>
-			<div class="child" id="img_1"> </div>	
+		<div id="form-canvas">
+			<header class="one-line" >
+				<p>CSS property mix-blend-mode</p>
+			</header>
+			<div class="one-line">
+				<label for="col">Color</label>
+				<input type="color" name="col" id="col">
+			</div>
+
+			<div class="one-line">
+				<label for="opacity">Opacity <span id="output-opacity">1</span></label>
+				<input type="range" name="opacity" id="opacity" min="0" max="1" step="0.1" value="1">
+			</div>
+
+			<div class="multi-line">
+				<div class="one-line">
+					<input type="radio" name="name-of-effect">
+					<label for="name-of-effect">Draw in all canvas</label>
+				</div>
+
+				<div class="one-line">
+					<input type="radio" name="n-of-canvas">
+					<label for="n-of-canvas">One canvas at a time</label>
+				</div>
+			</div>
+
+			<div class="multi-line">
+				<div class="one-line">
+					<input type="radio" name="margin_toggle">
+					<label for="margin_toggle">"Infinite" canvas</label>
+				</div>
+
+				<div class="one-line">
+					<input type="radio" name="margin_toggle">
+					<label for="margin_toggle">Limited canvas</label>
+				</div>
+			</div>
+
+			<div class="multi-line">
+				<div class="one-line">
+					<input type="radio" name="show_name">
+					<label for="show_name">Show name</label>
+				</div>
+
+				<div class="one-line">
+					<input type="radio" name="show_name">
+					<label for="show_name">Don't show name</label>
+				</div>
+			</div>
 		</div>
-		<div class="wrapper">
-			<canvas class="can" id="can_2"></canvas>
-			<div class="child" id="img_2"> </div>	
-		</div>
-		<div class="wrapper">
-			<canvas class="can" id="can_3"></canvas>
-			<div class="child" id="img_3"> </div>	
-		</div>
-		<div class="wrapper">
-			<canvas class="can" id="can_4"></canvas>
-			<div class="child" id="img_4"> </div>	
-		</div>
-		<div class="wrapper">
-			<canvas class="can" id="can_5"></canvas>
-			<div class="child" id="img_5"> </div>	
-		</div>
-		<div class="wrapper">
-			<canvas class="can" id="can_6"></canvas>
-			<div class="child" id="img_6"> </div>	
-		</div>
-		<div class="wrapper">
-			<canvas class="can" id="can_7"></canvas>
-			<div class="child" id="img_7"> </div>	
-		</div>
-		<div class="wrapper">
-			<canvas class="can" id="can_8"></canvas>
-			<div class="child" id="img_8"> </div>	
-		</div>
-		<div class="wrapper">
-			<canvas class="can" id="can_9"></canvas>
-			<div class="child" id="img_9"> </div>	
-		</div>
-		<div class="wrapper">
-			<canvas class="can" id="can_10"></canvas>
-			<div class="child" id="img_10"> </div>	
-		</div>
-		<div class="wrapper">
-			<canvas class="can" id="can_11"></canvas>
-			<div class="child" id="img_11"> </div>	
-		</div>
-		<div class="wrapper">
-			<canvas class="can" id="can_12"></canvas>
-			<div class="child" id="img_12"> </div>	
-		</div>
-		<div class="wrapper">
-			<canvas class="can" id="can_13"></canvas>
-			<div class="child" id="img_13"> </div>	
-		</div>
-		<div class="wrapper">
-			<canvas class="can" id="can_14"></canvas>
-			<div class="child" id="img_14"> </div>	
-		</div>
-		<div class="wrapper">
-			<canvas class="can" id="can_15"></canvas>
-			<div class="child" id="img_15"> </div>	
-		</div>
-		<div class="wrapper">
-			<canvas class="can" id="can_16"></canvas>
-			<div class="child" id="img_16"> </div>	
-		</div>
-		<div class="wrapper">
-			<canvas class="can" id="can_17"></canvas>
-			<div class="child" id="img_17"> </div>	
+		<div id="wrapper-wrapper"> 
+			<div class="outer-wrapper">
+				<div class="wrapper">
+					<canvas class="can" id="can_1"></canvas>
+					<div class="img_bg" id="img_1"> </div>	
+				</div>
+				<p>
+					mix-blend-mode: normal
+				</p>
+			</div>
+			<div class="outer-wrapper">
+				<div class="wrapper">
+					<canvas class="can" id="can_2"></canvas>
+					<div class="img_bg" id="img_2"> </div>	
+				</div>
+				<p>
+					mix-blend-mode: multiply
+				</p>
+			</div>
+			<div class="outer-wrapper">
+				<div class="wrapper">
+					<canvas class="can" id="can_3"></canvas>
+					<div class="img_bg" id="img_3"> </div>	
+				</div>
+				<p>
+					mix-blend-mode: screen
+				</p>
+			</div>
+			<div class="outer-wrapper">
+				<div class="wrapper">
+					<canvas class="can" id="can_4"></canvas>
+					<div class="img_bg" id="img_4"> </div>	
+				</div>
+				<p>
+					mix-blend-mode: overlay
+				</p>
+			</div>
+			<div class="outer-wrapper">
+				<div class="wrapper">
+					<canvas class="can" id="can_5"></canvas>
+					<div class="img_bg" id="img_5"> </div>	
+				</div>
+				<p>
+					mix-blend-mode: darken
+				</p>
+			</div>
+			<div class="outer-wrapper">
+				<div class="wrapper">
+					<canvas class="can" id="can_6"></canvas>
+					<div class="img_bg" id="img_6"> </div>	
+				</div>
+				<p>
+					mix-blend-mode: lighten
+				</p>
+			</div>
+			<div class="outer-wrapper">
+				<div class="wrapper">
+					<canvas class="can" id="can_7"></canvas>
+					<div class="img_bg" id="img_7"> </div>	
+				</div>
+				<p>
+					mix-blend-mode: color-dodge
+				</p>
+			</div>
+			<div class="outer-wrapper">
+				<div class="wrapper">
+					<canvas class="can" id="can_8"></canvas>
+					<div class="img_bg" id="img_8"> </div>	
+				</div>
+				<p>
+					mix-blend-mode: color-burn
+				</p>
+			</div>
+			<div class="outer-wrapper">
+				<div class="wrapper">
+					<canvas class="can" id="can_9"></canvas>
+					<div class="img_bg" id="img_9"> </div>	
+				</div>
+				<p>
+					mix-blend-mode: hard-light
+				</p>
+			</div>
+			<div class="outer-wrapper">
+				<div class="wrapper">
+					<canvas class="can" id="can_10"></canvas>
+					<div class="img_bg" id="img_10"> </div>	
+				</div>
+				<p>
+					mix-blend-mode: soft-light
+				</p>
+			</div>
+			<div class="outer-wrapper">
+				<div class="wrapper">
+					<canvas class="can" id="can_11"></canvas>
+					<div class="img_bg" id="img_11"> </div>	
+				</div>
+				<p>
+					mix-blend-mode: difference
+				</p>
+			</div>
+			<div class="outer-wrapper">
+				<div class="wrapper">
+					<canvas class="can" id="can_12"></canvas>
+					<div class="img_bg" id="img_12"> </div>	
+				</div>
+				<p>
+					mix-blend-mode: exclusion
+				</p>
+			</div>
+			<div class="outer-wrapper">
+				<div class="wrapper">
+					<canvas class="can" id="can_13"></canvas>
+					<div class="img_bg" id="img_13"> </div>	
+				</div>
+				<p>
+					mix-blend-mode: hue
+				</p>
+			</div>
+			<div class="outer-wrapper">
+				<div class="wrapper">
+					<canvas class="can" id="can_14"></canvas>
+					<div class="img_bg" id="img_14"> </div>	
+				</div>
+				<p>
+					mix-blend-mode: saturation
+				</p>
+			</div>
+			<div class="outer-wrapper">
+				<div class="wrapper">
+					<canvas class="can" id="can_15"></canvas>
+					<div class="img_bg" id="img_15"> </div>	
+				</div>
+				<p>
+					mix-blend-mode: color
+				</p>
+			</div>
+			<div class="outer-wrapper">
+				<div class="wrapper">
+					<canvas class="can" id="can_16"></canvas>
+					<div class="img_bg" id="img_16"> </div>	
+				</div>
+				<p>
+					mix-blend-mode: luminosity
+				</p>
+			</div>
+			<div class="outer-wrapper">
+				<div class="wrapper">
+					<canvas class="can" id="can_17"></canvas>
+					<div class="img_bg" id="img_17"> </div>	
+				</div>
+				<p>
+					mix-blend-mode: plus-lighter
+				</p>
+			</div>
 		</div>
 		<script src="script.js">
 		</script>
