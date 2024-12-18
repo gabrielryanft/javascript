@@ -32,6 +32,10 @@ body{
 	padding: 10px;
 }
 
+h1{
+	font-size: 1.2rem;
+}
+
 #form-canvas > div{
 	margin: auto 20px
 }
@@ -41,10 +45,15 @@ label, header{
 	margin-left: 20px;
 }
 
+span{
+	display: inline-block;
+	width: 3ch;
+}
+
 .multi-line{
 	display: flex;
 	flex-direction: column;
-	flex-wrap: no-wrap;
+	flex-wrap: nowrap;
 }
 
 .one-line{
@@ -88,7 +97,7 @@ canvas{
 	height: 200px;
 	width: 200px;
 	position: absolute;
-	inset: -1;
+	inset: 0;
 	z-index: -1;
 	transition: all 200ms linear;
 }

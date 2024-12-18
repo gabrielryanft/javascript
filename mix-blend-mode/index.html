@@ -7,9 +7,9 @@
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-		<div id="form-canvas">
+		<form id="form-canvas" autocomplete="off">
 			<header class="one-line" >
-				<p>CSS property mix-blend-mode</p>
+				<h1>CSS property mix-blend-mode</h1>
 			</header>
 			<div class="one-line">
 				<label for="col">Color</label>
@@ -17,46 +17,46 @@
 			</div>
 
 			<div class="one-line">
-				<label for="opacity">Opacity <span id="output-opacity">1</span></label>
+				<label for="opacity">Opacity <span id="output-opacity" aria-hidden="true" role="presentation">1</span></label>
 				<input type="range" name="opacity" id="opacity" min="0" max="1" step="0.1" value="1">
 			</div>
 
 			<div class="multi-line">
 				<div class="one-line">
-					<input type="radio" name="name-of-effect">
+					<input type="radio" name="name-of-effect" id="noe_all" checked>
 					<label for="name-of-effect">Draw in all canvas</label>
 				</div>
 
 				<div class="one-line">
-					<input type="radio" name="n-of-canvas">
-					<label for="n-of-canvas">One canvas at a time</label>
+					<input type="radio" name="name-of-effect" id="noe_one">
+					<label for="name-of-effect">One canvas at a time</label>
 				</div>
 			</div>
 
 			<div class="multi-line">
 				<div class="one-line">
-					<input type="radio" name="margin_toggle">
-					<label for="margin_toggle">"Infinite" canvas</label>
+					<input type="radio" name="mouse_off_toggle" id="infinite_y" checked>
+					<label for="mouse_off_toggle">"Infinite" canvas</label>
 				</div>
 
 				<div class="one-line">
-					<input type="radio" name="margin_toggle">
-					<label for="margin_toggle">Limited canvas</label>
+					<input type="radio" name="mouse_off_toggle" id="infinite_n">
+					<label for="mouse_off_toggle">Limited canvas</label>
 				</div>
 			</div>
 
 			<div class="multi-line">
 				<div class="one-line">
-					<input type="radio" name="show_name">
+					<input type="radio" name="show_name" id="showname_y" checked>
 					<label for="show_name">Show name</label>
 				</div>
 
 				<div class="one-line">
-					<input type="radio" name="show_name">
+					<input type="radio" name="show_name" id="showname_n">
 					<label for="show_name">Don't show name</label>
 				</div>
 			</div>
-		</div>
+		</form>
 		<div id="wrapper-wrapper"> 
 			<div class="outer-wrapper">
 				<div class="wrapper">
