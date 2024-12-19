@@ -12,6 +12,7 @@ function inlista(n, i) {
         return false;
     }
 }
+
 function isnum(n) {
     if (n >= 1 && n <= 100) {
         return true;
@@ -20,13 +21,17 @@ function isnum(n) {
     }
 }
 
+const addnumphrase = (valtoadd) => `Valor ${valtoadd} adicionado.`;
+
+lista.style.width = `${addnumphrase(100).length}ch`;
+
 function adicionar() {
     if (!inlista(num.value, valores) && isnum(num.value)) {
         // a ! antes da inlista quer dizer que ela NÃO está na lista .
         // [mesmo] -- se ele for diferente de não estar na lista...
         valores.push(Number(num.value));
         let item = document.createElement("option");
-        item.innerHTML = `Valor ${num.value} adicionado.`;
+        item.innerHTML = `${addnumphrase(num.value)}`;
         lista.appendChild(item);
     } else {
         alert("Valor invalido ou já encontrado na lista");
@@ -54,16 +59,16 @@ function finalizar() {
     media = soma / tot;
 
     res.innerHTML = "";
-    res.innerHTML += `<p>A media dos números é ${media}</p>`;
-    res.innerHTML += `<p>O número de itens na lista é ${tot}</p>`;
-    res.innerHTML += `<p>O maior número é o ${maior}.</p>`;
-    res.innerHTML += `<p>O menor número é o ${menor}.</p>`;
-    res.innerHTML += `<p>A soma de todos os números é ${soma}.</p>`;
+    res.innerHTML += `<p>A media dos números é ${media};</p><br>`;
+    res.innerHTML += `<p>O número de itens na lista é ${tot};</p><br>`;
+    res.innerHTML += `<p>O maior número é o ${maior};</p><br>`;
+    res.innerHTML += `<p>O menor número é o ${menor};</p><br>`;
+    res.innerHTML += `<p>A soma de todos os números é ${soma}.</p><br>`;
 }
 
 num.addEventListener("keypress", (event) => {
     if (event.key == "Enter") {
         adicionar();
-        console.log("po");
+        console.log("oi");
     }
 });

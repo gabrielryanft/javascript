@@ -26,30 +26,32 @@ h1,p{
     text-align:center;
     color: white
 }
-header{
-
+main > div > div > div> p{
+    margin: 1re m
 }
-main > div > div > p{
-    margin: 1rem
-}
-main > div > div{
-    width: 50%;
+main > div > div > div{
+    min-width: 50%;
     display:flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
 }
-main > div > div > p > select{
-    max-width: 10rem;
+main > p{
+    width: 100%;
+}
+main > div > div > div > p > select{
     min-height: 10rem;
 }
-main > div{
+main > div > div{
     display:flex;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
     margin: .5rem
+}
+#res{
+    flex-direction: column;
 }
 #formulario{
    display: flex;
@@ -72,7 +74,6 @@ input[type=button]{
     border: 3px inset rgba(73, 56, 0, 0.726)
 }
 #lista{
-    width: 350px;
     background-color: rgb(250, 243, 207);
     border: 2px solid rgb(153, 149, 128);
     border-radius: 3px;
