@@ -177,6 +177,13 @@ input[type=file]::-webkit-file-upload-button{
     pointer-events: none;
 }
 
+input[type=file]::file-selector-button{
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+    pointer-events: none;
+}
+
 #alert_progresso{
     color: transparent;
     pointer-events: none;
