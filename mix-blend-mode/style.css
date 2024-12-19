@@ -29,15 +29,25 @@ body{
 
 	min-height: var(--height-form-canvas);
 	width: 100%;
-	padding: 10px;
+	border-bottom: 1px solid black;
+	padding: 5px 0px;
+	margin-bottom: 10px
 }
 
 h1{
 	font-size: 1.2rem;
 }
 
-#form-canvas > div{
-	margin: auto 20px
+.multi-line:has(:nth-child(1):nth-child(1)){
+	outline: 1px solid black;
+	padding: 5px;
+	margin: 5px
+}
+
+.one-line:not(:has(input[type="radio"])){
+	outline: 1px solid black;
+	padding: 5px;
+	margin: 5px
 }
 
 label, header{

@@ -7,9 +7,9 @@
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-		<form id="form-canvas" autocomplete="off">
-			<header class="one-line" >
-				<h1>CSS property mix-blend-mode</h1>
+		<form id="form-canvas" autocomplete="off" role="presentation">
+			<header>
+				<h1>CSS mix-blend-mode property</h1>
 			</header>
 			<div class="one-line">
 				<label for="col">Color</label>
@@ -24,36 +24,37 @@
 			<div class="multi-line">
 				<div class="one-line">
 					<input type="radio" name="name-of-effect" id="noe_all" checked>
-					<label for="name-of-effect">Draw in all canvas</label>
+					<!-- You can use an id for labelling(?) the inputs. -->
+					<label for="noe_all">Draw in all canvas</label>
 				</div>
 
 				<div class="one-line">
 					<input type="radio" name="name-of-effect" id="noe_one">
-					<label for="name-of-effect">One canvas at a time</label>
+					<label for="noe_one">One canvas at a time</label>
 				</div>
 			</div>
 
 			<div class="multi-line">
 				<div class="one-line">
 					<input type="radio" name="mouse_off_toggle" id="infinite_y" checked>
-					<label for="mouse_off_toggle">"Infinite" canvas</label>
+					<label for="infinite_y">"Infinite" canvas</label>
 				</div>
 
 				<div class="one-line">
 					<input type="radio" name="mouse_off_toggle" id="infinite_n">
-					<label for="mouse_off_toggle">Limited canvas</label>
+					<label for="infinite_n">Limited canvas</label>
 				</div>
 			</div>
 
 			<div class="multi-line">
 				<div class="one-line">
 					<input type="radio" name="show_name" id="showname_y" checked>
-					<label for="show_name">Show name</label>
+					<label for="showname_y">Show name</label>
 				</div>
 
 				<div class="one-line">
 					<input type="radio" name="show_name" id="showname_n">
-					<label for="show_name">Don't show name</label>
+					<label for="showname_n">Don't show name</label>
 				</div>
 			</div>
 		</form>

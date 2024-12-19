@@ -115,12 +115,20 @@ var opacity_draw = document.querySelector("#opacity");
 var output_opacity = document.querySelector("#output-opacity");
 opacity_draw.addEventListener("input", () => {
 	output_opacity.innerHTML = `${opacity_draw.value}`;
+	color = `rgba(${Number(parseInt(color_hex.slice(1, 3), 16))}, ${Number(parseInt(color_hex.slice(3, 5), 16))
+		}, ${Number(parseInt(color_hex.slice(5, 7), 16))}, ${Number(opacity_draw.value)
+		})`;
+	console.log(color);
 });
 
 var color_element = document.querySelector("#col");
+var color_hex = color_element.value;
 var color;
 color_element.addEventListener("input", () => {
-	color = color_element.value;
+	color_hex = color_element.value;
+	color = `rgba(${parseInt(color_hex.slice(1, 3), 16)}, ${parseInt(color_hex.slice(3, 5), 16)
+		}, ${parseInt(color_hex.slice(5, 7), 16)}, ${opacity_draw.value})`;
+	//the 0 position is the hash sign (#)
 	console.log(color);
 });
 
