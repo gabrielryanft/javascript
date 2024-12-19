@@ -1,10 +1,15 @@
-function put(){
-    let listit = document.querySelector('#listitem')
-    let list = document.querySelector('#listchild')
-    let content = document.createElement('li')
+const listit = document.querySelector("#listitem");
+const list = document.querySelector("#listchild");
 
-    content.innerHTML = `${listit.value}`
-
-    list.appendChild(content)
-
+function put() {
+    const content = document.createElement("li");
+    content.innerHTML = `${listit.value}`;
+    list.appendChild(content);
 }
+
+listit.addEventListener("keypress", (event) => {
+    if (event.key == "Enter") {
+        put();
+        listit.value = "";
+    }
+});
