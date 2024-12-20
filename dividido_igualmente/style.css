@@ -37,7 +37,17 @@ main > #img_div{
     height: calc(11vmin * 5);
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
+    outline: 1px solid black;
+}
+
+#wrapper{
+    outline: 1px solid black;
+    position: relative;
+    max-width: calc(18vmin * 5);
+    max-height: calc(11vmin * 5);
+    min-width: 0;
+    min-height: 0;
+    object-fit: contain;
 }
 
 img{
@@ -45,21 +55,6 @@ img{
     max-height: calc(11vmin * 5);
     height: 100%;
     width: 100%;
-    object-fit: contain;
-}
-
-#wrapper{
-    outline: 1px solid black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    max-width: calc(18vmin * 5);
-    max-height: calc(11vmin * 5);
-    height: calc(11vmin * 5);
-    width: auto;
-    min-width: 0;
-    min-height: 0;
     object-fit: contain;
 }
 
@@ -103,7 +98,7 @@ footer{
         height: calc(11vmin * 5);
         align-items: center;
         justify-content: center;
-        border: 1px solid black;
+        outline: 1px solid black;
     }
     
     img{

@@ -25,27 +25,26 @@
         <div>
             <div>
                 <label for="img_user">Escolha uma imagem do seu computador</label>
-                <input type="file" name="img_user" id="img_user" accept="image/png, image/jpeg">
+                <input type="file" name="img_user" id="img_user" accept="image/png, image/jpeg" autocomplete="off">
             </div>
             <div>
                 <label for="link_img">Ou use o link de uma imagem</label>
-                <input type="text" name="link_img" id="link_img">
+                <input type="text" name="link_img" id="link_img" autocomplete="off">
                 <button onclick="submit_img()">Aplicar mudança</button>
             </div>
             <div>
                 <label for="img_sz">Tamanho da imagem</label>
-                <input type="range" name="img_sz" id="img_sz" min="0" max="100" value="100">
+                <input type="range" name="img_sz" id="img_sz" min="0" max="100" value="100" autocomplete="off">
                 <p id="tamanho"></p>
             </div>
             <div>
                 <label for="num_col">Número de colunas (Número maior que zero.)</label>
-                <input type="number" name="num_col" id="num_col" value="5" min="1" oninput="num_col_change()">
+                <input type="number" name="num_col" id="num_col" value="5" min="1" oninput="num_col_change()" autocomplete="off">
             </div>
             <div>
                 <label for="num_row">Número de linhas (Número maior que zero.)</label>
-                <input type="number" name="num_row" id="num_row" value="4" min="1" oninput="num_row_change()">
+                <input type="number" name="num_row" id="num_row" value="4" min="1" oninput="num_row_change()" autocomplete="off">
             </div>
-            <input type="submit" value="">
         </div>
     </main>
     <footer>
