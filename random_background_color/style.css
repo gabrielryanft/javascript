@@ -8,15 +8,31 @@
 
 :root{
     --header_height: 4rem;
-    --main_height: calc(100vh - var(--header_height) - var(--footer_height) - 1.5rem); /* - 1.5rem is margin of error*/
+    --main_height: calc(100vh - var(--header_height) - var(--footer_height));
     --footer_height: 3rem;
 
     --all_width: 100%;
 
-    --color_bg: ;
+    --css-color_bg: #ffffbb; 
+    --font-color: black;
+
+    --color_bg: ; /* Used in js. */
+}
+
+@media(prefers-color-scheme: dark) {
+    :root{
+        --css-color_bg: #222222;
+    --font-color: #cccccc;
+    }
+
 }
 
 /*header*/
+
+body{
+    background-color: var(--css-color_bg);
+    color: var(--font-color);
+}
 
 header{
     display: flex;
@@ -28,11 +44,13 @@ header{
     flex-wrap: wrap;
     border-bottom: 2px solid;
     text-align: center;
+    background-color: var(--css-color_bg)
 }
 
 header > h1{
     font-size: 2rem;
-    margin: .5rem 2rem
+    margin: .5rem 2rem;
+    color: var(--font-color);
 }
  
 header ul{
@@ -46,6 +64,7 @@ ul > li{
     list-style: none;
     margin: 0.5rem;
     font-family: 'Courier New', Courier, monospace;
+    color: var(--font-color);
     font-weight: 500;
     font-size: 1.1rem;
 }
@@ -79,7 +98,8 @@ main p{
     padding: .5rem;
     color: #fff;
     border-radius: .2rem;
-    margin: 1rem
+    margin: 1rem;
+    color: var(--font-color);
 }
 
 main button{
@@ -88,7 +108,7 @@ main button{
     padding: .3rem;
     color: #111;
     border-radius: .2rem;
-    border: 2px solid;
+    border: 2px solid var(--font-color);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -109,4 +129,6 @@ footer{
     color: var(--color_bg);
     border-top: 2px solid;
     font-weight: bold;
+    background-color: var(--css-color_bg);
+    color: var(--font-color);
 }
