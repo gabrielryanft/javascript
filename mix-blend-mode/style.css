@@ -42,13 +42,13 @@ h1{
 .multi-line:has(:nth-child(1):nth-child(1)){
 	outline: 1px solid black;
 	padding: 5px;
-	margin: 5px
+	margin: 2px
 }
 
 .one-line:not(:has(input[type="radio"])){
 	outline: 1px solid black;
 	padding: 5px;
-	margin: 5px
+	margin: 2px
 }
 
 label, header{
@@ -70,6 +70,11 @@ span{
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+}
+
+input[type=radio]{
+	position: relative;
+	top: -3px;
 }
 
 input[type="range"]{
@@ -193,4 +198,14 @@ p{
 
 #can_17{
 	mix-blend-mode: plus-lighter;
+}
+
+footer{
+	display: grid;
+	height: 3rem;
+	width: 100%;
+	place-items: center;
+	margin-top: 10px;
+	border-top: 1px solid black;
+	font-weight: bolder;
 }
