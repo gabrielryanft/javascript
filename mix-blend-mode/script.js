@@ -20,7 +20,7 @@ class Particle {
 		this.x = mouse_pos.x;
 		this.y = mouse_pos.y;
 		this.color = color;
-		this.size = 10;
+		this.size = sizeValue;
 	}
 
 	draw() {
@@ -111,25 +111,32 @@ infinite_y.addEventListener("input", () => {
 	}
 });
 
-var opacity_draw = document.querySelector("#opacity");
-var output_opacity = document.querySelector("#output-opacity");
-opacity_draw.addEventListener("input", () => {
-	output_opacity.innerHTML = `${opacity_draw.value}`;
-	color = `rgba(${Number(parseInt(color_hex.slice(1, 3), 16))}, ${Number(parseInt(color_hex.slice(3, 5), 16))
-		}, ${Number(parseInt(color_hex.slice(5, 7), 16))}, ${Number(opacity_draw.value)
-		})`;
-	console.log(color);
+const size_brsh = document.querySelector("#size_brsh");
+var sizeValue = size_brsh.value;
+size_brsh.addEventListener("input", () => {
+	sizeValue = size_brsh.value;
 });
 
 var color_element = document.querySelector("#col");
 var color_hex = color_element.value;
-var color;
+var color = color_hex;
 color_element.addEventListener("input", () => {
 	color_hex = color_element.value;
-	color = `rgba(${parseInt(color_hex.slice(1, 3), 16)}, ${parseInt(color_hex.slice(3, 5), 16)
-		}, ${parseInt(color_hex.slice(5, 7), 16)}, ${opacity_draw.value})`;
+	color = `rgba(${parseInt(color_hex.slice(1, 3), 16)}, ${
+		parseInt(color_hex.slice(3, 5), 16)
+	}, ${parseInt(color_hex.slice(5, 7), 16)}, ${opacity_draw.value})`;
 	//the 0 position is the hash sign (#)
-	console.log(color);
+});
+
+var opacity_draw = document.querySelector("#opacity");
+var output_opacity = document.querySelector("#output-opacity");
+opacity_draw.addEventListener("input", () => {
+	output_opacity.innerHTML = `${opacity_draw.value}`;
+	color = `rgba(${Number(parseInt(color_hex.slice(1, 3), 16))}, ${
+		Number(parseInt(color_hex.slice(3, 5), 16))
+	}, ${Number(parseInt(color_hex.slice(5, 7), 16))}, ${
+		Number(opacity_draw.value)
+	})`;
 });
 
 var one_c_at_a_time;

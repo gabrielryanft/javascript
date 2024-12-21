@@ -36,6 +36,7 @@ body{
 
 h1{
 	font-size: 1.2rem;
+	margin-left: 20px;
 }
 
 .multi-line:has(:nth-child(1):nth-child(1)){
@@ -52,7 +53,6 @@ h1{
 
 label, header{
 	margin: auto 5px;
-	margin-left: 20px;
 }
 
 span{
@@ -70,6 +70,17 @@ span{
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+}
+
+input[type="range"]{
+	width: 70px;
+}
+
+input[type="number"]{
+	width: 70px;
+	outline: 1px solid black;
+	font-size: 1rem;
+	padding: 3px;
 }
 
 #wrapper-wrapper{
