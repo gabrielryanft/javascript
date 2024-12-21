@@ -5,7 +5,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* outline: 1px solid red; */
 }
 
 :root{
@@ -165,15 +164,22 @@ footer{
     height: var(--height_footer);
     place-items: center;
 }
-/* 
+
 footer > p{
     margin: 1rem;
     font-family: monospace;
-    color: rgba(0, 0, 0, 0.8);
+    color: black;
     font-size: .9rem;
     width: 18ch;
     white-space: nowrap;
     overflow: hidden;
-    font-weight: lighter;
-    animation: digitando 6s steps(18) alternate, piscando .6s infinite step-end alternate;
-} */
+    font-weight: bolder;
+    animation: digitando 6s steps(19) alternate;
+}
+
+@keyframes digitando {
+   from {width: 0px} 
+   to {width: 19ch}
+}
+
+
