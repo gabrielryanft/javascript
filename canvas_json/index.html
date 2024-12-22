@@ -1,118 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drawing canvas</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <main>
-        <div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Drawing canvas</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <main>
             <div>
-                <canvas>
-                </canvas>
-                <div id="bg_img">
-                </div>
-            </div>
-            <div id="form_id">
-                <div class="div_cnfg" id="brush_cnfg">
-                    <div>
-                        <label for="col">Color</label><input title="Color of the brush" type="color" name="col" id="col">
-                    </div>
-                    <div>
-                        <label for="part_sz">Brush size</label><input title="Size of the brush" type="number" name="part_sz" id="part_sz" value="20">
-                    </div>
-                    <div>
-                        <label for="part_opcty">Brush opacity</label><input title="Opacity of the brush" type="range" name="part_opcty" id="part_opcty" min="0" max="1" step="0.1" value="1">
-                    </div>
-                    <div>
-                        <label for="col_var">Variance in the color</label><input title="Variance in the color of the brush" type="number" name="col_var" id="col_var" value="10" min="0" max="255">
-                    </div>
-                    <div>
-                        <label for="sz_var">Variance in the size of the brush</label><input title="Variance in the color of the brush" type="range" name="sz_var" id="sz_var" min="0" max="2" step="0.1" value="0">
-                    </div>
-                </div>
-                <div class="div_cnfg" id="del_cnfg">
-                    <button title="Delete last dot from the drawing" onclick="delete_last_d()">Delete last dot</button>
-                    <button title="Delete last scratch from the drawing" onclick="delete_last_s()">Delete last scratch</button>
-                </div>
-                <div class="div_cnfg" id="cnvs_cnfg">
-                    <div>
-                        <label for="can_w">Canva width</label><input title="width of the canva" type="text" name="can_w" id="can_w" placeholder="px, vh, vh, rem...">
-                    </div>
-                    <div>
-                        <label for="can_h">Canva height</label><input title="Height of the canva" type="text" name="can_h" id="can_h" placeholder="px, vh, vh, rem...">
-                    </div>
-                </div>
-                <div class="div_cnfg" id="bg_cnfg">
-                    <div>
-                        <label for="bg_url">Background image(Only to help you copy)</label><input title="Background image of the canvas (Only to help you copy)" type="text" name="bg_url" id="bg_url" placeholder="Url">
-                    </div>
-                    <div>
-                        <label for="bg_x">Background X position</label><input title="X position of the background" type="number" name="bg_x" id="bg_x" placeholder="percentages(%) only.">
-                    </div>
-                    <div>
-                        <label for="bg_y">Background Y position</label><input title="Y position of the background" type="number" name="bg_y" id="bg_y" placeholder="percentages(%) only.">
-                    </div>
-                    <div>
-                        <label for="bg_sz">Background size</label><input title="Size of the background" type="text" name="bg_sz" id="bg_sz" placeholder="px, rem, vh, vh, rem...">
-                    </div>
-                    <div>
-                        <label for="bg_opcty">Background opacity</label><input title="Opacity of the background" type="range" name="bg_opcty" id="bg_opcty" min="0" max="1" step="0.1">
-                    </div>
-                    <div>
-                        <input title="Button to alow repeating background" type="radio" name="bg_rpt" value="repeat background" id="bg_rpty">
-                        <label for="bg_rpty">repeat background</label>
-                    </div>
-                    <div>
-                        <input title="Button to DO NOT alow repeating background" type="radio" name="bg_rpt" value="no repeat background" id="bg_rptn" checked>
-                        <label for="bg_rptn">no repeat background</label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="lst_cnfg">
-            <div id="info_lst_cnfg">
-                <button id="btn_ilc" onclick="rcst_info_lst()">Show drawing information list</button>
-                <p id="p_ilc">You can copy from the console (The one in your browser).</p>
-            </div>
-            <p id="legend">
-                <span class="key">c</span> = <span class="str">color of the brush</span>;<br>
-                <span class="key">o_c</span> = <span class="str">original brush color</span>;<br>
-                <span class="key">c_v</span> = <span class="str">variancy in the brush color</span>;<br>
-                <span class="key">o</span> = <span class="str">opacity</span>;<br>
-                <span class="key">o_b_s</span> = <span class="str">original brush size</span>;<br>
-                <span class="key">b_s</span> = <span class="str">brush size</span>;<br>
-                <span class="key">s_v</span> = <span class="str">brush size variation</span>;<br>
-                <span class="key">i_g</span> = <span class="str">index of the group (each scratch is a group)</span>;<br>
-                <span class="key">i_s</span> = <span class="str">self index in the group</span>;<br>
-                <span class="key">i_a</span> = <span class="str">absolue index</span>;<br>
-                <span class="key">x</span> = <span class="str">x position</span>;<br>
-                <span class="key">y</span> = <span class="str">y position</span>.<br>
-            </p>
-            <div id="info_list_grid">
                 <div>
-                    <div>
-                        <p>Drawing information list</p>
-                        <button onclick="copy_info_list()">Copy list to clipboard</button>
+                    <canvas id="main-canvas">
+                    </canvas>
+                    <div id="bg_img">
                     </div>
+                </div>
+                <div id="form_id">
+                    <div class="div_cnfg" id="brush_cnfg">
+                        <div>
+                            <label for="col">Color</label><input title="Color of the brush" type="color" name="col" id="col">
+                        </div>
+                        <div>
+                            <label for="part_sz">Brush size</label><input title="Size of the brush" type="number" name="part_sz" id="part_sz" value="20">
+                        </div>
+                        <div>
+                            <label for="part_opcty">Brush opacity</label><input title="Opacity of the brush" type="range" name="part_opcty" id="part_opcty" min="0" max="1" step="0.1" value="1">
+                        </div>
+                        <div>
+                            <label for="col_var">Variance in the color</label><input title="Variance in the color of the brush" type="number" name="col_var" id="col_var" value="10" min="0" max="255">
+                        </div>
+                        <div>
+                            <label for="sz_var">Variance in the size of the brush</label><input title="Variance in the color of the brush" type="range" name="sz_var" id="sz_var" min="0" max="2" step="0.1" value="0">
+                        </div>
+                    </div>
+                    <div class="div_cnfg" id="del_cnfg">
+                        <button title="Delete last dot from the drawing" onclick="delete_last_d()">Delete last dot</button>
+                        <button title="Delete last scratch from the drawing" onclick="delete_last_s()">Delete last scratch</button>
+                    </div>
+                    <div class="div_cnfg" id="cnvs_cnfg">
+                        <div>
+                            <label for="can_w">Canva width</label><input title="width of the canva" type="text" name="can_w" id="can_w" placeholder="px, vh, vh, rem...">
+                        </div>
+                        <div>
+                            <label for="can_h">Canva height</label><input title="Height of the canva" type="text" name="can_h" id="can_h" placeholder="px, vh, vh, rem...">
+                        </div>
+                    </div>
+                    <div class="div_cnfg" id="bg_cnfg">
+                        <div>
+                            <label for="bg_url">Background image(Only to help you copy)</label><input title="Background image of the canvas (Only to help you copy)" type="text" name="bg_url" id="bg_url" placeholder="Url">
+                        </div>
+                        <div>
+                            <label for="bg_x">Background X position</label><input title="X position of the background" type="number" name="bg_x" id="bg_x" placeholder="percentages(%) only.">
+                        </div>
+                        <div>
+                            <label for="bg_y">Background Y position</label><input title="Y position of the background" type="number" name="bg_y" id="bg_y" placeholder="percentages(%) only.">
+                        </div>
+                        <div>
+                            <label for="bg_sz">Background size</label><input title="Size of the background" type="text" name="bg_sz" id="bg_sz" placeholder="px, rem, vh, vh, rem...">
+                        </div>
+                        <div>
+                            <label for="bg_opcty">Background opacity</label><input title="Opacity of the background" type="range" name="bg_opcty" id="bg_opcty" min="0" max="1" step="0.1">
+                        </div>
+                        <div>
+                            <input title="Button to alow repeating background" type="radio" name="bg_rpt" value="repeat background" id="bg_rpty">
+                            <label for="bg_rpty">repeat background</label>
+                        </div>
+                        <div>
+                            <input title="Button to DO NOT alow repeating background" type="radio" name="bg_rpt" value="no repeat background" id="bg_rptn" checked>
+                            <label for="bg_rptn">no repeat background</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="lst_cnfg">
+                <div id="info_lst_cnfg">
+                    <button id="btn_ilc" onclick="rcst_info_lst()">Show drawing information list</button>
+                    <p id="p_ilc">You can copy from the console (The one in your browser).</p>
+                </div>
+                <p id="legend">
+                    <span class="key">c</span> = <span class="str">color of the brush</span>;<br>
+                    <span class="key">o_c</span> = <span class="str">original brush color</span>;<br>
+                    <span class="key">c_v</span> = <span class="str">variancy in the brush color</span>;<br>
+                    <span class="key">o</span> = <span class="str">opacity</span>;<br>
+                    <span class="key">o_b_s</span> = <span class="str">original brush size</span>;<br>
+                    <span class="key">b_s</span> = <span class="str">brush size</span>;<br>
+                    <span class="key">s_v</span> = <span class="str">brush size variation</span>;<br>
+                    <span class="key">i_g</span> = <span class="str">index of the group (each scratch is a group)</span>;<br>
+                    <span class="key">i_s</span> = <span class="str">self index in the group</span>;<br>
+                    <span class="key">i_a</span> = <span class="str">absolue index</span>;<br>
+                    <span class="key">x</span> = <span class="str">x position</span>;<br>
+                    <span class="key">y</span> = <span class="str">y position</span>.<br>
+                </p>
+                <div id="info_list_grid">
+                    <div>
+                        <div>
+                            <p>Drawing information list</p>
+                            <button onclick="copy_info_list()">Copy list to clipboard</button>
+                        </div>
 
-                    <p id="inf_lst"></p>
-                </div>
-                <div>
-                    <div>
-                        <p>Drawing information list with each scratch in its own list(group)</p>
-                        <button onclick="copy_info_list_sctch_pts()">Copy list each scratch in its own list(group) to clipboard</button>
+                        <p id="inf_lst"></p>
                     </div>
-                    <p id="inf_lst_sctchs_pts"></p>
+                    <div>
+                        <div>
+                            <p>Drawing information list with each scratch in its own list(group)</p>
+                            <button onclick="copy_info_list_sctch_pts()">Copy list each scratch in its own list(group) to clipboard</button>
+                        </div>
+                        <p id="inf_lst_sctchs_pts"></p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </main>
-    <footer>
-        <p>Gabriel Totosão</p>
-    </footer>
-    <script src="script.js"></script>
-</body>
+        </main>
+        <footer>
+            <p id="grtts">Gabriel Totosão</p>
+            <canvas id="footer-canvas"></canvas>
+        </footer>
+        <script src="script.js"></script>
+    </body>
 </html>

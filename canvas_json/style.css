@@ -53,17 +53,18 @@ main > div > div:nth-child(1){
     transition: all 200ms linear;
 }
 
-canvas{
-    background-color: white;
-
+#main-canvas{
+    background-color: #eeeeee;
     height: var(--can_h);
     max-height: 90vh;
     width: var(--can_w);
     max-width: 75vh;
-    outline: 1px solid white;
-    outline-offset: -1px;
+    outline: 5px solid #7c4b00;
+    outline-offset: 20px;
+    box-shadow: 0 0 0 20px #442e00, inset 0 0 10px black;
     z-index: 1;
     touch-action: none;
+    margin: 30px;
 }
 
 #form_id{
@@ -207,29 +208,19 @@ footer{
     align-items: center;
     justify-content: center;
     position: relative;
-    z-index: 0;
-    background-image: url(images/nerd_face.jpg);
-    background-size: 4rem;
-    background-repeat: repeat-x;
-    background-position: 50% 20%;
+    bottom: -1px;
+}
+
+#footer-canvas{
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
 }
 
 footer > p{
-    margin: 0;
-    padding: 0;
-    z-index: 2;
-
-}
-
-footer:hover::after{
-    background-color: transparent
-}
-
-footer::after{    
-    content: "";
-    background-color: var(--bg_c);
     position: absolute;
-    inset: 0;
-    z-index: 1;
-    transition: all 200ms linear;
+    z-index: 0;
 }
+
