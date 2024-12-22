@@ -1,5 +1,13 @@
 @charset "UTF-8";
 
+:root{
+    --x-pos-footer: -50%;
+    --y-pos-footer: -50%;
+
+    --left-p: 50%;
+    --top-p: 50%;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -43,7 +51,7 @@ p{
     text-wrap: balance
 }
 
-canvas{
+.main-canvas{
     display: flex;
     width: 100%;
     min-height: 15rem;
@@ -142,3 +150,22 @@ button{
     user-select: none;
     -webkit-user-drag: none;
 }
+
+footer{
+    height: 3rem;
+    width: 100%;
+    background-color: black;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+footer p{
+    position: absolute;
+    top: var(--top-p);
+    left: var(--left-p);
+    cursor: default;
+    transform: translate(var(--x-pos-footer), var(--y-pos-footer));
+    transition: all 200ms linear;
+}
+
