@@ -35,7 +35,7 @@
     }
 }
 
-@emdia (prefers-color-scheme: light){
+@media (prefers-color-scheme: light){
     header > button:hover{
 	background-color: #408640;
 	box-shadow: 0 0 20px 5px #70b670
@@ -64,8 +64,8 @@ header > h1{
 }
 
 header > button{
-    display: flex;
-    align-items: center;
+    display: grid;
+    place-items: center;
 
     border: none;
     border-radius: 50%;
@@ -82,7 +82,13 @@ header > button:focus-visible{
 }
 
 #icone_ajuda{
+    min-height: 2rem;
+    min-width: 2rem;
+    font-weight: bolder;
     font-size: 2rem;
+    position: relative;
+    top: -3px;
+    margin: auto 0px;
     color: #222222
 }
 
@@ -157,12 +163,12 @@ li{
 }
 
 .bold_leg{
-	font-size: 1.2rem
+    font-size: 1.2rem
 }
 
 #mathml_calc{
     font-size: 1.5rem;
-	font-weight: bold;
+    font-weight: bold;
 }
 
 /*main*/
@@ -183,45 +189,32 @@ main{
 
 #escolars{
     font-family: "sans-serif";
-    margin: 0 .2rem;
     position: relative;
     z-index: 2;
-    color: black
-}
-
-#escolars::before{
-	position: absolute;
-	z-index: -1;
-	top: 50%;
-	left: 50%;
-	background-color: #fac308;
-	content: "escos";
-	padding: 1px;
-	font-size: 0.8rem;
-	font-family: 'sans-serif';
-	color: transparent;
-	transform: translate(-50%, -60%);
-	border-radius: 0.3rem
+    color: black;
+    background-color: #fac308;
+    padding: 4px 2px 1px 2px;
+    border-radius: 0.3rem
 }
 
 #aviso{
-	z-index: 999;
-	line-height: 1.3rem;
-	text-indent: 2rem;
-	font-family: "sans-serif";
-	font-size: 1rem;
-	max-width: 500px;
-	text-wrap: pretty;
-	margin: 1rem;
+    z-index: 999;
+    line-height: 1.3rem;
+    text-indent: 2rem;
+    font-family: "sans-serif";
+    font-size: 1rem;
+    max-width: 500px;
+    text-wrap: pretty;
+    margin: 1rem;
 }
 
 #dica_aviso{
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 #escolars_suround{
-	font-weight: bold;
-	font-size: 0.9rem
+    font-weight: bold;
+    font-size: 0.9rem
 }
 
 main div{
@@ -249,17 +242,17 @@ main form div{
     justify-content: space-around;
     flex-wrap: nowrap;
     flex-direction: row;
-    
+
     margin: 0.5rem;
 }
 
 @media (max-width: 280px) {
     main form div{
-        flex-wrap: wrap;
+	flex-wrap: wrap;
     }
 
     main form input[type=number]{
-        width: 100%
+	width: 100%
     }
 }
 
@@ -321,8 +314,8 @@ main div p{
 }
 
 @keyframes mostrar_nota{
-    from{color: white}
-    to{color: var(--cor_nota)}
+from{color: white}
+to{color: var(--cor_nota)}
 }
 
 /*Footer*/
