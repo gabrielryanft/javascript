@@ -1068,6 +1068,6 @@ footer.addEventListener("mousemove", (event) => {
     );
     document.documentElement.style.setProperty(
         "--y-pos-footer",
-        `calc(${event.y - grtts.getBoundingClientRect().top}px - 50%)`,
+        `calc(${event.y - grtts.getBoundingClientRect().top}px + 50%)`,
     );
 });
