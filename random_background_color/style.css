@@ -127,8 +127,8 @@ footer{
     width: var(--all_width);
     place-items: center;
     color: var(--color_bg);
-    border-top: 2px solid;
+    border-top: 2px solid var(--font-color);
     font-weight: bold;
     background-color: var(--css-color_bg);
-    color: var(--font-color);
 }
+
