@@ -3,6 +3,7 @@
 * {
 	margin: 0px;
 	padding: 0px;
+	box-sizing: border-box;
 }
 
 h1,
@@ -21,22 +22,22 @@ main {
 .card {
 	margin: 20px;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
+	;
 	flex-wrap: wrap;
 	justify-content: center;
+	padding: 1rem;
 
-	width: 20%;
-	height: 50vh;
 	outline: solid 1px black;
 }
 
 .image {
-	margin-top: 5%;
 	outline: solid 1px black;
-	height: 80%;
-	width: 90%;
-
+	min-height: 10rem;
+	min-width: 9rem;
+	width: 100%;
 	overflow: hidden;
+	max-width: 20vw
 }
 
 img {
