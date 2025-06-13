@@ -1,24 +1,24 @@
 @charset "UTF-8";
 
-:root{
+:root {
 	--height-form-canvas: 3rem;
 	--height-wrppr-wrppr: calc(var(--height-header) - var(--height-footer));
 	--height-footer: 2rem;
 }
 
-*{
+* {
 	margin: 0px;
 	padding: 0px;
 	border: none;
 	box-sizing: border-box;
 }
 
-body{
+body {
 	width: 100%;
 	height: 100vh;
 }
 
-#form-canvas{
+#form-canvas {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -34,72 +34,75 @@ body{
 	margin-bottom: 10px
 }
 
-h1{
+h1 {
 	font-size: 1.2rem;
 	margin-left: 20px;
 }
 
-.multi-line:has(:nth-child(1):nth-child(1)){
+.multi-line:has(:nth-child(1):nth-child(1)) {
 	outline: 1px solid black;
 	padding: 5px;
 	margin: 2px
 }
 
-.one-line:not(:has(input[type="radio"])){
+.one-line:not(:has(input[type="radio"])) {
+	display: flex;
+	align-items: center;
 	outline: 1px solid black;
 	padding: 5px;
 	margin: 2px
 }
 
-label, header{
+label,
+header {
 	margin: auto 5px;
 }
 
-span{
+span {
 	display: inline-block;
 	width: 3ch;
 }
 
-.multi-line{
+.multi-line {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
 }
 
-.one-line{
+.one-line {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 }
 
-input[type=radio]{
+input[type=radio] {
 	position: relative;
 	top: -3px;
 }
 
-input[type="range"]{
+input[type="range"] {
 	width: 70px;
 }
 
-input[type="number"]{
+input[type="number"] {
 	width: 70px;
 	outline: 1px solid black;
 	font-size: 1rem;
 	padding: 3px;
 }
 
-#wrapper-wrapper{
+#wrapper-wrapper {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 }
 
-.wrapper{
+.wrapper {
 	display: flex;
 	position: relative;
 }
 
-canvas{
+canvas {
 	background-color: white;
 
 	height: 200px;
@@ -111,7 +114,7 @@ canvas{
 	touch-action: none;
 }
 
-.img_bg{
+.img_bg {
 	background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png");
 	background-size: 200px;
 	background-size: 100%;
@@ -128,79 +131,79 @@ canvas{
 	transition: all 200ms linear;
 }
 
-p{
+p {
 	text-align: center;
 }
 
-#can_1{
+#can_1 {
 	mix-blend-mode: normal;
 }
 
-#can_2{
+#can_2 {
 	mix-blend-mode: multiply;
 }
 
-#can_3{
+#can_3 {
 	mix-blend-mode: screen;
 }
 
-#can_4{
+#can_4 {
 	mix-blend-mode: overlay;
 }
 
-#can_5{
+#can_5 {
 	mix-blend-mode: darken;
 }
 
-#can_6{
+#can_6 {
 	mix-blend-mode: lighten;
 }
 
-#can_7{
+#can_7 {
 	mix-blend-mode: color-dodge;
 }
 
-#can_8{
+#can_8 {
 	mix-blend-mode: color-burn;
 }
 
-#can_9{
+#can_9 {
 	mix-blend-mode: hard-light;
 }
 
-#can_10{
+#can_10 {
 	mix-blend-mode: soft-light;
 }
 
-#can_11{
+#can_11 {
 	mix-blend-mode: difference;
 }
 
-#can_12{
+#can_12 {
 	mix-blend-mode: exclusion;
 }
 
-#can_13{
+#can_13 {
 	mix-blend-mode: hue;
 }
 
-#can_14{
+#can_14 {
 	mix-blend-mode: saturation;
 }
 
-#can_15{
+#can_15 {
 	mix-blend-mode: color;
 }
 
-#can_16{
+#can_16 {
 	mix-blend-mode: luminosity;
 }
 
-#can_17{
+#can_17 {
 	mix-blend-mode: plus-lighter;
 }
 
-footer{
+footer {
 	display: grid;
 	height: 3rem;
 	width: 100%;
@@ -208,4 +211,44 @@ footer{
 	margin-top: 10px;
 	border-top: 1px solid black;
 	font-weight: bolder;
+	transition: color 2s linear, background-color .5s linear;
+}
+
+footer:hover p {
+	transition: color 2s linear, background-color .5s linear;
+	color: white
+}
+
+footer:hover {
+	background-color: black
+}
+
+/* modal */
+
+#abrir_modal {
+	font-weight: 900;
+	font-size: 1.5rem;
+	outline: 2px solid black;
+	padding: 10px 20px;
+	border-radius: 50%;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+}
+
+#modal {
+	padding: 20px;
+	padding-bottom: 10px;
+	margin: auto auto;
+	outline: 2px solid black;
+	text-align: center;
+}
+
+#fechar_modal {
+	background-color: #9f2222;
+	margin: 10px;
+	padding: 5px 10px;
+	outline: 1px solid black;
+	color: white;
+
 }
