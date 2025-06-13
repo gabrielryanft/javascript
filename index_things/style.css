@@ -23,7 +23,6 @@ main {
 	margin: 20px;
 	display: flex;
 	flex-direction: column;
-	;
 	flex-wrap: wrap;
 	justify-content: center;
 	padding: 1rem;
