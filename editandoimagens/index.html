@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,10 +14,12 @@
     </header>
     <main>
         <div>
-            <img src="./imagens/eu-feio.jpg" alt="">
+            <img src="./imagens/eu-feio.jpg" alt="" id="the_image">
         </div>
         <form id="formulario" method="post" autocomplete="off">
+            <!-- this div#editar is used to centralize in the editing panel: -->
             <div id="editar"></div>
+
             <div class="pRange">
                 <label for="filter-blur" id="filter-blur">blur</label>
                 <input type="range" name="" id="filter-blur" min="0" max="20" value="0">
@@ -58,6 +60,12 @@
                 <input type="range" name="" id=" invert"min="0" max="100" value="0">
             </div>
             <input type="reset" value="Resetar edição">
+
+            <div id="file_inpt">
+                <label for="choose">Escolher imagem
+                    <input type="file" name="choose" id="choose" accept="image/gif, image/jpeg, image/png" onchange="loadFile(event)">
+                </label>
+            </div>
         </form>
     </main>
     <footer>

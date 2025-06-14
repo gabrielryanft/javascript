@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', efeitosfunc)
 document.querySelector("#formulario").addEventListener("reset", resetEfeitos)
 
@@ -7,16 +6,16 @@ function efeitosfunc(){
     efeitos.forEach(function(div){
         var pClicado = div.querySelector('label')
         var pNome = pClicado.textContent
-        
+
         function checarValorRangeOn(){
             var rangeAtiva = div.querySelector('input')
             var valorRange = rangeAtiva.value
             return valorRange
         }
-        
+
         div.addEventListener('input', function(){
             document.documentElement.style.setProperty(`--${pNome}`, `${checarValorRangeOn()}${medidafunc(pNome)}`)
-        })   
+        })
     })
 }
 
@@ -35,7 +34,6 @@ function resetEfeitos(){
         console.log(valor)
         document.documentElement.style.setProperty(`--${pNome}`, `${valor}${medidafunc(pNome)}`)
     })
-        
 }
 
 function medidafunc(nomeEfeito){
@@ -48,3 +46,8 @@ function medidafunc(nomeEfeito){
     }
     return medida
 }
+
+var loadFile = function(event) {
+	var image = document.getElementById('the_image');
+	image.src = URL.createObjectURL(event.target.files[0]);
+};
