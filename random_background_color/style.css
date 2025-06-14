@@ -1,40 +1,41 @@
 @charset "UTF-8";
 
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-:root{
+:root {
     --header_height: 4rem;
     --main_height: calc(100vh - var(--header_height) - var(--footer_height));
     --footer_height: 3rem;
 
     --all_width: 100%;
 
-    --css-color_bg: #ffffbb; 
+    --css-color_bg: #ffffbb;
     --font-color: black;
 
-    --color_bg: ; /* Used in js. */
+    --color_bg: ;
+    /* Used in js. */
 }
 
 @media(prefers-color-scheme: dark) {
-    :root{
+    :root {
         --css-color_bg: #222222;
-    --font-color: #cccccc;
+        --font-color: #cccccc;
     }
 
 }
 
 /*header*/
 
-body{
+body {
     background-color: var(--css-color_bg);
     color: var(--font-color);
 }
 
-header{
+header {
     display: flex;
     min-height: var(--header_height);
     width: var(--all_width);
@@ -47,20 +48,20 @@ header{
     background-color: var(--css-color_bg)
 }
 
-header > h1{
+header>h1 {
     font-size: 2rem;
     margin: .5rem 2rem;
     color: var(--font-color);
 }
- 
-header ul{
+
+header ul {
     display: flex;
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
 }
- 
-ul > li{
+
+ul>li {
     list-style: none;
     margin: 0.5rem;
     font-family: 'Courier New', Courier, monospace;
@@ -69,15 +70,15 @@ ul > li{
     font-size: 1.1rem;
 }
 
-li > a{     
+li>a {
     color: black;
     text-decoration: none;
-    margin:auto
+    margin: auto
 }
 
 /*main*/
 
-main{
+main {
     display: grid;
     min-height: 10rem;
     height: var(--main_height);
@@ -86,13 +87,13 @@ main{
     background-color: var(--color_bg);
 }
 
-main > div{
+main>div {
     display: grid;
     width: var(--all_width);
     place-items: center;
 }
 
-main p{
+main p {
     font-size: 1.5rem;
     background-color: #333;
     padding: .5rem;
@@ -102,7 +103,7 @@ main p{
     color: var(--font-color);
 }
 
-main button{
+main button {
     font-size: 1.3rem;
     background-color: #fff;
     padding: .3rem;
@@ -112,7 +113,7 @@ main button{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-main button:active{
+main button:active {
     color: green;
     outline: 3px solid white;
     border-radius: .05rem;
@@ -121,7 +122,25 @@ main button:active{
 
 /*footer*/
 
-footer{
+@keyframes roda {
+    1% {
+        color: yellow
+    }
+
+    33% {
+        color: red
+    }
+
+    63% {
+        color: green
+    }
+
+    93% {
+        color: blue
+    }
+}
+
+footer {
     display: grid;
     height: var(--footer_height);
     width: var(--all_width);
@@ -130,5 +149,9 @@ footer{
     border-top: 2px solid var(--font-color);
     font-weight: bold;
     background-color: var(--css-color_bg);
+    animation: roda 1s steps(4) paused infinite
 }
 
+footer:hover>p {
+    animation: roda 1s steps(4) running infinite
+}

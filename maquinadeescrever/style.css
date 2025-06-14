@@ -1,13 +1,13 @@
 @charset "UTF-8";
 
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root{
+:root {
     --height_header: 5.5rem;
     --height_main: calc(100vh - var(--height_footer) - var(--height_header));
     --height_footer: 4rem;
@@ -17,9 +17,9 @@
     --tempo_digitacao: 3s;
 }
 
-header, 
-hgroup{
-    display: flex; 
+header,
+hgroup {
+    display: flex;
     flex-direction: column;
     min-height: var(--height_header);
     width: 100%;
@@ -28,7 +28,7 @@ hgroup{
     box-shadow: 0px 0px 0px 2px black
 }
 
-h1{
+h1 {
     font-size: 2rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-wrap: balance;
@@ -36,20 +36,20 @@ h1{
     margin-bottom: 0
 }
 
-@media (max-width: 350px){
-    h1{
+@media (max-width: 350px) {
+    h1 {
         font-size: 1.5rem
     }
 }
 
-header p{
+header p {
     font-size: 1rem;
     font-family: sans-serif;
     margin: 0 1rem .5rem;
-    text-wrap:pretty
+    text-wrap: pretty
 }
 
-main{
+main {
     display: flex;
     flex-direction: column-reverse;
     min-height: var(--height_main);
@@ -58,13 +58,13 @@ main{
     align-items: center;
 }
 
-form{
+form {
     display: grid;
     width: 100%;
     place-items: center;
 }
 
-#form_txt{
+#form_txt {
     display: flex;
     width: 100%;
     text-align: center;
@@ -74,7 +74,7 @@ form{
     justify-content: center;
 }
 
-label{
+label {
     display: inline-block;
     width: clamp(25ch, 50%, 45ch);
     text-wrap: wrap;
@@ -82,7 +82,8 @@ label{
     font-weight: normal;
     font-size: 1rem;
 }
-textarea{
+
+textarea {
     padding: .2rem;
     font-family: monospace;
     font-size: 1rem;
@@ -98,7 +99,7 @@ textarea{
     transition: all 200ms linear;
 }
 
-input[type=submit]{
+input[type=submit] {
     width: 6rem;
     font-family: monospace;
     font-size: 1rem;
@@ -107,20 +108,20 @@ input[type=submit]{
     border-radius: .2rem;
     border: 1px solid rgb(100, 100, 100);
     padding: .5rem;
-    
+
     outline: 1px solid transparent;
     outline-offset: -3px;
     transition: all 200ms linear;
 }
 
 input[type=submit]:focus-visible,
-textarea:focus-visible{
+textarea:focus-visible {
     outline: 2px solid rgb(0, 140, 210);
     outline-offset: 3px;
 }
 
 
-#div_txt{
+#div_txt {
     min-height: fit-content;
     width: fit-content;
     max-width: 80vmin;
@@ -133,7 +134,7 @@ textarea:focus-visible{
     border-radius: .2rem;
 }
 
-#texto{
+#texto {
     font-family: 'Courier New', Courier, monospace;
     color: black;
     font-size: 1.3rem;
@@ -145,7 +146,7 @@ textarea:focus-visible{
     font-weight: 600;
 }
 
-#texto::after{
+#texto::after {
     content: "|";
     font-weight: bolder;
     color: black;
@@ -159,27 +160,29 @@ textarea:focus-visible{
     }
 }
 
-footer{
+footer {
     display: grid;
     height: var(--height_footer);
     place-items: center;
 }
 
-footer > p{
-    margin: 1rem;
-    font-family: monospace;
-    color: black;
-    font-size: .9rem;
-    width: 18ch;
-    white-space: nowrap;
-    overflow: hidden;
-    font-weight: bolder;
-    animation: digitando 6s steps(19) alternate;
+footer p {
+    background-image: linear-gradient(90deg, black 0% 50%, white 50% 100%);
+    background-size: 200%;
+    background-position: right;
+    background-clip: text;
+    color: rgba(0, 0, 0, 0.0);
+    font-size: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    letter-spacing: .08rem;
+    padding: 1px 0px;
+    position: relative;
+    transition: all .2s linear !important;
 }
 
-@keyframes digitando {
-   from {width: 0px} 
-   to {width: 19ch}
+footer:hover p,
+footer:hover p::after {
+    background-position: left;
+    transition: all 6s steps(18) !important;
 }
-
-
