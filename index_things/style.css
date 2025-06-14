@@ -95,6 +95,6 @@ footer p {
 /* 	order: the more negative the number, the first it will be. */
 /* } */
 
-.card:nth-child(2) {
-	order: -2
-}
+/* .card:nth-child(2) { */
+/* 	order: -2 */
+/* } */
