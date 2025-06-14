@@ -31,6 +31,11 @@ do
 done < $tmp_file
 printf "
 </main>
+<footer>
+    <p>
+    <span class='hide'>console.log('</span>Gabriel R. totosão<span class='hide'>')</span>
+    </p>
+</footer>
 </body>
 </html>
 " >> index.html
