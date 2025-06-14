@@ -93,3 +93,17 @@ if ((img.width / img.height) <= 1.63636363636) {
 }
 img.style.aspectRatio = `${img.width}/${img.height}`; // These are the stars of the show
 wrapper.style.aspectRatio = `${img.width}/${img.height}`; // It wasn't working because of this mf
+
+
+const modal = document.querySelector("#modal")
+const abrir_modal = document.querySelector("#abrir_modal")
+const fechar_modal = document.querySelector("#fechar_modal")
+
+abrir_modal.addEventListener("click", () =>{
+    modal.showModal()
+    console.log("Modal aberto!")
+})
+fechar_modal.addEventListener("click", () => {
+    modal.close()
+    console.log("Modal fechado!")
+})

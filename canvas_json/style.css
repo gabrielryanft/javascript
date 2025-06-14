@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-*{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
@@ -10,22 +10,22 @@
     outline: 0px solid transparent
 }
 
-*:focus-visible{
+*:focus-visible {
     outline: 2px solid rgb(0, 200, 255);
     outline-offset: 1px;
 }
 
-:root{
+:root {
     --can_h: 450px;
     --can_w: 330px;
     --bg_c: rgb(17, 17, 17);
 }
 
-body{
+body {
     background-color: var(--bg_c)
 }
 
-main > div:nth-child(1){
+main>div:nth-child(1) {
     min-height: 100vh;
     width: 100%;
     display: flex;
@@ -34,12 +34,12 @@ main > div:nth-child(1){
     justify-content: center;
 }
 
-main > div > div:nth-child(1){
+main>div>div:nth-child(1) {
     display: flex;
     position: relative;
 }
 
-#bg_img{
+#bg_img {
     position: absolute;
     inset: 0;
     --col-grd: rgba(0, 0, 0, 0.6);
@@ -53,7 +53,7 @@ main > div > div:nth-child(1){
     transition: all 200ms linear;
 }
 
-#main-canvas{
+#main-canvas {
     background-color: #eeeeee;
     height: var(--can_h);
     max-height: 90vh;
@@ -67,7 +67,7 @@ main > div > div:nth-child(1){
     margin: 30px;
 }
 
-#form_id{
+#form_id {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,7 +77,7 @@ main > div > div:nth-child(1){
     margin: 15px 0
 }
 
-.div_cnfg{
+.div_cnfg {
     display: flex;
     flex-direction: column;
     padding: 6px;
@@ -86,11 +86,11 @@ main > div > div:nth-child(1){
     border-radius: 10px
 }
 
-.div_cnfg > * > *{
+.div_cnfg>*>* {
     margin: 3px
 }
 
-button{
+button {
     padding: 6px;
     border-radius: 6px;
     border: none;
@@ -99,57 +99,57 @@ button{
     margin: 3px
 }
 
-button:active{
+button:active {
     background-color: gray
 }
 
-#lst_cnfg{
+#lst_cnfg {
     display: flex;
     flex-direction: column;
     background-color: rgb(34, 34, 34);
 }
 
-#lst_cnfg button{
+#lst_cnfg button {
     margin: 3px 1rem 3px 3px
 }
 
-p{
+p {
     color: white;
     font-family: 'Courier New', Courier, monospace;
     padding: 1rem;
     font-weight: bold;
 }
 
-p > *{
+p>* {
     font-family: 'Courier New', Courier, monospace;
 }
 
-input{
+input {
     color: black
 }
 
-#legend{
+#legend {
     padding-top: 0;
 }
 
-#info_list_grid{
+#info_list_grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
 }
 
-#info_list_grid > div > div{
+#info_list_grid>div>div {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
 }
 
-#info_list_grid > div > div > button{
+#info_list_grid>div>div>button {
     margin: 10px
 }
 
-#info_lst_cnfg{
+#info_lst_cnfg {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -157,51 +157,51 @@ input{
     margin: 0
 }
 
-#btn_ilc{
+#btn_ilc {
     margin: 0
 }
 
-#p_ilc{
+#p_ilc {
     margin: 0;
     padding: 0
 }
 
-.sqr_bkts{
+.sqr_bkts {
     color: rgb(143, 168, 28)
 }
 
-.crl_bkts{
+.crl_bkts {
     color: rgb(194, 49, 194)
 }
 
-.key{
+.key {
     color: rgb(8, 145, 224)
 }
 
-.str{
+.str {
     color: rgb(207, 65, 13)
 }
 
-.num{
+.num {
     color: rgb(39, 155, 35)
 }
 
-.indent_1{
+.indent_1 {
     display: inline-block;
     width: 2ch;
 }
 
-.indent_2{
+.indent_2 {
     display: inline-block;
     width: 4ch;
 }
 
-.indent_3{
+.indent_3 {
     display: inline-block;
     width: 6ch;
 }
 
-footer{
+footer {
     display: flex;
     height: 3rem;
     width: 100%;
@@ -211,7 +211,7 @@ footer{
     bottom: -1px;
 }
 
-#footer-canvas{
+#footer-canvas {
     margin: 0;
     padding: 0;
     z-index: 1;
@@ -219,8 +219,46 @@ footer{
     width: 100%;
 }
 
-footer > p{
+footer>p {
     position: absolute;
     z-index: 0;
 }
 
+/* modal */
+
+#abrir_modal {
+    font-weight: 900;
+    font-size: 1.5rem;
+    outline: 2px solid black;
+    padding: 10px 18px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 9999999;
+}
+
+#modal {
+    padding: 20px;
+    padding-bottom: 10px;
+    margin: auto auto;
+    outline: 2px solid black;
+    text-align: center;
+}
+
+#fechar_modal {
+    background-color: #9f2222;
+    margin: 10px;
+    padding: 5px 10px;
+    outline: 1px solid black;
+    color: white;
+
+}
+
+#modal * {
+    color: black
+}
+
+#modal a {
+    color: blue
+}

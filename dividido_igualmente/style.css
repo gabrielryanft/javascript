@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-:root{
+:root {
     --height-header: 4rem;
     --height-footer: 3rem;
     --height-main: calc(100vh - var(--height-header) - var(--height-footer));
@@ -10,23 +10,23 @@
 
     --lettr-spcing: 1ch;
     /*--width-grtts: calc(18ch + ((var(--lettr-spcing) * 18)));*/
-    --width-grtts: calc( 18ch + 18ch);
+    --width-grtts: calc(18ch + 18ch);
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-header{
+header {
     display: grid;
     min-height: var(--height-header);
     width: 100%;
     place-items: center;
 }
 
-main{
+main {
     display: flex;
     min-height: var(--height-main);
     width: 100%;
@@ -35,7 +35,7 @@ main{
     flex-direction: column;
 }
 
-main > #img_div{
+main>#img_div {
     display: flex;
     width: calc(18vmin * 5);
     height: calc(11vmin * 5);
@@ -44,7 +44,7 @@ main > #img_div{
     outline: 1px solid black;
 }
 
-#wrapper{
+#wrapper {
     outline: 1px solid black;
     position: relative;
     max-width: calc(18vmin * 5);
@@ -54,7 +54,7 @@ main > #img_div{
     object-fit: contain;
 }
 
-img{
+img {
     max-width: calc(18vmin * 5);
     max-height: calc(11vmin * 5);
     height: 100%;
@@ -62,7 +62,7 @@ img{
     object-fit: contain;
 }
 
-#wrapper::after{
+#wrapper::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -71,14 +71,14 @@ img{
 
 }
 
-footer{
+footer {
     display: grid;
     height: var(--height-footer);
     width: 100%;
     place-items: center;
 }
 
-footer p{
+footer p {
     transition: all 200ms linear, outline-offset 500ms linear;
     font-size: 1rem;
     font-family: monospace;
@@ -86,13 +86,13 @@ footer p{
     font-weight: bolder;
 }
 
-p::after{
+p::after {
     outline-top: 0px solid transparent;
     outline-bottom: 0px solid transparent;
     content: "";
     position: absolute;
     z-index: 999;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     height: 0;
@@ -103,11 +103,11 @@ p::after{
     background-image: repeating-linear-gradient(90deg, black 0% calc(0% + 1px), transparent calc(0% + 1px) calc((100% / 18) * 1))
 }
 
-footer:hover p{
+footer:hover p {
     letter-spacing: var(--lettr-spcing);
 }
 
-footer:hover p::after{
+footer:hover p::after {
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     z-index: 999;
@@ -121,15 +121,15 @@ footer:hover p::after{
 }
 
 @media print {
-    header{
+    header {
         display: none
     }
 
-    form{
+    form {
         display: none
     }
-    
-    main{
+
+    main {
         display: flex;
         min-height: 100%;
         width: 100%;
@@ -137,8 +137,8 @@ footer:hover p::after{
         place-content: center;
         flex-direction: column;
     }
-    
-    main > #img_div{
+
+    main>#img_div {
         display: flex;
         width: calc(18vmin * 5);
         height: calc(11vmin * 5);
@@ -146,17 +146,17 @@ footer:hover p::after{
         justify-content: center;
         outline: 1px solid black;
     }
-    
-    img{
+
+    img {
         max-width: calc(18vmin * 5);
         max-height: calc(11vmin * 5);
         height: 100%;
         width: 100%;
         object-fit: contain;
-    
+
     }
-    
-    #wrapper{
+
+    #wrapper {
         outline: 1px solid black;
         display: flex;
         align-items: center;
@@ -170,16 +170,46 @@ footer:hover p::after{
         min-height: 0;
         object-fit: contain;
     }
-    
-    #wrapper::after{
+
+    #wrapper::after {
         content: "";
         position: absolute;
         inset: 0;
         z-index: 2;
         background-image: repeating-linear-gradient(90deg, black 0% calc(0% + 1px), transparent calc(0% + 1px) calc(var(--n_col) - 1px), black calc(var(--n_col) - 1px) var(--n_col)), repeating-linear-gradient(180deg, black 0% calc(0% + 1px), transparent calc(0% + 1px) calc(var(--n_row) - 1px), black calc(var(--n_row) - 1px) var(--n_row));
     }
-    
-    footer{
+
+    footer {
         display: none
     }
+}
+
+/* modal */
+
+#abrir_modal {
+    font-weight: 900;
+    font-size: 1.5rem;
+    outline: 2px solid black;
+    padding: 10px 20px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+#modal {
+    padding: 20px;
+    padding-bottom: 10px;
+    margin: auto auto;
+    outline: 2px solid black;
+    text-align: center;
+}
+
+#fechar_modal {
+    background-color: #9f2222;
+    margin: 10px;
+    padding: 5px 10px;
+    outline: 1px solid black;
+    color: white;
+
 }
