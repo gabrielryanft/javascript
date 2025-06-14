@@ -8,7 +8,7 @@ printf '<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTMLeCSS - GabrielRyanFT </title>
+    <title>JavaScript - GabrielRyanFT </title>
     <link rel="stylesheet" href="./index_things/style.css">
 </head>
 <body>
