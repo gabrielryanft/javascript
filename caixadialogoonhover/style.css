@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-:root{
+:root {
     --footer_height: 4rem;
 
     --x_mouse0: 50%;
@@ -28,21 +28,21 @@
     --outln_clr: transparent
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     margin: 0px;
-    padding: 0px; 
+    padding: 0px;
     font-family: 'Courier New', Courier, monospace;
-    background-color:rgba(0, 110, 0, 0.146);
+    background-color: rgba(0, 110, 0, 0.146);
     box-sizing: border-box;
 }
 
-header{
+header {
     display: grid;
     place-items: center;
     height: 4.5rem;
@@ -50,7 +50,7 @@ header{
     box-shadow: inset 0px 0px 20px 0px rgba(0, 85, 0, 0.75);
 }
 
-h1{
+h1 {
     text-align: center;
     text-wrap: balance;
     margin: 0 2rem;
@@ -58,27 +58,27 @@ h1{
     color: rgb(15, 37, 15);
 }
 
-h2{
-   word-wrap: break-word;
-   margin: 2rem;
+h2 {
+    word-wrap: break-word;
+    margin: 2rem;
 
 }
 
-header p{
+header p {
     width: clamp(45ch, 50%, 75ch);
     text-indent: 2rem;
     margin: 1.5rem
 }
 
 @media (max-width: 60ch) {
-    header p{
+    header p {
         width: clamp(25ch, 50%, 75ch);
         text-indent: 2rem;
         margin: 1rem
     }
 }
 
-main{
+main {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -87,7 +87,7 @@ main{
     padding: clamp(1rem, 50%, 2rem)
 }
 
-main p{
+main p {
     width: clamp(20ch, 50%, 35ch);
     font-weight: 500;
     text-align: left;
@@ -95,26 +95,25 @@ main p{
     margin: 1rem auto
 }
 
-img{
-    display: block;
+img {
+    display: flex;
     margin: auto;
     min-width: 250px;
-    max-width: 400px;
-    max-height: 90vh;
+    max-width: 200px;
     border: 8px double rgba(0, 33, 0, 0.838);
     pointer-events: none;
 }
 
-.imgs{
+.imgs {
     position: relative;
     margin: auto;
     display: grid;
     place-items: center;
     height: fit-content;
-    width:fit-content
+    width: fit-content
 }
 
-.imgs::after{
+.imgs::after {
     transition-property: font-size, padding, outline, min-height, min-width, max-height, max-width;
     transition-duration: 200ms;
     transition-timing-function: linear;
@@ -130,31 +129,31 @@ img{
     letter-spacing: .05rem;
 }
 
-#img1::after{
+#img1::after {
     content: "Parece um psicopata";
     font-size: var(--font_sz_sudo0);
     padding: var(--padding_sudo0);
-    top: var(--y_mouse0); 
+    top: var(--y_mouse0);
     left: var(--x_mouse0);
 }
 
-#img2::after{
+#img2::after {
     content: "Nerd";
     font-size: var(--font_sz_sudo1);
     padding: var(--padding_sudo1);
-    top: var(--y_mouse1); 
+    top: var(--y_mouse1);
     left: var(--x_mouse1);
 }
 
-#img3::after{
+#img3::after {
     content: "Muito totoso";
     font-size: var(--font_sz_sudo2);
     padding: var(--padding_sudo2);
-    top: var(--y_mouse2); 
+    top: var(--y_mouse2);
     left: var(--x_mouse2);
 }
 
-#img4::after{
+#img4::after {
     content: "";
     background-image: url("imgs/eunsay.png");
     background-size: cover;
@@ -168,11 +167,13 @@ img{
     max-height: var(--max_h);
     outline: var(--outln_sz) double var(--outln_clr);
 
-    top: var(--y_mouse3); 
+    top: var(--y_mouse3);
     left: var(--x_mouse3);
+
+    max-width: 400px;
 }
 
-#img4::before{
+#img4::before {
     content: "Passe o mouse em cima:";
     font-size: 1rem;
     font-family: Roboto, Oxygen, Ubuntu, 'Trebuchet MS', sans-serif;
@@ -183,12 +184,12 @@ img{
     transform: translatex(-50%);
 }
 
-#img4_img{
+#img4_img {
     padding: 1rem;
     margin: 2rem
 }
 
-footer{
+footer {
     display: grid;
     place-items: center;
     height: var(--footer_height);
@@ -197,50 +198,51 @@ footer{
     text-shadow: 0px 0px 1px rgb(0, 58, 0);
 }
 
-footer > p{
+footer>p {
     --font_sz: 1rem;
     position: relative;
     font-size: var(--font_sz);
     display: flex;
     align-items: center;
-    padding: .5rem; 
+    padding: .5rem;
 }
 
 
-footer #spn{
+footer #spn {
     position: absolute;
     left: 50%;
-    transform: translateX(-50%) translateY(calc((var(--font_sz) + var(--padding_spn_sz) + .5rem) * -1)); /*o .5rem  é para dar um espaço a mais.*/
+    transform: translateX(-50%) translateY(calc((var(--font_sz) + var(--padding_spn_sz) + .5rem) * -1));
+    /*o .5rem  é para dar um espaço a mais.*/
     font-size: 0px;
 
     transition: all 200ms linear;
 }
 
-footer:hover #spn{
-     --padding_spn_sz: .3rem; 
-     font-size: var(--font_sz);
-     background-color:rgb(29, 63, 26);
-     color: white;
-     padding: var(--padding_spn_sz);
-     border-radius: .5rem 
+footer:hover #spn {
+    --padding_spn_sz: .3rem;
+    font-size: var(--font_sz);
+    background-color: rgb(29, 63, 26);
+    color: white;
+    padding: var(--padding_spn_sz);
+    border-radius: .5rem
 }
- 
-footer #spn::after{
-     transition: all 500ms linear;
-     content: "";
-     position: absolute;
-     bottom: -4px;
-     left: 50%;
-     transform: translateX(-50%) rotate(45deg);
-     z-index: -1;
-     width: 0px;
-     height: 0px;
-     display: inline-block;
-     background-color: transparent;
+
+footer #spn::after {
+    transition: all 500ms linear;
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    z-index: -1;
+    width: 0px;
+    height: 0px;
+    display: inline-block;
+    background-color: transparent;
 }
- 
-footer:hover #spn::after{
-     width: 10px;
-     height: 10px;
-     background-color: rgb(29, 63, 26);
- }
+
+footer:hover #spn::after {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(29, 63, 26);
+}
