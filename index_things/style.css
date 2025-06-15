@@ -33,6 +33,15 @@ main {
 	max-width: 25vw
 }
 
+.card:hover {
+	box-shadow: 0 0 10px -1px gray;
+}
+
+.card:active {
+	transition: all 0s linear;
+	box-shadow: none;
+}
+
 .image {
 	outline: solid 1px black;
 	/* min-height: 10rem; */
